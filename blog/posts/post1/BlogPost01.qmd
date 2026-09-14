@@ -6,7 +6,7 @@ categories:
   - P-Value
 ---
 
-![](figure1.png){width="500px"}
+![](BlogPost01Cover.png){width="500px"}
 
 # Why Is the p-value So Easy to Misunderstand?
 

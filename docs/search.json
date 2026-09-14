@@ -4,7 +4,7 @@
     "href": "bio.html",
     "title": "About Me",
     "section": "",
-    "text": "Write a short biography here.\nInclude:"
+    "text": "I’m Guozhi Ye, a master’s student at the University of Pennsylvania studying Applied Economics and Data Science (AEDS). My academic interests focus on macroeconomic analysis, business analytics, and data-driven decision-making. I enjoy using economic reasoning and quantitative methods to better understand real-world business and economic problems. Alongside my graduate studies, I am developing practical technical skills in R, SQL, and Git to strengthen my ability to work with data, conduct reproducible analysis, and collaborate on analytical projects. Looking ahead, I hope to pursue a career that combines economics, data analysis, and business strategy."
   },
   {
     "objectID": "bio.html#education",
@@ -19,20 +19,6 @@
     "title": "About Me",
     "section": "Interests",
     "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis"
-  },
-  {
-    "objectID": "bio.html#contact",
-    "href": "bio.html#contact",
-    "title": "About Me",
-    "section": "Contact",
-    "text": "Contact"
-  },
-  {
-    "objectID": "bio.html#studentemail.edu",
-    "href": "bio.html#studentemail.edu",
-    "title": "About Me",
-    "section": "student@email.edu",
-    "text": "student@email.edu"
   },
   {
     "objectID": "blog/index.html",
