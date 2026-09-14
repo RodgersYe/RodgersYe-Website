@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Guozhi Ye",
-    "section": "",
-    "text": "Guozhi Ye\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
-  },
-  {
     "objectID": "bio.html",
     "href": "bio.html",
     "title": "About Me",
@@ -49,11 +42,11 @@
     "text": "Blog Post 01\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Blog Post\n\n\n\n\n\n\n\n\nJun 16, 2026\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "blog/posts/post1/Untitled.html",
-    "href": "blog/posts/post1/Untitled.html",
-    "title": "My First Blog Post",
-    "section": "",
-    "text": "This is my first blog post. Example \\(\\LaTeX\\) equation: \\(\\frac{1}{2}\\sum_{i=1}^nx_i\\)"
+    "objectID": "blog/posts/post1/BlogPost01.html#takeaway",
+    "href": "blog/posts/post1/BlogPost01.html#takeaway",
+    "title": "Blog Post 01",
+    "section": "Takeaway",
+    "text": "Takeaway\nA p-value is not “the probability that the null hypothesis is true.” It is “the probability of observing the current result, or a more extreme one, assuming that the null hypothesis is true.”\nThe key to understanding the p-value is not memorizing the number (0.05), but remembering the direction of the conditional probability:\n\\[\nP(\\text{Data}\\mid H_0)\n\\neq\nP(H_0\\mid \\text{Data})\n\\]\nOnce this distinction is clear, the p-value becomes much less mysterious."
   },
   {
     "objectID": "resume.html",
@@ -70,24 +63,17 @@
     "text": "Resume PDF"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Guozhi Ye",
+    "section": "",
+    "text": "Guozhi Ye\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "blog/posts/post1/BlogPost01.html",
-    "href": "blog/posts/post1/BlogPost01.html",
-    "title": "My First Blog Post",
-    "section": "",
-    "text": "This is my first blog post. Example \\(\\LaTeX\\) equation: \\(\\frac{1}{2}\\sum_{i=1}^nx_i\\)"
-  },
-  {
-    "objectID": "blog/posts/post1/BlogPost01.html#takeaway",
-    "href": "blog/posts/post1/BlogPost01.html#takeaway",
-    "title": "Blog Post 01",
-    "section": "Takeaway",
-    "text": "Takeaway\nA p-value is not “the probability that the null hypothesis is true.” It is “the probability of observing the current result, or a more extreme one, assuming that the null hypothesis is true.”\nThe key to understanding the p-value is not memorizing the number (0.05), but remembering the direction of the conditional probability:\n\\[\nP(\\text{Data}\\mid H_0)\n\\neq\nP(H_0\\mid \\text{Data})\n\\]\nOnce this distinction is clear, the p-value becomes much less mysterious."
   }
 ]
