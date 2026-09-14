@@ -1,5 +1,5 @@
 ---
-title: "My First Blog Post"
+title: "Blog Post 01"
 date: 2026-September-14 
 categories:
   - STAT
