@@ -3,14 +3,15 @@ title: ""
 ---
 
 ::::: columns
+
 ::: {.column width="35%"}
-![](images/profile.png){width="100%"}
+![](images/profile.jpg){width="100%"}
 :::
 
-::: {.column width="65%"}
+::: {.column width="65%" style="padding-left: 2rem;"}
 ![](images/UniversityofPennsylvania_FullLogo_RGB.png){width="250px"}
 
-# Student Name
+# Guozhi Ye
 
 University of Pennsylvaina
 
