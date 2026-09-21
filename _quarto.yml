@@ -9,7 +9,7 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - bio.qmd
+      - aboutme.qmd
       - resume.qmd
       - blog/index.qmd
 

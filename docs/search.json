@@ -1,31 +1,10 @@
 [
   {
-    "objectID": "bio.html",
-    "href": "bio.html",
-    "title": "About Me",
-    "section": "",
-    "text": "I’m Guozhi Ye, a master’s student at the University of Pennsylvania studying Applied Economics and Data Science (AEDS). My academic interests focus on macroeconomic analysis, business analytics, and data-driven decision-making. I enjoy using economic reasoning and quantitative methods to better understand real-world business and economic problems. Alongside my graduate studies, I am developing practical technical skills in R, SQL, and Git to strengthen my ability to work with data, conduct reproducible analysis, and collaborate on analytical projects. Looking ahead, I hope to pursue a career that combines economics, data analysis, and business strategy."
-  },
-  {
-    "objectID": "bio.html#education",
-    "href": "bio.html#education",
-    "title": "About Me",
-    "section": "Education",
-    "text": "Education\nMaster of Applied Economics and Data Science, University of Pennsylvania (expaceted 2027) Batelor of Science, University Name 2026"
-  },
-  {
-    "objectID": "bio.html#interests",
-    "href": "bio.html#interests",
-    "title": "About Me",
-    "section": "Interests",
-    "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis"
-  },
-  {
     "objectID": "blog/index.html",
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Blog Post 01\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nMy Second Blog Post\n\n\n\n\n\n\n\n\nJun 16, 2026\n\n\n\n\n\nNo matching items"
+    "text": "My Second Blog Post\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post 01\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/post1/BlogPost01.html#takeaway",
@@ -33,6 +12,27 @@
     "title": "Blog Post 01",
     "section": "Takeaway",
     "text": "Takeaway\nA p-value is not “the probability that the null hypothesis is true.” It is “the probability of observing the current result, or a more extreme one, assuming that the null hypothesis is true.”\nThe key to understanding the p-value is not memorizing the number (0.05), but remembering the direction of the conditional probability:\n\\[\nP(\\text{Data}\\mid H_0)\n\\neq\nP(H_0\\mid \\text{Data})\n\\]\nOnce this distinction is clear, the p-value becomes much less mysterious."
+  },
+  {
+    "objectID": "aboutme.html",
+    "href": "aboutme.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I’m Guozhi Ye, a master’s student at the University of Pennsylvania studying Applied Economics and Data Science (AEDS). My academic interests focus on macroeconomic analysis, business analytics, and data-driven decision-making. I enjoy using economic reasoning and quantitative methods to better understand real-world business and economic problems. Alongside my graduate studies, I am developing practical technical skills in R, SQL, and Git to strengthen my ability to work with data, conduct reproducible analysis, and collaborate on analytical projects. Looking ahead, I hope to pursue a career that combines economics, data analysis, and business strategy."
+  },
+  {
+    "objectID": "aboutme.html#education",
+    "href": "aboutme.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\nMaster of Applied Economics and Data Science, University of Pennsylvania (expaceted 2027) Batelor of Science, University Name 2026"
+  },
+  {
+    "objectID": "aboutme.html#interests",
+    "href": "aboutme.html#interests",
+    "title": "About Me",
+    "section": "Interests",
+    "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis"
   },
   {
     "objectID": "resume.html",
@@ -54,12 +54,5 @@
     "title": "Guozhi Ye",
     "section": "",
     "text": "Guozhi Ye\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
   }
 ]

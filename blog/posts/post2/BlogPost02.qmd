@@ -1,6 +1,6 @@
 ---
 title: "My Second Blog Post"
-date: 2026-06-16
+date: 2026-09-21
 categories:
   - opinion
   - labor market
