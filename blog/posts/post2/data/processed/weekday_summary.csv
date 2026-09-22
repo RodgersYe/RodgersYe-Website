@@ -1,0 +1,8 @@
+rank,weekday,number_of_events,number_of_calendar_days,events_per_weekday,share_percent
+1,Tuesday,707,52,13.6,19.8
+2,Wednesday,701,52,13.48,19.6
+3,Thursday,658,53,12.42,18.4
+4,Monday,466,52,8.96,13
+5,Friday,459,52,8.83,12.8
+6,Saturday,331,52,6.37,9.3
+7,Sunday,255,52,4.9,7.1

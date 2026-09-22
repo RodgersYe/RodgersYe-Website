@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-09-21">
 
-<title>My Second Blog Post – Guozhi Ye</title>
+<title>Post 2: What Is the Best Day of the Week for Attending Drexel Events? – Guozhi Ye</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -129,10 +129,11 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My Second Blog Post</h1>
+<h1 class="title">Post 2: What Is the Best Day of the Week for Attending Drexel Events?</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">opinion</div>
-    <div class="quarto-category">labor market</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">Web Scraping</div>
+    <div class="quarto-category">Data Analysis</div>
   </div>
   </div>
 
@@ -156,8 +157,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="this-is-my-second-blog-post." class="level2">
-<h2 class="anchored" data-anchor-id="this-is-my-second-blog-post.">This is my second blog post.</h2>
+<p><img src="BlogPost02Cover.png" class="img-fluid" width="500"></p>
+<section id="when-should-you-keep-your-schedule-open" class="level2">
+<h2 class="anchored" data-anchor-id="when-should-you-keep-your-schedule-open">When Should You Keep Your Schedule Open?</h2>
+<p>University event calendars can be overwhelming. Talks, workshops, exhibitions, career events, and student activities are spread across the week, but they are not necessarily distributed evenly. If someone wants to attend more campus events, does it matter which days they keep relatively flexible?</p>
+<p>To answer this question, I analyzed events listed on the <strong>Drexel University Events Calendar</strong> for 2026. My research question is:</p>
+<p><strong>Which day or days of the week offer the most opportunities among events currently listed on the Drexel University Events Calendar for 2026?</strong></p>
+<p>The goal is not simply to count events. I want to turn publicly available calendar data into a practical scheduling recommendation.</p>
+</section>
+<section id="scraping-and-cleaning-the-calendar" class="level2">
+<h2 class="anchored" data-anchor-id="scraping-and-cleaning-the-calendar">Scraping and Cleaning the Calendar</h2>
+<p>I collected the data from the <a href="https://calendar.drexel.edu/EventList.aspx">Drexel University Events Calendar</a> using R and the <code>rvest</code> package. Before scraping, I checked the site’s robots rules and confirmed that the calendar page was not disallowed. To limit the burden on the website, I requested only one monthly calendar page at a time and added a two-second pause between requests.</p>
+<p>The scraping script collected event titles, dates, event IDs, and URLs for January through December 2026. It produced <strong>3,869 raw calendar records</strong>.</p>
+<p>The raw data required cleaning. Events explicitly marked as cancelled were removed. This eliminated 292 calendar records representing four unique cancelled events. I also checked for exact duplicates based on event ID, information ID, and date, but found none.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 6
+   rank weekday   number_of_events number_of_calendar_days events_per_weekday
+  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;                   &lt;dbl&gt;              &lt;dbl&gt;
+1     1 Tuesday                707                      52              13.6 
+2     2 Wednesday              701                      52              13.5 
+3     3 Thursday               658                      53              12.4 
+4     4 Monday                 466                      52               8.96
+5     5 Friday                 459                      52               8.83
+6     6 Saturday               331                      52               6.37
+7     7 Sunday                 255                      52               4.9 
+# ℹ 1 more variable: share_percent &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>One important choice was how to handle multi-day and recurring events. I treated an event appearing on multiple dates as multiple <strong>attendance opportunities</strong> because a person could potentially attend it on different days. However, I also performed a robustness check excluding events explicitly labeled as multi-day events.</p>
+</section>
+<section id="tuesdays-and-wednesdays-stand-out" class="level2">
+<h2 class="anchored" data-anchor-id="tuesdays-and-wednesdays-stand-out">Tuesdays and Wednesdays Stand Out</h2>
+<p>The cleaned dataset contains <strong>3,577 event occurrences</strong>. Tuesdays had 707 listed opportunities and Wednesdays had 701. Because weekdays do not all occur exactly the same number of times in a calendar year, I divided the number of events by the number of occurrences of each weekday in 2026.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="BlogPost02_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A typical Tuesday had about <strong>13.6 listed event opportunities</strong>, compared with <strong>13.5 on Wednesday</strong> and <strong>12.4 on Thursday</strong>. The numbers fall substantially toward the weekend: Saturday averaged about 6.4 and Sunday only 4.9.</p>
+<p>The difference between Tuesday and Wednesday is extremely small, so it would be misleading to claim that Tuesday is decisively the single best day.</p>
+</section>
+<section id="does-the-result-hold-up" class="level2">
+<h2 class="anchored" data-anchor-id="does-the-result-hold-up">Does the Result Hold Up?</h2>
+<p>There are two important concerns. First, the data were scraped on September 21, 2026, so events later in the year may not yet be fully posted. Second, long-running events could disproportionately affect weekday counts.</p>
+<p>I therefore repeated the analysis using only events occurring on or before September 21. In that sample, <strong>Wednesday ranked slightly above Tuesday</strong>. I also excluded events explicitly labeled as multi-day events; in that version, <strong>Tuesday ranked first and Wednesday second</strong>.</p>
+<p>Across all three specifications, the broader pattern remained the same: <strong>Tuesday and Wednesday consistently had the highest concentration of event opportunities, with Thursday close behind.</strong></p>
+</section>
+<section id="takeaway" class="level2">
+<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
+<p>For someone trying to maximize opportunities to attend events listed on Drexel’s calendar, the most useful scheduling strategy is not to focus on one single “best” day. Instead, <strong>keeping Tuesdays and Wednesdays relatively flexible provides the greatest access to events, while Thursdays are another strong option</strong>.</p>
+<p>The analysis also illustrates an important lesson from web scraping: collecting the data is only the first step. Cleaning repeated listings, defining what counts as an opportunity, and recognizing incomplete future schedules are necessary before scraped data can support a useful real-world decision.</p>
 
 
 </section>

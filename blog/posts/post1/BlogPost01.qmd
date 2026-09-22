@@ -1,5 +1,5 @@
 ---
-title: "Blog Post 01"
+title: "Post 1: Misconceptions About the P-Value"
 date: 2026-September-14 
 categories:
   - STAT

@@ -4,14 +4,63 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "My Second Blog Post\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post 01\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Post 2: What Is the Best Day of the Week for Attending Drexel Events?\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 1: Misconceptions About the P-Value\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nYou Guess\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "blog/posts/post1/BlogPost01.html#takeaway",
-    "href": "blog/posts/post1/BlogPost01.html#takeaway",
-    "title": "Blog Post 01",
+    "objectID": "blog/posts/post2/BlogPost02.html#when-should-you-keep-your-schedule-open",
+    "href": "blog/posts/post2/BlogPost02.html#when-should-you-keep-your-schedule-open",
+    "title": "Post 2: What Is the Best Day of the Week for Attending Drexel Events?",
+    "section": "When Should You Keep Your Schedule Open?",
+    "text": "When Should You Keep Your Schedule Open?\nUniversity event calendars can be overwhelming. Talks, workshops, exhibitions, career events, and student activities are spread across the week, but they are not necessarily distributed evenly. If someone wants to attend more campus events, does it matter which days they keep relatively flexible?\nTo answer this question, I analyzed events listed on the Drexel University Events Calendar for 2026. My research question is:\nWhich day or days of the week offer the most opportunities among events currently listed on the Drexel University Events Calendar for 2026?\nThe goal is not simply to count events. I want to turn publicly available calendar data into a practical scheduling recommendation."
+  },
+  {
+    "objectID": "blog/posts/post2/BlogPost02.html#scraping-and-cleaning-the-calendar",
+    "href": "blog/posts/post2/BlogPost02.html#scraping-and-cleaning-the-calendar",
+    "title": "Post 2: What Is the Best Day of the Week for Attending Drexel Events?",
+    "section": "Scraping and Cleaning the Calendar",
+    "text": "Scraping and Cleaning the Calendar\nI collected the data from the Drexel University Events Calendar using R and the rvest package. Before scraping, I checked the site’s robots rules and confirmed that the calendar page was not disallowed. To limit the burden on the website, I requested only one monthly calendar page at a time and added a two-second pause between requests.\nThe scraping script collected event titles, dates, event IDs, and URLs for January through December 2026. It produced 3,869 raw calendar records.\nThe raw data required cleaning. Events explicitly marked as cancelled were removed. This eliminated 292 calendar records representing four unique cancelled events. I also checked for exact duplicates based on event ID, information ID, and date, but found none.\n\n\n# A tibble: 7 × 6\n   rank weekday   number_of_events number_of_calendar_days events_per_weekday\n  &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;                   &lt;dbl&gt;              &lt;dbl&gt;\n1     1 Tuesday                707                      52              13.6 \n2     2 Wednesday              701                      52              13.5 \n3     3 Thursday               658                      53              12.4 \n4     4 Monday                 466                      52               8.96\n5     5 Friday                 459                      52               8.83\n6     6 Saturday               331                      52               6.37\n7     7 Sunday                 255                      52               4.9 \n# ℹ 1 more variable: share_percent &lt;dbl&gt;\n\n\nOne important choice was how to handle multi-day and recurring events. I treated an event appearing on multiple dates as multiple attendance opportunities because a person could potentially attend it on different days. However, I also performed a robustness check excluding events explicitly labeled as multi-day events."
+  },
+  {
+    "objectID": "blog/posts/post2/BlogPost02.html#tuesdays-and-wednesdays-stand-out",
+    "href": "blog/posts/post2/BlogPost02.html#tuesdays-and-wednesdays-stand-out",
+    "title": "Post 2: What Is the Best Day of the Week for Attending Drexel Events?",
+    "section": "Tuesdays and Wednesdays Stand Out",
+    "text": "Tuesdays and Wednesdays Stand Out\nThe cleaned dataset contains 3,577 event occurrences. Tuesdays had 707 listed opportunities and Wednesdays had 701. Because weekdays do not all occur exactly the same number of times in a calendar year, I divided the number of events by the number of occurrences of each weekday in 2026.\n\n\n\n\n\n\n\n\n\nA typical Tuesday had about 13.6 listed event opportunities, compared with 13.5 on Wednesday and 12.4 on Thursday. The numbers fall substantially toward the weekend: Saturday averaged about 6.4 and Sunday only 4.9.\nThe difference between Tuesday and Wednesday is extremely small, so it would be misleading to claim that Tuesday is decisively the single best day."
+  },
+  {
+    "objectID": "blog/posts/post2/BlogPost02.html#does-the-result-hold-up",
+    "href": "blog/posts/post2/BlogPost02.html#does-the-result-hold-up",
+    "title": "Post 2: What Is the Best Day of the Week for Attending Drexel Events?",
+    "section": "Does the Result Hold Up?",
+    "text": "Does the Result Hold Up?\nThere are two important concerns. First, the data were scraped on September 21, 2026, so events later in the year may not yet be fully posted. Second, long-running events could disproportionately affect weekday counts.\nI therefore repeated the analysis using only events occurring on or before September 21. In that sample, Wednesday ranked slightly above Tuesday. I also excluded events explicitly labeled as multi-day events; in that version, Tuesday ranked first and Wednesday second.\nAcross all three specifications, the broader pattern remained the same: Tuesday and Wednesday consistently had the highest concentration of event opportunities, with Thursday close behind."
+  },
+  {
+    "objectID": "blog/posts/post2/BlogPost02.html#takeaway",
+    "href": "blog/posts/post2/BlogPost02.html#takeaway",
+    "title": "Post 2: What Is the Best Day of the Week for Attending Drexel Events?",
     "section": "Takeaway",
-    "text": "Takeaway\nA p-value is not “the probability that the null hypothesis is true.” It is “the probability of observing the current result, or a more extreme one, assuming that the null hypothesis is true.”\nThe key to understanding the p-value is not memorizing the number (0.05), but remembering the direction of the conditional probability:\n\\[\nP(\\text{Data}\\mid H_0)\n\\neq\nP(H_0\\mid \\text{Data})\n\\]\nOnce this distinction is clear, the p-value becomes much less mysterious."
+    "text": "Takeaway\nFor someone trying to maximize opportunities to attend events listed on Drexel’s calendar, the most useful scheduling strategy is not to focus on one single “best” day. Instead, keeping Tuesdays and Wednesdays relatively flexible provides the greatest access to events, while Thursdays are another strong option.\nThe analysis also illustrates an important lesson from web scraping: collecting the data is only the first step. Cleaning repeated listings, defining what counts as an opportunity, and recognizing incomplete future schedules are necessary before scraped data can support a useful real-world decision."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Guozhi Ye",
+    "section": "",
+    "text": "Guozhi Ye\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Download my resume here:"
+  },
+  {
+    "objectID": "resume.html#resume-pdf",
+    "href": "resume.html#resume-pdf",
+    "title": "Resume",
+    "section": "Resume PDF",
+    "text": "Resume PDF"
   },
   {
     "objectID": "aboutme.html",
@@ -35,24 +84,17 @@
     "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis"
   },
   {
-    "objectID": "resume.html",
-    "href": "resume.html",
-    "title": "Resume",
-    "section": "",
-    "text": "Download my resume here:"
+    "objectID": "blog/posts/post1/BlogPost01.html#takeaway",
+    "href": "blog/posts/post1/BlogPost01.html#takeaway",
+    "title": "Post 1: Misconceptions About the P-Value",
+    "section": "Takeaway",
+    "text": "Takeaway\nA p-value is not “the probability that the null hypothesis is true.” It is “the probability of observing the current result, or a more extreme one, assuming that the null hypothesis is true.”\nThe key to understanding the p-value is not memorizing the number (0.05), but remembering the direction of the conditional probability:\n\\[\nP(\\text{Data}\\mid H_0)\n\\neq\nP(H_0\\mid \\text{Data})\n\\]\nOnce this distinction is clear, the p-value becomes much less mysterious."
   },
   {
-    "objectID": "resume.html#resume-pdf",
-    "href": "resume.html#resume-pdf",
-    "title": "Resume",
-    "section": "Resume PDF",
-    "text": "Resume PDF"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Guozhi Ye",
-    "section": "",
-    "text": "Guozhi Ye\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
+    "objectID": "blog/posts/post3/BlogPost03.html#na",
+    "href": "blog/posts/post3/BlogPost03.html#na",
+    "title": "You Guess",
+    "section": "NA",
+    "text": "NA\nComing Soon"
   }
 ]
