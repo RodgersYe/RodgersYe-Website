@@ -1,5 +1,5 @@
 ---
-title: "How Has the American Workweek Changed?"
+title: "Post 3: How Has the American Workweek Changed?"
 date: "2026-09-28"
 categories:
   - Data Visualization
