@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-09-28">
 
-<title>Post 3: How Has the American Workweek Changed? – Guozhi Ye</title>
+<title>You Guess – Guozhi Ye</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -129,11 +128,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Post 3: How Has the American Workweek Changed?</h1>
+<h1 class="title">You Guess</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Data Visualization</div>
-    <div class="quarto-category">Labor Economics</div>
-    <div class="quarto-category">IPUMS CPS</div>
+    <div class="quarto-category">XXX</div>
   </div>
   </div>
 
@@ -145,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 28, 2026</p>
+      <p class="date">Invalid Date</p>
     </div>
   </div>
   
@@ -157,73 +154,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="BlogPost03Cover.png" class="img-fluid" width="500"></p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Employment tells us whether people work, but working hours reveal another dimension of labor supply: how much time workers spend on the job. Similar employment levels can coexist with different working schedules. Separating main-job hours from hours at other jobs also helps identify where changes in working time occur.</p>
-<p>This post asks: <strong>How did actual weekly working hours change across age groups in the United States between 2000 and 2024, and how much of the pattern appears in main jobs versus other jobs?</strong></p>
-</section>
-<section id="data-and-methods" class="level2">
-<h2 class="anchored" data-anchor-id="data-and-methods">Data and methods</h2>
-<p>I use microdata from <a href="https://cps.ipums.org/cps/">IPUMS CPS</a>, covering all 300 Basic Monthly samples from January 2000 through December 2024. The analysis includes civilians aged 16 or older who were at work during the survey reference week (<code>EMPSTAT = 10</code>), had positive sampling weights, and had valid hours information.</p>
-<p>Workers are divided into six age groups: 16–24, 25–34, 35–44, 45–54, 55–64, and 65+.</p>
-<p>The three hours variables measure actual hours during the previous week: <a href="https://cps.ipums.org/cps-action/variables/AHRSWORKT"><code>AHRSWORKT</code></a> covers all jobs, <a href="https://cps.ipums.org/cps-action/variables/AHRSWORK1"><code>AHRSWORK1</code></a> covers the main job, and <a href="https://cps.ipums.org/cps-action/variables/AHRSWORK2"><code>AHRSWORK2</code></a> covers other jobs. These measure actual working time rather than usual schedules.</p>
-<p>All five figures use the same analysis sample. Not-in-universe codes are excluded from hours calculations, except that other-job hours are assigned zero for confirmed single-job workers. Published topcoded values are retained.</p>
-<p>Within each month and age group, I calculate weighted means using <a href="https://cps.ipums.org/cps-action/variables/WTFINL"><code>WTFINL</code></a>, the person-level weight recommended for Basic Monthly analyses. Thus, the estimates describe the population represented by the retained observations rather than an unweighted average of survey respondents. Annual hours are the average of the twelve monthly weighted means.</p>
-</section>
-<section id="figure-1-total-hours" class="level2">
-<h2 class="anchored" data-anchor-id="figure-1-total-hours">Figure 1: Total hours</h2>
-<p><img src="figures/fig1_total_hours_by_age.png" class="img-fluid" style="width:100.0%" alt="Figure 1. Annual average total weekly work hours by age, 2000–2024. Hours increase overall for workers aged 65 and older."></p>
-<p>Figure 1 shows substantial differences in working time across ages. Workers aged 25–64 generally work longer weeks than the youngest and oldest groups. However, the long-run changes differ: most groups below age 65 end the period with lower average hours than in 2000, while the 65+ group moves upward.</p>
-<p>Among workers aged 65+, average weekly hours rise from approximately 30 to 33. For those aged 16–24, hours fall from approximately 33 to 31. The older group overtakes the youngest group during the period.</p>
-<p>These are changes among people who were working; they do not establish whether older adults became more likely to work.</p>
-</section>
-<section id="figure-2-main-job-hours" class="level2">
-<h2 class="anchored" data-anchor-id="figure-2-main-job-hours">Figure 2: Main-job hours</h2>
-<p><img src="figures/fig2_main_job_hours_by_age.png" class="img-fluid" style="width:100.0%" alt="Figure 2. Main-job weekly work hours by age, 2000–2024. Patterns resemble total hours, using the same vertical scale as Figure 1."></p>
-<p>Figure 2 closely resembles Figure 1. The upward movement among older workers and the lower endpoint levels among younger and middle-aged groups also appear in main-job hours. Using the same vertical scale in both figures makes this comparison straightforward.</p>
-<p>This similarity indicates that changes in main-job hours account for much of the overall pattern. Understanding the changing workweek therefore requires attention to hours in workers’ primary jobs.</p>
-</section>
-<section id="figure-3-other-job-hours" class="level2">
-<h2 class="anchored" data-anchor-id="figure-3-other-job-hours">Figure 3: Other-job hours</h2>
-<p><img src="figures/fig3_other_job_hours_by_age.png" class="img-fluid" style="width:100.0%" alt="Figure 3. Other-job weekly work hours by age, 2000–2024. Averages include zero hours for confirmed single-job workers."></p>
-<p>Other-job hours contribute much less to the average workweek. In 2024, the age-group averages are roughly 0.6–0.8 hours per worker per week. Several groups show a decline around 2020 followed by a recovery.</p>
-<p>The denominator is essential: these averages include single-job workers with zero other-job hours. They do <strong>not</strong> imply that people holding multiple jobs spend less than an hour working outside their main job.</p>
-<p>The average combines how common multiple-job holding is with how many other-job hours those workers report.</p>
-</section>
-<section id="figure-4-main-job-share" class="level2">
-<h2 class="anchored" data-anchor-id="figure-4-main-job-share">Figure 4: Main-job share</h2>
-<p><img src="figures/fig4_main_job_share_by_age.png" class="img-fluid" style="width:100.0%" alt="Figure 4. Main-job share of total hours by age, 2000–2024. Shares remain around 98 percent; the vertical axis is zoomed."></p>
-<p>Figure 4 expresses main-job hours relative to total hours. Each annual share equals annual mean main-job hours divided by annual mean total hours, multiplied by 100. It is a ratio of means, not an average of individual workers’ percentages.</p>
-<p>Main jobs consistently account for approximately 98% of measured hours. Although the lines appear variable, the vertical axis is narrowly zoomed: most movements represent fractions of a percentage point.</p>
-<p>The central finding is the persistent dominance of main-job hours.</p>
-</section>
-<section id="figure-5-other-job-share" class="level2">
-<h2 class="anchored" data-anchor-id="figure-5-other-job-share">Figure 5: Other-job share</h2>
-<p><img src="figures/fig5_other_job_share_by_age.png" class="img-fluid" style="width:100.0%" alt="Figure 5. Other-job share of total hours by age, 2000–2024. Shares generally remain around 1–2.5 percent."></p>
-<p>Figure 5 shows the complementary perspective. Other jobs generally account for around 1–2.5% of hours. Younger workers often have a relatively high other-job share despite working fewer other-job hours than some middle-aged groups.</p>
-<p>Their lower total hours help explain this distinction between absolute hours and proportional importance.</p>
-<p>Figures 4 and 5 describe essentially the same composition from opposite directions. They should be interpreted together, rather than treated as independent evidence.</p>
-</section>
-<section id="interpretation-and-limitations" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation-and-limitations">Interpretation and limitations</h2>
-<p>These patterns remain descriptive. Changes can reflect shifts in occupations, part-time work, or the composition of people who remain employed.</p>
-<p>The figures do not follow a fixed cohort as it ages, establish causal explanations, or demonstrate statistical significance.</p>
-</section>
-<section id="takeaway" class="level2">
-<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
-<p><strong>The takeaway is that the American workweek changed differently across age groups.</strong></p>
-<p>Older workers who were at work averaged longer weeks by 2024, while most younger groups averaged shorter weeks than in 2000. Main-job hours explain much of this pattern; other jobs contribute a small, varying share of total working time.</p>
-</section>
-<section id="reproducibility" class="level2">
-<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
-<p>The analysis code is available in the <a href="https://github.com/RodgersYe/RodgersYe-Website">GitHub repository</a>.</p>
-<p>To reproduce the figures, open the website’s RStudio project and place the corresponding IPUMS extract at <code>blog/posts/post3/data/raw/cps_raw.csv</code>.</p>
-<p>Run <code>blog/posts/post3/code/01_clean_analyze.R</code>, followed by <code>blog/posts/post3/code/02_make_figures.R</code>.</p>
-<p>The scripts generate the processed estimates and figures using project-relative paths.</p>
+<p><img src="XXX.png" class="img-fluid" width="500"></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
