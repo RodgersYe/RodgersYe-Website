@@ -7,3 +7,11 @@
 
 **/*.quarto_ipynb
 .DS_Store
+
+# Blog Post 03 large CPS raw data
+blog/posts/post3/data/raw/cps_raw.csv
+blog/posts/post3/data/raw/cps_raw.csv.gz
+
+# Ignore standalone README render output
+/README.html
+/site_libs/

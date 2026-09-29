@@ -1,0 +1,14 @@
+---
+title: "You Guess"
+date: 2026-10-XX
+categories:
+  - XXX
+  - XXX
+  - XXX
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+![](XXX.png){width="500px"}

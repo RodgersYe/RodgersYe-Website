@@ -1,0 +1,17 @@
+variable,data_type,missing_n
+YEAR,numeric,0
+SERIAL,numeric,0
+MONTH,numeric,0
+HWTFINL,numeric,0
+CPSID,numeric,0
+ASECFLAG,numeric,34863025
+PERNUM,numeric,0
+WTFINL,numeric,0
+CPSIDP,numeric,0
+CPSIDV,numeric,0
+AGE,numeric,0
+EMPSTAT,numeric,0
+AHRSWORKT,numeric,0
+AHRSWORK1,numeric,0
+AHRSWORK2,numeric,0
+MULTJOB,numeric,0
