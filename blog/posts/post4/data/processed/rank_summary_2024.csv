@@ -1,0 +1,2 @@
+"year","states","states_moving_up","states_moving_down","states_unchanged","states_with_rank_change","median_absolute_rank_change","maximum_absolute_rank_change","nominal_top10_count","adjusted_top10_count","top10_overlap","income_rpp_correlation","official_rank_disagreements","official_ratio_min","official_ratio_max"
+2024,50,20,24,6,44,4,26,10,10,7,0.716764669607175,0,0.809253023541306,0.809279069511923

@@ -8,6 +8,8 @@
 **/*.quarto_ipynb
 .DS_Store
 
+/.Renviron
+
 # Blog Post 03 large CPS raw data
 blog/posts/post3/data/raw/cps_raw.csv
 blog/posts/post3/data/raw/cps_raw.csv.gz
