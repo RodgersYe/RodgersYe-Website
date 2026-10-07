@@ -1,5 +1,5 @@
 ---
-title: "The Price Tag Behind America’s Income Rankings"
+title: "Blog 4: The Price Tag Behind America’s Income Rankings"
 date: 2026-10-06
 categories:
   - Regional Economics
