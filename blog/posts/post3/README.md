@@ -1,436 +1,485 @@
-# Blog Post 03: How Has the American Workweek Changed?
+# Blog Post 3: How Has the American Workweek Changed?
 
-**Differences Across Age Groups, 2000–2024**
+## Overview
 
-This project uses IPUMS Current Population Survey (CPS) microdata
-to examine changes in actual weekly working hours across age groups
-in the United States.
+This project examines actual weekly working hours across six age groups
+in the United States from 2000 through 2024. It uses IPUMS Current
+Population Survey (CPS) Basic Monthly microdata to calculate weighted
+hours estimates and visualize total hours, main-job hours, other-job
+hours, and their composition.
 
-The blog focuses on weighted descriptive analysis and five related
-visualizations. Regression analysis is not used.
+This README documents data requirements, cleaning decisions, script
+dependencies, generated files, and the steps needed to reproduce the
+five figures used in `BlogPost03.qmd`.
+
+## Research Background
+
+Employment status describes whether people work; working hours describe
+how much time workers spend on the job. Examining hours therefore adds
+a dimension to the study of labor supply that employment status alone
+does not capture.
+
+Comparisons across age groups can show whether changes in the workweek
+are shared across the working population. Separating main-job hours
+from other-job hours also helps identify which component accounts for
+the observed pattern. This project provides descriptive evidence on
+these differences without attributing them to a particular cause.
 
 ## Research Question
 
-How did actual weekly working hours change across age groups
-between 2000 and 2024, and how much of the pattern appears in
-main jobs versus other jobs?
+**How did actual weekly working hours change across age groups in the
+United States between 2000 and 2024, and how much of the pattern appears
+in main jobs versus other jobs?**
 
-The analysis examines:
+The analysis compares total, main-job, and other-job hours, together
+with main-job and other-job shares of total hours, across workers aged
+16–24, 25–34, 35–44, 45–54, 55–64, and 65+.
 
-1. Total weekly working hours.
-2. Weekly hours at the main job.
-3. Weekly hours at other jobs.
-4. Main-job hours as a share of total hours.
-5. Other-job hours as a share of total hours.
+## Data Sources
 
-## Main Findings
+### IPUMS CPS Basic Monthly Microdata
 
-The figures show that:
+**Provider:**  
+IPUMS CPS, University of Minnesota. Underlying CPS data are provided
+by the U.S. Census Bureau and Bureau of Labor Statistics.
 
-- Workers aged 25–64 generally have longer average workweeks
-  than the youngest and oldest groups.
-- Workers aged 65 and older average more weekly hours in 2024
-  than in 2000, while most younger groups average fewer.
-- Main-job hours account for much of the pattern in total hours.
-- Main jobs consistently account for approximately 98%
-  of measured working hours.
-- Other jobs contribute a small share of average total hours,
-  with differences across age groups and years.
+**Source:**  
+[IPUMS CPS](https://cps.ipums.org/cps/)
 
-These findings describe workers who were at work during the
-reference week. They do not measure employment rates or establish
-causal relationships.
+**Data coverage:**  
+United States, January 2000–December 2024: 300 Basic Monthly samples.
+The analysis retains workers aged 16 or older who were at work during
+the reference week and meet the weight and hours requirements below.
 
-## Data Source
+**Date accessed or downloaded:**  
+Not documented in the supplied project materials. The blog publication
+date does not establish the data download date.
 
-Source: [IPUMS CPS](https://cps.ipums.org/cps/)
+**Access method:**  
+A locally stored IPUMS CSV extract. Neither script downloads data;
+reproduction without the raw file requires obtaining an extract through
+the IPUMS CPS website.
 
-- Survey: Current Population Survey.
-- Samples: Basic Monthly samples.
-- Period: January 2000 through December 2024.
-- Coverage: 300 survey months.
-- Input filename: `cps_raw.csv`.
-- Sampling weight: `WTFINL`.
+**Files used:**
 
-The analysis uses Basic Monthly observations rather than pooling
-Basic Monthly and Annual Social and Economic Supplement (ASEC)
-records.
+- `data/raw/cps_raw.csv`: input read by the analysis script.
+- `data/raw/cps_raw.csv.gz`: compressed file shown in the project
+  directory; neither script reads it directly.
 
-### Required Variables
+The microdata supply age, employment status, multiple-job status,
+sampling weights, and actual hours worked during the previous week.
+The analysis uses the following columns:
 
-| Variable | Purpose |
+| Variable | Use |
 |---|---|
-| `YEAR` | Survey year |
-| `MONTH` | Survey month |
-| `ASECFLAG` | Distinguish ASEC from March Basic Monthly records |
-| `AGE` | Define age groups |
-| `EMPSTAT` | Identify respondents who were at work |
-| `MULTJOB` | Identify workers with multiple jobs |
-| `WTFINL` | Person-level Basic Monthly sampling weight |
-| `AHRSWORKT` | Actual hours worked across all jobs last week |
-| `AHRSWORK1` | Actual hours worked at the main job last week |
-| `AHRSWORK2` | Actual hours worked at other jobs last week |
+| `YEAR`, `MONTH` | Identify survey periods |
+| `ASECFLAG` | Audit sample types and exclude ASEC records |
+| `AGE` | Define the six age groups |
+| `EMPSTAT` | Retain respondents at work: code `10` |
+| `MULTJOB` | Distinguish single-job and multiple-job workers |
+| `WTFINL` | Weight person-level monthly estimates |
+| `AHRSWORKT` | Actual hours across all jobs |
+| `AHRSWORK1` | Actual hours at the main job |
+| `AHRSWORK2` | Actual hours at other jobs |
 
-Additional technical variables may be present in the extract.
-`WKSTAT` is not required by this analysis.
+`ASECFLAG` is required by a later check in `01_clean_analyze.R`, even
+though it is absent from that script's initial required-variable list.
 
-Official variable documentation:
+## Data and Reproducibility Notes
 
-- [WTFINL](https://cps.ipums.org/cps-action/variables/WTFINL)
-- [AHRSWORKT](https://cps.ipums.org/cps-action/variables/AHRSWORKT)
-- [AHRSWORK1](https://cps.ipums.org/cps-action/variables/AHRSWORK1)
-- [AHRSWORK2](https://cps.ipums.org/cps-action/variables/AHRSWORK2)
+- The supplied directory screenshot shows raw and processed files
+  locally. Their inclusion in the public GitHub repository has not been
+  verified. Check the cloned checkout before deciding whether to obtain
+  the raw data separately.
+- IPUMS registration is required to create a website extract. The two
+  analysis scripts use local files and require no API key or network
+  connection once the input is available.
+- `data/raw/` stores source data. Preserve it without manual changes.
+  `data/processed/` stores summaries, audits, and sensitivity outputs
+  generated by `01_clean_analyze.R`.
+- The cleaned person-level working sample is held in R memory; the
+  script does not export a separate cleaned microdata file.
+- The required uncompressed input path is
+  `blog/posts/post3/data/raw/cps_raw.csv`, relative to the website root.
+  A compressed file alone does not satisfy the script's file check.
+- Keep the extract definition, codebook, download date, and data-version
+  citation with your reproduction records. These metadata were not
+  supplied for this README, so the original extract version cannot be
+  identified precisely.
+- No extract-expiration period is documented here. The pipeline reads
+  a saved local file and does not depend on an active download link.
+- The supplied materials do not establish permission to redistribute
+  the raw extract. Data-use requirements are separate from any license
+  covering the analysis code; see Data Attribution and Usage below.
 
-### Obtaining the Data
+## Analytical Workflow
 
-To reproduce the analysis:
+The dependency chain is: local raw CSV → `01_clean_analyze.R` → processed
+estimates → `02_make_figures.R` → five PNG figures → `BlogPost03.qmd`.
+Data acquisition occurs outside the scripts.
 
-1. Register for access through IPUMS CPS.
-2. Select all Basic Monthly samples from 2000 through 2024.
-3. Include the variables listed above.
-4. Download the CSV extract and its accompanying documentation.
-5. Decompress the CSV if necessary and name it `cps_raw.csv`.
-6. Place it in `blog/posts/post3/data/raw/`.
+### Step 1 — Obtain the Raw Extract
 
-Keep the extract codebook and the IPUMS citation supplied with
-the download so that the data version and variable definitions
-can be documented.
+**Script:** None.
+
+Obtain an IPUMS CPS CSV extract covering all Basic Monthly samples from
+2000 through 2024 and including the columns listed above. Save the
+uncompressed file as `data/raw/cps_raw.csv` within the post directory.
+
+### Step 2 — Import, Audit, Clean, and Analyze
+
+**Script:** `code/01_clean_analyze.R`
+
+**Input:** `data/raw/cps_raw.csv`.
+
+**Outputs:** All CSV files listed under Processed Data below.
+
+The script imports numeric codes, checks required columns, audits
+variable types, month coverage, employment codes, hours codes, sampling
+weights, and sample types, then applies these selection rules:
+
+- Years 2000–2024 and months 1–12.
+- `ASECFLAG = 2` or a missing flag; records with `ASECFLAG = 1` are
+  excluded. Unexpected nonmissing flag codes cause an error.
+- Finite age from 16 to below 999, `EMPSTAT = 10`, and positive finite
+  `WTFINL`.
+- Valid values for all three cleaned hours measures.
+
+Total hours are retained when `AHRSWORKT` is an integer from 1 to 198;
+main-job hours are retained from 0 to 99. Other-job hours are assigned
+zero when `MULTJOB = 1` and `AHRSWORK2` is 0 or 999. For `MULTJOB = 2`,
+other-job hours are retained from 0 to 99. Other combinations receive
+missing cleaned other-job hours and are excluded from the common sample.
+Published component values of 99 are retained as topcoded observations.
+
+For each month and age group, the script calculates weighted mean
+hours using `sum(WTFINL * hours) / sum(WTFINL)`. It also records sample
+counts, represented population totals, weighted individual standard
+deviations, and the weighted percentage holding multiple jobs.
+
+Annual mean hours give equal weight to the twelve monthly weighted
+means. Annual hours shares equal 100 times the annual mean component
+hours divided by annual mean total hours. These are ratios of means,
+not averages of individual shares. Other-job averages include zeros
+for confirmed single-job workers.
+
+The script verifies coverage after sample selection, requires every
+month–age cell, and creates 2000-versus-2024 endpoint comparisons.
+It also recalculates estimates after excluding total hours above 168
+or component discrepancies exceeding `1e-8`. Sensitivity outputs are
+auxiliary checks; the published figures use baseline estimates.
+
+### Step 3 — Generate the Five Figures
+
+**Script:** `code/02_make_figures.R`
+
+**Input:** `data/processed/annual_age_hours.csv`.
+
+**Outputs:** Five PNG files in `figures/`.
+
+The script validates required numeric columns, finite values, age labels,
+coverage of all 25 years and six groups, and twelve months per annual
+estimate. It then plots the five metrics with consistent age-group
+colors and marks 2024 observations.
+
+Figures 1 and 2 share a zoomed vertical scale. Figure 4 also uses a
+zoomed axis; Figures 3 and 5 start at zero. PNGs are exported at
+11 × 7 inches and 300 dpi. The script reads its input from disk and
+does not require objects remaining in memory from Step 2.
+
+### Step 4 — Render the Blog
+
+**File:** `BlogPost03.qmd`
+
+**Inputs:** The five PNG figures and `BlogPost03Cover.png`.
+
+The QMD contains narrative and static image references. It has no
+executable analysis chunks and does not regenerate estimates or plots.
+It does not read processed CSVs or include tables.
 
 ## Project Structure
 
-The following paths are relative to `blog/posts/post3/`.
+The following structure follows the supplied project screenshot.
+Paths are relative to `blog/posts/post3/`; local presence does not
+establish that a file is tracked in GitHub.
 
 ```text
-code/
-  01_clean_analyze.R
-  02_make_figures.R
-  03_make_tables.R
-
-data/
-  raw/
-    cps_raw.csv
-  processed/
-
-figures/
-  fig1_total_hours_by_age.png
-  fig2_main_job_hours_by_age.png
-  fig3_other_job_hours_by_age.png
-  fig4_main_job_share_by_age.png
-  fig5_other_job_share_by_age.png
-
-tables/
-
-BlogPost03.qmd
-README.md
-cover.png
+post3/
+├── README.md
+├── BlogPost03.qmd
+├── BlogPost03Cover.png
+├── code/
+│   ├── 01_clean_analyze.R
+│   └── 02_make_figures.R
+├── data/
+│   ├── raw/
+│   │   ├── cps_raw.csv
+│   │   └── cps_raw.csv.gz
+│   └── processed/
+│       ├── data_inventory.csv
+│       ├── year_month_audit.csv
+│       ├── missing_months_audit.csv
+│       ├── empstat_code_audit.csv
+│       ├── multjob_code_audit.csv
+│       ├── hours_code_audit.csv
+│       ├── weight_audit.csv
+│       ├── asec_flag_audit.csv
+│       ├── cleaning_audit.csv
+│       ├── sample_flow.csv
+│       ├── hours_consistency_audit.csv
+│       ├── monthly_age_hours.csv
+│       ├── annual_age_hours.csv
+│       ├── age_group_changes_2000_2024.csv
+│       ├── sensitivity_exclusions.csv
+│       ├── annual_age_hours_sensitivity.csv
+│       ├── sensitivity_comparison.csv
+│       └── sensitivity_summary.csv
+└── figures/
+    ├── fig1_total_hours_by_age.png
+    ├── fig2_main_job_hours_by_age.png
+    ├── fig3_other_job_hours_by_age.png
+    ├── fig4_main_job_share_by_age.png
+    └── fig5_other_job_share_by_age.png
 ```
 
-The project is part of a larger Quarto website.
-Run the analysis from the website's root RStudio project,
-which contains the website configuration file `_quarto.yml`.
+## File Guide
 
-### Script Responsibilities
+### Blog Files
 
-| Script | Purpose |
+| File | Purpose |
 |---|---|
-| `01_clean_analyze.R` | Import, audit, clean, calculate weighted estimates, and run sensitivity checks |
-| `02_make_figures.R` | Generate the five figures from processed annual estimates |
-| `03_make_tables.R` | Generate supplementary descriptive and robustness tables |
+| `BlogPost03.qmd` | Quarto article source referencing five static figures and the cover |
+| `BlogPost03Cover.png` | Cover displayed in the article body |
+| `README.md` | Project documentation and reproduction instructions |
 
-The final blog does not use the tables or additional results
-generated by `03_make_tables.R`.
+### Code
 
-Running that script is optional and is not required to reproduce
-the published figures or render the article.
+| File | Purpose |
+|---|---|
+| `code/01_clean_analyze.R` | Import and audit raw data; select and clean the sample; calculate monthly and annual estimates, endpoint changes, and cleaning sensitivity outputs |
+| `code/02_make_figures.R` | Read baseline annual estimates, validate plotting inputs, and export five figures |
 
-## Sample Definition
+### Raw Data
 
-The analysis retains observations that satisfy all of the following:
-
-- Survey year between 2000 and 2024.
-- Survey month between 1 and 12.
-- Basic Monthly sample membership.
-- Age 16 or older with a valid age value.
-- At work during the reference week: `EMPSTAT = 10`.
-- Positive, finite `WTFINL`.
-- Valid information for all three working-hours measures
-  after cleaning.
-
-The six age groups are:
-
-- 16–24
-- 25–34
-- 35–44
-- 45–54
-- 55–64
-- 65+
-
-All five figures use the same complete-hours sample.
-
-Sample counts refer to person-month records, not unique individuals.
-Some respondents appear in more than one monthly sample.
-
-## Cleaning Decisions
-
-### Sample Type
-
-ASEC observations are excluded.
-
-The script retains observations with `ASECFLAG = 2`
-and observations with a missing flag in the monthly extract,
-after auditing sample types and month coverage.
-
-### Hours Variables
-
-- `999` is treated as a not-in-universe code.
-- Valid published total-hours values from 1 through 198 are retained.
-- Valid main-job and other-job hours range from 0 through 99.
-- A value of `99` in the component variables means 99 or more hours
-  and is retained as the published topcoded value.
-- Other-job hours are set to zero for confirmed single-job workers
-  when `MULTJOB = 1` and `AHRSWORK2` is either 0 or 999.
-
-Not all not-in-universe values are converted to zero.
-The zero assignment applies specifically to confirmed single-job
-workers' other-job hours.
-
-### Unusual or Inconsistent Hours
-
-The baseline preserves valid published values while flagging:
-
-- Total hours above 168 per week.
-- Records where main-job and other-job hours do not sum
-  to reported total hours.
-- Topcoded component hours.
-
-A sensitivity analysis excludes records with total hours above 168
-or inconsistent component totals and recalculates the estimates.
-
-## Weighting and Annual Aggregation
-
-### Monthly Estimates
-
-For each age group and month, mean hours are calculated as:
-
-\[
-\bar{h}_{g,m,y}
-=
-\frac{
-  \sum_{i \in (g,m,y)} w_i h_i
-}{
-  \sum_{i \in (g,m,y)} w_i
-},
-\]
-
-where \(w_i\) is `WTFINL`.
-
-The same procedure is applied to total, main-job, and other-job hours.
-
-### Annual Estimates
-
-Annual mean hours give equal weight to the twelve monthly estimates:
-
-\[
-\bar{h}_{g,y}
-=
-\frac{1}{12}
-\sum_{m=1}^{12}
-\bar{h}_{g,m,y}.
-\]
-
-This is an average of monthly weighted means.
-It is not an unweighted mean of individual records or a pooled
-annual estimate that weights months by their sample sizes.
-
-### Hours Shares
-
-Annual main-job and other-job shares are calculated as:
-
-\[
-S^{\text{main}}_{g,y}
-=
-100
-\frac{
-  \bar{h}^{\text{main}}_{g,y}
-}{
-  \bar{h}^{\text{total}}_{g,y}
-},
-\]
-
-\[
-S^{\text{other}}_{g,y}
-=
-100
-\frac{
-  \bar{h}^{\text{other}}_{g,y}
-}{
-  \bar{h}^{\text{total}}_{g,y}
-}.
-\]
-
-These are ratios of annual mean hours, not averages of individual
-workers' hours shares.
-
-Other-job mean hours include zeros for confirmed single-job workers.
-They therefore do not represent average other-job hours conditional
-on holding multiple jobs.
-
-## Figures
-
-| Figure | Output | Purpose |
+| File | Source | Purpose |
 |---|---|---|
-| 1 | `fig1_total_hours_by_age.png` | Establish overall age differences and trends |
-| 2 | `fig2_main_job_hours_by_age.png` | Examine the main-job component |
-| 3 | `fig3_other_job_hours_by_age.png` | Examine other-job hours across all sampled workers |
-| 4 | `fig4_main_job_share_by_age.png` | Show the dominance of main-job hours |
-| 5 | `fig5_other_job_share_by_age.png` | Show the relative contribution of other jobs |
+| `data/raw/cps_raw.csv` | IPUMS CPS | Uncompressed microdata input |
+| `data/raw/cps_raw.csv.gz` | IPUMS CPS extract, as documented in the existing README | Compressed raw file; not read by either script |
 
-Figures 1 and 2 use the same vertical scale.
+### Processed Data
 
-Figure 4 uses a zoomed vertical axis to show small changes.
-Figures 4 and 5 describe complementary aspects of the same
-hours composition and should not be treated as independent evidence.
+All files below are under `data/processed/` and generated by
+`code/01_clean_analyze.R`.
 
-## Software Requirements
+| File | Generated By | Purpose |
+|---|---|---|
+| `data_inventory.csv` | `01_clean_analyze.R` | Column types and actual missing-value counts |
+| `year_month_audit.csv` | `01_clean_analyze.R` | Raw record counts by survey month |
+| `missing_months_audit.csv` | `01_clean_analyze.R` | Missing raw survey months in the study period |
+| `empstat_code_audit.csv` | `01_clean_analyze.R` | Employment-status code frequencies |
+| `multjob_code_audit.csv` | `01_clean_analyze.R` | Multiple-job code frequencies |
+| `hours_code_audit.csv` | `01_clean_analyze.R` | Hours-code, missingness, range, and topcoding checks |
+| `weight_audit.csv` | `01_clean_analyze.R` | Weight counts and ranges |
+| `asec_flag_audit.csv` | `01_clean_analyze.R` | Sample-type flag counts by month |
+| `cleaning_audit.csv` | `01_clean_analyze.R` | Retention, exclusions, conflicts, and retained weight by year and age |
+| `sample_flow.csv` | `01_clean_analyze.R` | Record counts through sample selection |
+| `hours_consistency_audit.csv` | `01_clean_analyze.R` | Component discrepancies, unusually high hours, and topcoding |
+| `monthly_age_hours.csv` | `01_clean_analyze.R` | Monthly weighted statistics and hours shares |
+| `annual_age_hours.csv` | `01_clean_analyze.R` | Baseline annual estimates used by every figure |
+| `age_group_changes_2000_2024.csv` | `01_clean_analyze.R` | Endpoint levels and changes |
+| `sensitivity_exclusions.csv` | `01_clean_analyze.R` | Counts and percentage excluded by the sensitivity rules |
+| `annual_age_hours_sensitivity.csv` | `01_clean_analyze.R` | Annual estimates for the restricted sample |
+| `sensitivity_comparison.csv` | `01_clean_analyze.R` | Baseline and restricted estimates and differences |
+| `sensitivity_summary.csv` | `01_clean_analyze.R` | Maximum absolute difference for each figure metric |
 
-The analysis requires:
+### Figures
 
-- R
-- The `tidyverse` package
-- The `here` package
-- The `scales` package
-- Quarto for rendering and previewing the website
+All files below are under `figures/` and generated by
+`code/02_make_figures.R` from `data/processed/annual_age_hours.csv`.
 
-RStudio is recommended for working with the website project.
+| File | Generated By | Purpose |
+|---|---|---|
+| `fig1_total_hours_by_age.png` | `02_make_figures.R` | Total weekly hours by age |
+| `fig2_main_job_hours_by_age.png` | `02_make_figures.R` | Main-job weekly hours by age |
+| `fig3_other_job_hours_by_age.png` | `02_make_figures.R` | Other-job weekly hours across the retained sample |
+| `fig4_main_job_share_by_age.png` | `02_make_figures.R` | Main-job share of total hours |
+| `fig5_other_job_share_by_age.png` | `02_make_figures.R` | Other-job share of total hours |
 
-Install the R packages in the R console:
+## How to Reproduce the Analysis
 
-```r
-install.packages(c("tidyverse", "here", "scales"))
+### 1. Clone or Open the Repository
+
+```bash
+git clone https://github.com/RodgersYe/RodgersYe-Website.git
+cd RodgersYe-Website
 ```
 
-The optional table script also requires `gt`:
+Open the website's RStudio project, or start R from this repository
+root. The post is located at `blog/posts/post3/`. Both scripts use
+`here::here()` to resolve paths from the website project root.
 
-```r
-install.packages("gt")
-```
+### 2. Obtain the Required Raw Data
 
-## Reproduction Instructions
+Check whether `blog/posts/post3/data/raw/cps_raw.csv` is available.
+If it is the intended extract, no new download is needed. If only the
+compressed file is available, decompress it to the required CSV path.
 
-### 1. Open the Website Project
-
-Open the website's `.Rproj` file in RStudio.
-
-The scripts use `here::here()` to locate the project root,
-then resolve paths under `blog/posts/post3/`.
-No user-specific absolute paths are required.
-
-### 2. Add the Raw Data
-
-Place the IPUMS CSV extract at:
+If neither file is available, register with
+[IPUMS CPS](https://cps.ipums.org/cps/), select all Basic Monthly samples
+from January 2000 through December 2024, and include the variables
+listed under Data Sources, including `ASECFLAG`. Download a CSV extract,
+preserve numeric codes and uppercase column names, and save the
+uncompressed file as:
 
 ```text
 blog/posts/post3/data/raw/cps_raw.csv
 ```
 
-### 3. Generate the Estimates
+Retain the codebook and extract definition. No API key is needed for
+the local analysis. Without the original extract metadata, a new extract
+can reproduce the documented workflow, but identical values to the
+original download cannot be guaranteed.
 
-From the website project root, run in the R console:
+### 3. Install Required Software and Packages
+
+Use R to run the scripts and Quarto to render the website. RStudio is
+optional but convenient. Software and package versions are not recorded
+in the supplied materials.
+
+Install the packages called by the scripts in the R console:
+
+```r
+install.packages(c("tidyverse", "here", "scales"))
+```
+
+Both scripts load `tidyverse` and call `here::here()`. The figure script
+also calls `scales` functions. No table package is required.
+
+### 4. Run the Analysis Scripts
+
+From the website project root, run in R:
 
 ```r
 source("blog/posts/post3/code/01_clean_analyze.R")
-```
-
-This produces the data audits, monthly estimates, annual estimates,
-endpoint comparisons, and sensitivity-analysis outputs.
-
-### 4. Generate the Figures
-
-Run:
-
-```r
 source("blog/posts/post3/code/02_make_figures.R")
 ```
 
-This reads the processed annual estimates and saves all five figures
-to `blog/posts/post3/figures/`.
+The first script produces processed CSVs; the second requires
+`annual_age_hours.csv` from that script. Neither script acquires data.
+They create their output directories when needed and overwrite their
+named outputs when rerun.
 
-The figure script does not require objects left in memory
-by the cleaning script.
+For complete reproduction, run both scripts from raw data even if
+processed estimates are already present. To regenerate only figures,
+the first script may be skipped when the correct baseline
+`annual_age_hours.csv` is already available. The figure script can run
+in a fresh R session.
 
-### 5. Render the Article
+Successful complete coverage yields 1,800 monthly age-group rows and
+150 annual age-group rows. These are aggregate output dimensions,
+not counts of raw survey observations or unique people. Each annual
+row must report `months_observed = 12`.
 
-From the website project root, run in the terminal:
+### 5. Render the Blog
+
+Ensure all five figures and `BlogPost03Cover.png` are present, then run
+from the website root:
 
 ```bash
 quarto render blog/posts/post3/BlogPost03.qmd
 ```
 
-Alternatively, open `BlogPost03.qmd` in RStudio and click **Render**.
+Rendering uses existing images and does not run either R script.
+If all images are already available, rendering can proceed without
+regenerating the analysis, but this alone does not reproduce the results.
 
-The article references previously generated PNG files.
-Rendering the article does not rerun the analysis scripts.
-
-### 6. Preview the Website
-
-Run in the terminal:
+To preview the complete website:
 
 ```bash
 quarto preview
 ```
 
-Open the local address reported by Quarto if the browser does not
-open automatically.
-
-Check the article, five figures, cover image, and blog listing.
+Check the article and figures at the local address reported by Quarto.
 Press `Control + C` in the terminal to stop the preview.
 
-## Key Processed Outputs
+## Outputs
 
-Files generated under `data/processed/` include:
+- **Baseline estimates:** `monthly_age_hours.csv` and
+  `annual_age_hours.csv` document the weighted summaries. All five
+  figures read the annual baseline file.
+- **Published figures:** The five PNGs are directly referenced by
+  `BlogPost03.qmd` and provide the article's visual evidence.
+- **Endpoint comparisons:** `age_group_changes_2000_2024.csv` records
+  changes for checking the start-versus-end patterns.
+- **Audit outputs:** Inventory, coverage, code, weight, sample-flow,
+  and consistency files document selection and data quality.
+- **Sensitivity outputs:** Restricted annual estimates, exclusions,
+  comparisons, and maximum differences assess dependence on specified
+  cleaning rules. They are not used as inputs to the published figures
+  or reported as additional results in the final article.
 
-| File | Contents |
-|---|---|
-| `sample_flow.csv` | Counts at successive sample-selection stages |
-| `cleaning_audit.csv` | Valid and excluded hours records by year and age |
-| `hours_consistency_audit.csv` | Inconsistency, unusual-hours, and topcoding checks |
-| `monthly_age_hours.csv` | Monthly weighted estimates |
-| `annual_age_hours.csv` | Annual estimates used by the figures |
-| `age_group_changes_2000_2024.csv` | Endpoint comparisons |
-| `annual_age_hours_sensitivity.csv` | Annual estimates after sensitivity exclusions |
-| `sensitivity_exclusions.csv` | Counts of excluded records |
-| `sensitivity_comparison.csv` | Baseline and restricted-sample comparisons |
-| `sensitivity_summary.csv` | Maximum absolute differences by measure |
+The project contains two analysis scripts. It generates no separate
+presentation tables or model outputs, and the final blog includes no
+tables.
 
-Additional files document variable inventories, time coverage,
-sample types, employment codes, hours codes, and sampling weights.
+## Key Findings
 
-## Interpretation and Limitations
+The article reports the following descriptive patterns, which provide
+qualitative checks for reproduced figures:
 
-- The sample includes people who were at work in the reference week.
-  It excludes unemployed people, people outside the labor force,
-  and employed people absent from work.
-- The figures describe actual hours rather than usual working schedules.
-- Age-group trends do not track a fixed cohort over its lifetime.
-- Changes may reflect shifts in occupations, part-time work,
-  or the composition of the working population.
-- Topcoding and reporting inconsistencies can affect measured hours.
-- Annual averages can conceal within-year changes.
-- Sampling weights support population estimation, but do not by
-  themselves provide valid standard errors.
-- Weighted standard deviations describe dispersion, not the
-  uncertainty of an estimated mean.
-- The analysis does not report design-based confidence intervals,
-  p-values, or claims of statistical significance.
-- Sensitivity checks assess dependence on particular cleaning choices;
-  they are not significance tests.
+- Workers aged 25–64 generally have longer average workweeks than
+  the youngest and oldest groups.
+- Workers aged 65+ average more hours in 2024 than in 2000, while most
+  younger groups average fewer hours.
+- Main-job hours account for much of the total-hours pattern and
+  approximately 98% of measured hours.
 
-## Repository
+**Main takeaway:** Changes in the American workweek differ across age
+groups and are largely reflected in hours at workers' main jobs.
 
-[RodgersYe-Website on GitHub](https://github.com/RodgersYe/RodgersYe-Website)
+## Limitations
 
-## Documentation
+- The sample represents people at work during the reference week.
+  It excludes unemployed people, people outside the labor force, and
+  employed people absent from work; it does not measure employment rates.
+- Actual hours can differ from usual schedules. Annual averages also
+  conceal within-year changes.
+- Age-group series do not follow a fixed cohort. Changes can reflect
+  occupations, part-time work, or the composition of workers.
+- Complete-hours selection, topcoding, and inconsistent reports can
+  affect estimates. The baseline retains component inconsistencies,
+  so the two reported hours shares need not sum to exactly 100%.
+- The cleaning sensitivity check does not remove all topcoded records
+  or resolve every measurement issue.
+- Person-month counts are not counts of independent or unique people.
+  Weighted individual standard deviations measure dispersion, not
+  standard errors of estimated means.
+- The analysis supplies no design-based confidence intervals or tests
+  of statistical significance and does not establish causal effects.
+- The original download date and extract version are undocumented in
+  the supplied materials, limiting verification of exact data provenance.
 
-- [IPUMS CPS](https://cps.ipums.org/cps/)
-- [IPUMS CPS weighting guidance](https://cps.ipums.org/cps/sample_weights.shtml)
-- [IPUMS CPS citation guidance](https://cps.ipums.org/cps/citation.shtml)
+## Data Attribution and Usage
+
+Attribute the harmonized data to IPUMS CPS, University of Minnesota,
+and acknowledge the underlying CPS data from the U.S. Census Bureau
+and Bureau of Labor Statistics. IPUMS requires appropriate citation;
+its [citation guidance](https://cps.ipums.org/cps/citation.shtml)
+recommends the following short attribution for online resources:
+
+> IPUMS CPS, University of Minnesota, www.ipums.org.
+
+Use the version-specific citation associated with the actual extract
+for a formal research citation. The original extract version was not
+provided, so a specific version number or DOI is not supplied here.
+The citation guidance also requests submission of citations for
+publications, reports, or educational materials using the data.
+
+The supplied materials do not establish the extract's specific license
+or redistribution permissions, nor whether raw data are publicly
+tracked in the repository. Follow the terms attached to your IPUMS
+access and extract. This README does not grant permission to
+redistribute third-party microdata. If raw data are absent from a clone,
+obtain your own extract using the instructions above; any repository
+code license does not replace the data provider's terms.
+
