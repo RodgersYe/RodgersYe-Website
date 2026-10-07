@@ -7,74 +7,11 @@
     "text": "Blog 4: The Price Tag Behind America’s Income Rankings\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 3: How Has the American Workweek Changed?\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 2: What Is the Best Day of the Week for Attending Drexel Events?\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 1: Misconceptions About the P-Value\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "blog/posts/post3/BlogPost03.html#introduction",
-    "href": "blog/posts/post3/BlogPost03.html#introduction",
+    "objectID": "blog/posts/post3/BlogPost03.html",
+    "href": "blog/posts/post3/BlogPost03.html",
     "title": "Post 3: How Has the American Workweek Changed?",
-    "section": "Introduction",
-    "text": "Introduction\nEmployment tells us whether people work, but working hours reveal another dimension of labor supply: how much time workers spend on the job. Similar employment levels can coexist with different working schedules. Separating main-job hours from hours at other jobs also helps identify where changes in working time occur.\nThis post asks: How did actual weekly working hours change across age groups in the United States between 2000 and 2024, and how much of the pattern appears in main jobs versus other jobs?"
-  },
-  {
-    "objectID": "blog/posts/post3/BlogPost03.html#data-and-methods",
-    "href": "blog/posts/post3/BlogPost03.html#data-and-methods",
-    "title": "Post 3: How Has the American Workweek Changed?",
-    "section": "Data and methods",
-    "text": "Data and methods\nI use microdata from IPUMS CPS, covering all 300 Basic Monthly samples from January 2000 through December 2024. The analysis includes civilians aged 16 or older who were at work during the survey reference week (EMPSTAT = 10), had positive sampling weights, and had valid hours information.\nWorkers are divided into six age groups: 16–24, 25–34, 35–44, 45–54, 55–64, and 65+.\nThe three hours variables measure actual hours during the previous week: AHRSWORKT covers all jobs, AHRSWORK1 covers the main job, and AHRSWORK2 covers other jobs. These measure actual working time rather than usual schedules.\nAll five figures use the same analysis sample. Not-in-universe codes are excluded from hours calculations, except that other-job hours are assigned zero for confirmed single-job workers. Published topcoded values are retained.\nWithin each month and age group, I calculate weighted means using WTFINL, the person-level weight recommended for Basic Monthly analyses. Thus, the estimates describe the population represented by the retained observations rather than an unweighted average of survey respondents. Annual hours are the average of the twelve monthly weighted means."
-  },
-  {
-    "objectID": "blog/posts/post3/BlogPost03.html#figure-1-total-hours",
-    "href": "blog/posts/post3/BlogPost03.html#figure-1-total-hours",
-    "title": "Post 3: How Has the American Workweek Changed?",
-    "section": "Figure 1: Total hours",
-    "text": "Figure 1: Total hours\n\nFigure 1 shows substantial differences in working time across ages. Workers aged 25–64 generally work longer weeks than the youngest and oldest groups. However, the long-run changes differ: most groups below age 65 end the period with lower average hours than in 2000, while the 65+ group moves upward.\nAmong workers aged 65+, average weekly hours rise from approximately 30 to 33. For those aged 16–24, hours fall from approximately 33 to 31. The older group overtakes the youngest group during the period.\nThese are changes among people who were working; they do not establish whether older adults became more likely to work."
-  },
-  {
-    "objectID": "blog/posts/post3/BlogPost03.html#figure-2-main-job-hours",
-    "href": "blog/posts/post3/BlogPost03.html#figure-2-main-job-hours",
-    "title": "Post 3: How Has the American Workweek Changed?",
-    "section": "Figure 2: Main-job hours",
-    "text": "Figure 2: Main-job hours\n\nFigure 2 closely resembles Figure 1. The upward movement among older workers and the lower endpoint levels among younger and middle-aged groups also appear in main-job hours. Using the same vertical scale in both figures makes this comparison straightforward.\nThis similarity indicates that changes in main-job hours account for much of the overall pattern. Understanding the changing workweek therefore requires attention to hours in workers’ primary jobs."
-  },
-  {
-    "objectID": "blog/posts/post3/BlogPost03.html#figure-3-other-job-hours",
-    "href": "blog/posts/post3/BlogPost03.html#figure-3-other-job-hours",
-    "title": "Post 3: How Has the American Workweek Changed?",
-    "section": "Figure 3: Other-job hours",
-    "text": "Figure 3: Other-job hours\n\nOther-job hours contribute much less to the average workweek. In 2024, the age-group averages are roughly 0.6–0.8 hours per worker per week. Several groups show a decline around 2020 followed by a recovery.\nThe denominator is essential: these averages include single-job workers with zero other-job hours. They do not imply that people holding multiple jobs spend less than an hour working outside their main job.\nThe average combines how common multiple-job holding is with how many other-job hours those workers report."
-  },
-  {
-    "objectID": "blog/posts/post3/BlogPost03.html#figure-4-main-job-share",
-    "href": "blog/posts/post3/BlogPost03.html#figure-4-main-job-share",
-    "title": "Post 3: How Has the American Workweek Changed?",
-    "section": "Figure 4: Main-job share",
-    "text": "Figure 4: Main-job share\n\nFigure 4 expresses main-job hours relative to total hours. Each annual share equals annual mean main-job hours divided by annual mean total hours, multiplied by 100. It is a ratio of means, not an average of individual workers’ percentages.\nMain jobs consistently account for approximately 98% of measured hours. Although the lines appear variable, the vertical axis is narrowly zoomed: most movements represent fractions of a percentage point.\nThe central finding is the persistent dominance of main-job hours."
-  },
-  {
-    "objectID": "blog/posts/post3/BlogPost03.html#figure-5-other-job-share",
-    "href": "blog/posts/post3/BlogPost03.html#figure-5-other-job-share",
-    "title": "Post 3: How Has the American Workweek Changed?",
-    "section": "Figure 5: Other-job share",
-    "text": "Figure 5: Other-job share\n\nFigure 5 shows the complementary perspective. Other jobs generally account for around 1–2.5% of hours. Younger workers often have a relatively high other-job share despite working fewer other-job hours than some middle-aged groups.\nTheir lower total hours help explain this distinction between absolute hours and proportional importance.\nFigures 4 and 5 describe essentially the same composition from opposite directions. They should be interpreted together, rather than treated as independent evidence."
-  },
-  {
-    "objectID": "blog/posts/post3/BlogPost03.html#interpretation-and-limitations",
-    "href": "blog/posts/post3/BlogPost03.html#interpretation-and-limitations",
-    "title": "Post 3: How Has the American Workweek Changed?",
-    "section": "Interpretation and limitations",
-    "text": "Interpretation and limitations\nThese patterns remain descriptive. Changes can reflect shifts in occupations, part-time work, or the composition of people who remain employed.\nThe figures do not follow a fixed cohort as it ages, establish causal explanations, or demonstrate statistical significance."
-  },
-  {
-    "objectID": "blog/posts/post3/BlogPost03.html#takeaway",
-    "href": "blog/posts/post3/BlogPost03.html#takeaway",
-    "title": "Post 3: How Has the American Workweek Changed?",
-    "section": "Takeaway",
-    "text": "Takeaway\nThe takeaway is that the American workweek changed differently across age groups.\nOlder workers who were at work averaged longer weeks by 2024, while most younger groups averaged shorter weeks than in 2000. Main-job hours explain much of this pattern; other jobs contribute a small, varying share of total working time."
-  },
-  {
-    "objectID": "blog/posts/post3/BlogPost03.html#reproducibility",
-    "href": "blog/posts/post3/BlogPost03.html#reproducibility",
-    "title": "Post 3: How Has the American Workweek Changed?",
-    "section": "Reproducibility",
-    "text": "Reproducibility\nThe analysis code is available in the GitHub repository.\nTo reproduce the figures, open the website’s RStudio project and place the corresponding IPUMS extract at blog/posts/post3/data/raw/cps_raw.csv.\nRun blog/posts/post3/code/01_clean_analyze.R, followed by blog/posts/post3/code/02_make_figures.R.\nThe scripts generate the processed estimates and figures using project-relative paths."
+    "section": "",
+    "text": "In 2000, Americans aged 65 and older who worked during the survey reference week averaged about 30 hours of work. Those aged 16–24 averaged roughly 33. By 2024, their positions had reversed: older workers averaged about 33 hours, younger workers about 31. Older workers had not become the longest-working group, but this reversal complicates a familiar question: Are Americans working more or less? The answer depends on whose working week we examine.\nThat distinction matters because employment counts measure how many people work, not how much time they contribute. Someone working twenty hours and someone working forty can each count as one employed person, despite different labor inputs and time available for education, caregiving, or other activities. Comparing age groups can reveal changes hidden within national averages. Separating main-job hours from other-job hours adds another question: How did actual weekly working hours change across age groups between 2000 and 2024, and where did those changes occur?\n\nWorkers aged 25–64 occupy a relatively stable corridor in Figure 1, generally averaging around 39–42 hours. The youngest and oldest groups sit below that corridor, but move in different directions. Younger workers’ hours fell early in the period, declined further around 2009, and subsequently recovered somewhat. Older workers’ hours generally increased, reaching a higher level around 2021 before retreating. The middle groups also ended below their starting levels, although their declines were interrupted by recoveries. This is a story of divergence and fluctuation, rather than a uniform shortening of the working week.\nThe analysis uses IPUMS CPS Basic Monthly microdata covering 300 months from January 2000 through December 2024. It retains civilian workers aged 16 and older who actually worked during the reference week, had positive sampling weights, and had valid information for all three hours measures. Monthly averages use the individual weight WTFINL; annual estimates average the twelve monthly estimates equally. These are actual hours worked last week, rather than usual or contracted hours. Consequently, the older group’s increase describes people who were working; it does not establish that older Americans generally worked more or became more likely to hold jobs.\n\nSeparating the working week reveals where most of the movement occurred. Figure 2 closely resembles Figure 1: older workers’ main-job hours increased, younger workers’ hours declined, and the middle groups retained their fluctuations. Because the figures share a vertical scale, their levels and movements are directly comparable. The age divergence therefore appears primarily in the main job, directing attention toward changes in principal work arrangements.\n\nOther jobs operate on a much smaller scale. In 2024, their contribution averaged approximately 0.6–0.85 hours per week across age groups, with workers aged 45–54 highest. But “less than an hour” does not describe a typical multiple-job holder’s additional workload. Confirmed single-job holders contribute zeros, spreading additional hours across the entire retained sample. This average reflects both how common multiple jobs are and how many additional hours their holders work.\n \nThe shares reinforce this interpretation: main jobs consistently account for approximately 98% of total hours. Figure 4’s narrow vertical range makes small changes look pronounced. Meanwhile, younger workers often have relatively high other-job shares without the highest other-job hours, partly because their total hours are lower. These annual shares divide average component hours by average total hours; they are not averages of individual shares. Retained inconsistencies between reported components and totals mean the two shares need not sum exactly to 100%.\nThe reversal remains descriptive. Older workers’ average could rise because individuals work longer, because shorter-hours workers leave employment, or through both processes. These repeated age-group comparisons do not follow the same individuals over time. Actual reference-week hours can also reflect temporary absences, while annual averaging conceals within-year changes. Complete-case selection, retained top-coded values, and inconsistent records may affect estimates. Without survey-design confidence intervals or significance tests, visible differences cannot establish statistical significance or causation.\nThe central finding is a reversal between the youngest and oldest working groups, concentrated in main-job hours. Explaining it requires learning who stayed in work, who left, and how their principal jobs changed."
   },
   {
     "objectID": "blog/posts/post1/BlogPost01.html#takeaway",
