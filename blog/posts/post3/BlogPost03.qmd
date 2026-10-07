@@ -14,6 +14,7 @@ execute:
 ---
 
 ![](BlogPost03Cover.png){width="500px"}
+
 In 2000, Americans aged 65 and older who worked during the survey reference 
 week averaged about 30 hours of work. Those aged 16–24 averaged roughly 33. By 
 2024, their positions had reversed: older workers averaged about 33 hours, 
