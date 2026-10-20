@@ -157,7 +157,17 @@ Script 03 needs both the raw pair and RDS. Confirm `analysis_completed = PASS` a
 
 Rent burden uses household weights and positive-income adult solo renters; severe burden means annualized gross rent **strictly above 50%** of income. Living-alone prevalence uses person weights and all state residents as its denominator. D.C. is retained separately in reports and excluded from the main 50-state figures. The documented pooled severe-burden rate is 33.1%, with a 95% interval of 32.8%–33.5%.
 
-Raw microdata and the household RDS are local-only files excluded by the documented ignore rules. Full reproduction requires authorized IPUMS access. The final QMD's executable chunks and exact image references are not established by the supplied Blog05 documentation; check the saved article before rendering.
+**Data access and redistribution:** To comply with IPUMS data-use terms and redistribution restrictions, this repository does not publicly distribute the raw IPUMS microdata or the household-level processed RDS. These files are stored locally and excluded by the documented ignore rules. Public reproduction materials consist of code, aggregate reports, figures, and article assets; they do not replace the microdata required for a full recalculation.
+
+To reproduce the complete analysis when the raw data are not already available:
+
+1. Register for an [IPUMS USA](https://usa.ipums.org/usa/) account and obtain your own personal API key through the [IPUMS Developer Portal](https://developer.ipums.org/).
+2. Add `IPUMS_API_KEY=YOUR_PERSONAL_KEY` to a private repository-root `.Renviron` file and restart R. Keep this file and your real key out of Git.
+3. Run the four-script sequence above. With `options(blog5.ipums_stage = "auto")`, `01_get_raw_data.R` requests and downloads the specified extract using your own account; the remaining scripts clean, validate, analyze, and plot the data.
+
+If a complete, authorized local XML/data pair is already present, stage `auto` reuses it without requiring an API key. Consult the [Post 5 README](blog/posts/post5/README.md) for the full acquisition instructions and [IPUMS USA terms of use](https://usa.ipums.org/usa/terms.shtml) for data-use requirements. Any license for this repository's code does not grant permission to redistribute IPUMS microdata.
+
+The final QMD's executable chunks and exact image references are not established by the supplied Blog05 documentation; check the saved article before rendering.
 
 ## Previewing and Rendering the Website
 
