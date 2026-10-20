@@ -17,3 +17,21 @@ blog/posts/post3/data/raw/cps_raw.csv.gz
 # Ignore standalone README render output
 /README.html
 /site_libs/
+.Renviron
+
+# Local credentials, session files, and IPUMS microdata
+.Renviron.*
+/blog/posts/post5/data/raw/ipums_2024/ 
+
+# Local credentials, session files, and IPUMS microdata
+/blog/posts/post5/data/raw/ipums_2024/ 
+
+# Local credentials, session files, and IPUMS microdata
+/blog/posts/post5/data/raw/ipums_2024/ 
+
+# Blog 5 local cleaned IPUMS microdata
+/blog/posts/post5/data/processed/single_person_renters_clean.rds
+/blog/posts/post5/data/processed/single_person_renters_clean.csv.gz
+/blog/posts/post5/data/processed/dc_single_person_renters_clean.rds 
+
+/blog/posts/post5/data/raw/ipums_2024/

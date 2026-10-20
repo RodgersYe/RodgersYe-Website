@@ -1,416 +1,193 @@
 # Personal Website and Data Analysis Blog
 
-This repository contains the source files for my personal website and a collection of reproducible data analysis blog posts.
+This [repository](https://github.com/RodgersYe/RodgersYe-Website) contains the source for my personal website and data analysis blog. The website is built with [Quarto](https://quarto.org/), and individual posts include R code, data documentation, and analytical outputs.
 
-The website is built with [Quarto](https://quarto.org/). In addition to the website source files, this repository contains the code, data, and figures used to reproduce the analyses presented in individual blog posts.
+This README provides repository navigation and a starting point for reproduction. Each post's own README documents its methods, inputs, dependencies, and limitations in detail.
 
 ## Repository Structure
 
-The repository is organized into three main components:
-
-1. Website source files
-2. Blog posts and their reproducibility materials
-3. Rendered website files
-
-A simplified version of the repository structure is shown below:
-
 ```text
 .
-├── images/
-│   ├── UniversityofPennsylvania_FullLogo_RGB.png
-│   └── profile.jpg
-│
+├── _quarto.yml          # Website configuration; rendered output goes to docs/
+├── index.qmd            # Homepage
+├── aboutme.qmd          # About Me page
+├── resume.qmd           # Résumé/CV page
+├── styles.css           # Shared website styling
+├── images/              # Images used by the main website pages
 ├── blog/
-│   ├── index.qmd
+│   ├── index.qmd        # Blog listing page
 │   └── posts/
-│       ├── post1/
-│       │   ├── BlogPost01.qmd
-│       │   ├── BlogPost01Cover.png
-│       │   ├── README.md
-│       │   ├── code/
-│       │   ├── data/
-│       │   └── figures/
-│       │
-│       ├── post2/
-│       │   ├── BlogPost02.qmd
-│       │   ├── BlogPost02Cover.png
-│       │   ├── README.md
-│       │   ├── code/
-│       │   ├── data/
-│       │   └── figures/
-│       │
-│       ├── post3/
-│       └── post4/
-│
-├── docs/
-│   ├── site_libs/
-│   ├── images/
-│   ├── blog/
-│   ├── index.html
-│   ├── aboutme.html
-│   ├── resume.html
-│   ├── search.json
-│   ├── listings.json
-│   └── styles.css
-│
-├── index.qmd
-├── aboutme.qmd
-├── resume.qmd
-├── styles.css
-├── _quarto.yml
-├── studentname-website.Rproj
+│       ├── post1/       # P-value interpretation and common misconceptions
+│       ├── post2/       # Drexel event opportunities
+│       ├── post3/       # U.S. working hours by age
+│       ├── post4/       # State income and regional prices
+│       └── post5/       # Living alone and rent burden
+├── docs/                # Rendered website served by GitHub Pages
 └── README.md
 ```
 
-The exact contents of individual blog post folders may vary slightly depending on the type of analysis, but the overall structure is kept consistent across posts.
-
-## Website Source Files
-
-The files in the root directory define the main pages and configuration of the personal website.
-
-### `_quarto.yml`
-
-This is the main Quarto configuration file for the website. It controls website-level settings such as navigation, page structure, output format, rendering options, and the output directory.
-
-### `index.qmd`
-
-Source file for the homepage of the website.
-
-### `aboutme.qmd`
-
-Source file for the About Me page.
-
-### `resume.qmd`
-
-Source file for the résumé/CV page.
-
-### `styles.css`
-
-Contains custom CSS used to control the appearance and formatting of the website.
-
-### `studentname-website.Rproj`
-
-RStudio project file for the website repository. Opening this file in RStudio provides a convenient project environment for editing the website and running the associated R code.
-
-## `images/`
-
-The root-level `images/` directory contains images used by the main pages of the personal website.
-
-Examples include:
-
-- profile photographs;
-- university or institutional logos;
-- other images used on the homepage or general website pages.
-
-Images used specifically by an individual blog post are not stored here. Blog-specific images are kept inside the corresponding blog post directory.
-
-## Blog Structure
-
-All blog-related source files are stored under:
-
-```text
-blog/
-```
-
-The main blog directory contains:
-
-```text
-blog/
-├── index.qmd
-└── posts/
-```
-
-### `blog/index.qmd`
-
-This file defines the main blog listing page. It is responsible for displaying and organizing the individual blog posts on the website.
-
-### `blog/posts/`
-
-Each blog post is stored in its own independent directory. For example:
-
-```text
-blog/posts/post2/
-```
-
-contains the source files and reproducibility materials associated with Blog Post 2.
-
-Each blog post is designed to be as self-contained as possible so that the analysis behind the post can be inspected and reproduced independently.
-
-## Structure of an Individual Blog Post
-
-A typical blog post directory follows the structure below:
-
-```text
-postX/
-├── BlogPost0X.qmd
-├── BlogPost0XCover.png
-├── README.md
-├── code/
-├── data/
-└── figures/
-```
-
-Each component has a specific purpose.
-
-### `BlogPost0X.qmd`
-
-This is the main Quarto source document for the blog post.
-
-It contains the written article and may include:
-
-- text;
-- equations;
-- tables;
-- figures;
-- citations;
-- references to outputs generated by the analysis.
-
-Rendering this file produces the web version of the blog post.
-
-### `BlogPost0XCover.png`
-
-This is the cover image associated with the blog post. It is used primarily for presentation on the blog listing page and/or at the beginning of the article.
-
-### `README.md`
-
-Each blog post may include its own README file containing information specific to that project.
-
-Depending on the post, the README may describe:
-
-- the research question;
-- data sources;
-- data download dates;
-- software or package requirements;
-- the purpose of each script;
-- the order in which scripts should be executed;
-- instructions for reproducing the analysis;
-- special requirements or restrictions associated with the data.
-
-For detailed reproduction instructions, users should consult the README inside the corresponding blog post directory.
-
-### `code/`
-
-The `code/` directory contains the scripts used to perform the analysis for the blog post.
-
-Depending on the project, these scripts may be used for tasks such as:
-
-- downloading or importing data;
-- cleaning raw data;
-- transforming variables;
-- constructing analytical datasets;
-- performing statistical analysis;
-- calculating summary statistics;
-- producing figures;
-- producing tables.
-
-When an analysis requires several stages, scripts are generally organized so that the workflow can be followed in sequence.
-
-For example:
-
-```text
-code/
-├── 01_get_raw_data.R
-├── 02_clean_data.R
-├── 03_analyze_data.R
-└── 04_make_figures.R
-```
-
-The exact scripts differ across blog posts.
-
-### `data/`
-
-The `data/` directory contains data associated with the analysis. It can include two general types of data: raw data and processed data.
-
-#### Raw data
-
-Raw data are the original datasets obtained from external sources before substantive cleaning or transformation.
-
-Examples may include data obtained from:
-
-- government agencies;
-- public APIs;
-- research databases;
-- publicly available datasets;
-- other documented external sources.
-
-Whenever possible, the source of the raw data is documented in the README for the corresponding blog post.
-
-#### Processed data
-
-Processed data are datasets created during the analysis after operations such as:
-
-- cleaning;
-- filtering;
-- merging;
-- reshaping;
-- variable construction;
-- aggregation.
-
-These files are included when they are useful for reproducing the analysis or understanding the data-processing workflow.
-
-The exact organization of raw and processed data may differ between projects depending on the requirements of the analysis.
-
-### `figures/`
-
-The `figures/` directory contains visualizations generated during the analysis.
-
-These may include:
-
-- statistical plots;
-- time-series figures;
-- maps;
-- exploratory visualizations;
-- final figures used in the published blog post.
-
-In general, these figures are outputs of the scripts contained in the corresponding `code/` directory rather than manually created files.
-
-## `docs/`: Rendered Website
-
-The `docs/` directory contains the rendered HTML version of the website.
-
-This directory is generated by Quarto when the website is rendered. Typical contents include:
-
-```text
-docs/
-├── site_libs/
-├── images/
-├── blog/
-├── index.html
-├── aboutme.html
-├── resume.html
-├── search.json
-├── listings.json
-└── styles.css
-```
-
-These files are the files served by GitHub Pages.
-
-The files inside `docs/` should generally be treated as generated output rather than source files.
-
-For example:
-
-```text
-index.qmd
-```
-
-is the source document, while:
-
-```text
-docs/index.html
-```
-
-is the rendered webpage generated from that source.
-
-Similarly, rendered versions of blog posts are stored under:
-
-```text
-docs/blog/
-```
-
-The recommended workflow is therefore to modify the `.qmd`, R, CSS, or other source files and then render the website again, rather than manually editing files inside `docs/`.
-
-## Source Files vs. Rendered Files
-
-The repository separates the website into two layers: source files and rendered files.
-
-| Location | Purpose |
-|---|---|
-| Root `.qmd` files | Source files for the main website pages |
-| `images/` | Images used by the main website |
-| `blog/` | Blog source files and reproducibility materials |
-| `blog/posts/postX/code/` | Code used for individual analyses |
-| `blog/posts/postX/data/` | Raw and processed data |
-| `blog/posts/postX/figures/` | Figures generated by the analysis |
-| `docs/` | Rendered HTML website served by GitHub Pages |
-
-## Reproducing a Blog Post
-
-To reproduce an individual analysis, navigate to the corresponding directory under:
-
-```text
-blog/posts/
-```
-
-For example:
-
-```text
-blog/posts/post2/
-```
-
-Then:
-
-1. Read the `README.md` inside that blog post directory.
-2. Review the data sources and any data-use requirements.
-3. Check the scripts in the `code/` directory.
-4. Obtain or verify the required raw data in the `data/` directory.
-5. Run the scripts in the order described in the post-specific README.
-6. Check the generated outputs in `data/` and `figures/`.
-7. Render the corresponding `.qmd` file if you want to reproduce the final blog article.
-
-Because different posts may rely on different data sources or software packages, the post-specific README should be considered the primary source of reproduction instructions.
-
-## Rendering the Website
-
-The website can be rendered using Quarto.
-
-From the root directory of the repository, run:
-
-```bash
-quarto render
-```
-
-Alternatively, the project can be opened in RStudio using:
-
-```text
-studentname-website.Rproj
-```
-
-and rendered using the Quarto tools available in RStudio.
-
-The rendered website files will be written to:
-
-```text
-docs/
-```
-
-## Reproducibility
-
-A major goal of this repository is to make the analyses presented in the blog transparent and reproducible.
-
-Whenever possible, each empirical blog post includes:
-
-- documentation of the original data source;
-- analysis code;
-- intermediate or processed datasets when appropriate;
-- generated figures;
-- instructions describing how the analysis can be reproduced.
-
-Some datasets may be subject to licensing, redistribution, API, or access restrictions. In those cases, the corresponding blog post README provides instructions for obtaining the original data rather than redistributing restricted files directly through this repository.
-
-## Repository Navigation
-
-If you are primarily interested in viewing the website, use the published GitHub Pages website or the rendered files in `docs/`.
-
-If you want to read the source of the website, see the `.qmd` files in the repository root and under `blog/`.
-
-If you want to read or reproduce a specific blog post, go to:
+Posts 2–5 use the following layout, with different scripts and data files in each post:
 
 ```text
 blog/posts/postX/
+├── README.md
+├── BlogPost0X.qmd
+├── BlogPost0XCover.png
+├── code/
+├── data/
+│   ├── raw/
+│   └── processed/
+└── figures/
 ```
 
-Within each post:
+The Blog05 article and cover names above are conventions; confirm the actual filenames and image references before rendering. Raw or processed microdata shown in a post's file guide are not necessarily included in a public clone.
 
-- `code/` contains the analysis scripts;
-- `data/` contains raw and processed data;
-- `figures/` contains figures generated during the analysis;
-- `README.md` contains project-specific reproduction instructions;
-- `BlogPost0X.qmd` contains the source text of the blog post.
+## Blog Index
 
-## License and Data Attribution
+| Post | Topic and coverage | Data source | Documentation |
+|---|---|---|---|
+| 1 — Misconceptions About the P-Value | P-value interpretation, conditional probability, and a two-sided fair-coin simulation | Simulated coin flips using Python/NumPy; no external dataset | [Post 1 source](blog/posts/post1/BlogPost01.qmd) |
+| 2 — Web Scraping for Actionable Insights | Weekday event opportunities listed for 2026; snapshot collected September 21, 2026 | Drexel University Events Calendar | [Post 2 README](blog/posts/post2/README.md) |
+| 3 — How Has the American Workweek Changed? | Actual weekly hours across six age groups, 2000–2024 | IPUMS CPS Basic Monthly microdata | [Post 3 README](blog/posts/post3/README.md) |
+| 4 — The Price Tag Behind America's Income Rankings | Nominal and regional-price-adjusted per capita personal income in the 50 states, 2024 | BEA archived income and API snapshots | [Post 4 README](blog/posts/post4/README.md) |
+| 5 — Is Living Alone Easier Where More People Do It? | Living-alone prevalence and severe rent burden in the 50 states, 2024 | IPUMS USA, ACS one-year microdata; Census state boundaries | [Post 5 README](blog/posts/post5/README.md) |
 
-The source code and website materials in this repository are separate from any third-party datasets used in the analyses.
+## Software and Setup
 
-External datasets remain subject to the licenses, terms of use, citation requirements, and redistribution policies of their original providers.
+Clone the repository and work from its root:
 
-Please consult the README for each individual blog post for information about its specific data sources and attribution requirements.
+```bash
+git clone https://github.com/RodgersYe/RodgersYe-Website.git
+cd RodgersYe-Website
+```
+
+Use R for the analytical scripts and Quarto for the website. RStudio is optional; open the repository's `.Rproj` file if using it. Posts 3–5 resolve paths from the website root with `here`; keep their documented directory locations.
+
+Install the packages needed for the post you want to reproduce:
+
+| Post | Documented R packages |
+|---|---|
+| 2 | `rvest` for scraping; inspect the scripts for other dependencies |
+| 3 | `tidyverse`, `here`, `scales` |
+| 4 | `here`, `httr2`, `ggplot2`, `usmap`, `usmapdata`, `sf`; `httr2` is needed only for API acquisition |
+| 5 | `here`, `ipumsr`, `data.table`, `tidyselect`, `sf`, `ggplot2`, `scales`, `patchwork`, `ggrepel` |
+
+Install Quarto separately. Mapping posts also require the system libraries used by `sf`. Exact software versions are not fully pinned in the supplied post documentation, so a new environment may not reproduce identical files.
+
+## Reproducing the Analyses
+
+Read the relevant post README first, confirm the required inputs, and run its scripts in the documented order before rendering updated figures. Rendering a page and recalculating its analysis are separate steps.
+
+### Post 2 — Drexel Events
+
+The workflow uses `code/01_scrape_events.R`, followed by `code/02_clean_analyze.R`, within `blog/posts/post2/`.
+
+- **Input:** `data/raw/drexel_events_raw.csv`, collected from 12 monthly calendar pages with a two-second pause between requests.
+- **Outputs:** Four processed CSVs, including cleaned events and weekday summaries, plus `events_by_weekday.png` and `weekday_robustness_check.png`.
+- **Snapshot check:** The documented data contain 3,869 raw records and 3,577 retained event occurrences after removing cancelled records. Recurring and multi-day occurrences remain in the main analysis.
+- **Interpretation:** Comparisons account for the number of times each weekday occurs in 2026. Tuesday and Wednesday consistently have the most listed opportunities, followed by Thursday.
+
+Preserve the September 21, 2026 snapshot to reproduce the documented results. A new scrape can reflect later calendar changes. Future events were incompletely posted at collection, which motivates the post's robustness checks.
+
+### Post 3 — Working Hours
+
+Obtain an IPUMS CPS Basic Monthly extract covering January 2000–December 2024. Save the uncompressed input as `blog/posts/post3/data/raw/cps_raw.csv`; the scripts do not read the `.csv.gz` directly or download data. Include all variables listed in the post README, including `ASECFLAG`.
+
+From a repository-root R session:
+
+```r
+source("blog/posts/post3/code/01_clean_analyze.R")
+source("blog/posts/post3/code/02_make_figures.R")
+```
+
+The first script writes baseline estimates, audits, endpoint comparisons, and sensitivity CSVs. The second reads `data/processed/annual_age_hours.csv` and generates five PNGs for total, main-job, and other-job hours and the two component shares. No cleaned person-level dataset is exported.
+
+Complete coverage yields 1,800 monthly age-group rows and 150 annual rows, each with 12 observed months. Annual means average the monthly weighted means equally. Results describe workers aged 16+ who were at work in the reference week; the series do not follow a fixed cohort.
+
+To regenerate only figures, run the second script with the correct baseline annual CSV. `BlogPost03.qmd` embeds existing images and does not execute either script. The original extract version and download date are undocumented, limiting exact replication of the original download.
+
+### Post 4 — State Income and Prices
+
+Reproduction requires the saved inputs in `blog/posts/post4/data/raw/`:
+
+- `bea_state_annual_income_2025-09-26.zip`, containing `SAINC1__ALL_AREAS_1929_2024.csv`;
+- `bea_nominal_pcpi_2024.csv`, `bea_all_items_rpp_2024.csv`, and `bea_official_real_pcpi_2024.csv`.
+
+Keep `bea_2024_metadata.rds` for acquisition provenance. The historical ZIP supplies nominal income for the main rankings; the API nominal-income CSV is used for a revision audit. Adjusted income equals archived nominal PCPI divided by all-items RPP/100. This measure is distinct from BEA's official real PCPI in constant 2017 dollars.
+
+From a repository-root terminal:
+
+```bash
+Rscript blog/posts/post4/code/02_clean_data.R
+Rscript blog/posts/post4/code/03_analyze_data.R
+Rscript blog/posts/post4/code/04_make_figures.R
+```
+
+These scripts generate three processed CSVs and three PNGs: two ranking maps and a rank-change chart. Validation requires 50 states and agreement with official real-income rankings. The documented comparison has 44 states changing rank, a median absolute movement of four places, and seven states common to both top-ten groups.
+
+Run `01_get_raw_data.R` only when fresh API acquisition is needed; it requires a personal `BEA_API_KEY`, overwrites the API snapshots, and does not obtain the historical ZIP. New vintages may change results or fail validation. Reusing the saved inputs needs no API key.
+
+**Figure limitation:** The article embeds five analytical PNGs, but script 04 regenerates only three. Retain `01_nominal_pcpi_ranking_2024.png` and `02_rpp_adjusted_pcpi_ranking_2024.png`; their generating code is absent from the documented pipeline. `BlogPost04.qmd` embeds saved images without rerunning the analysis.
+
+### Post 5 — Living Alone and Rent Burden
+
+Full reproduction uses the IPUMS USA **2024 ACS one-year sample (`us2024a`)**, including 80 household replicate weights. Keep one matching, unchanged `usa_*.xml` and `usa_*.dat.gz` pair in `blog/posts/post5/data/raw/ipums_2024/`. The DDI XML is required; no CSV conversion is needed.
+
+From a repository-root R session:
+
+```r
+options(blog5.ipums_stage = "auto")
+for (script in c("01_get_raw_data.R", "02_clean_data.R",
+                 "03_analyze_data.R", "04_make_figures.R")) {
+  source(here::here("blog", "posts", "post5", "code", script))
+}
+```
+
+Stage `auto` reuses a complete local raw pair, otherwise resumes a saved task or submits and downloads an extract using a personal `IPUMS_API_KEY`. Preserve `extract_id.txt` to resume an interrupted acquisition; task IDs belong to the account that created them.
+
+The final analytical outputs are:
+
+| Output | Files and role |
+|---|---|
+| One local RDS | `single_person_renters_clean.rds`: cleaned adult one-person renter households and embedded lineage |
+| Two aggregate CSVs | `data_validation_report.csv` and `statistical_summary.csv`: consolidated checks and estimates |
+| Three PNGs | `fig01_severe_burden_intervals.png`, `fig02_severe_rent_burden_map.png`, and `fig03_living_alone_population_share_map.png` |
+
+Script 03 needs both the raw pair and RDS. Confirm `analysis_completed = PASS` and no `FAIL` entries before using the summary. Script 04 requires both CSVs from a matching completed run and checks the RDS checksum if present. It can regenerate figures without microdata or the RDS; Census boundaries are downloaded only if the geometry ZIP is absent.
+
+Rent burden uses household weights and positive-income adult solo renters; severe burden means annualized gross rent **strictly above 50%** of income. Living-alone prevalence uses person weights and all state residents as its denominator. D.C. is retained separately in reports and excluded from the main 50-state figures. The documented pooled severe-burden rate is 33.1%, with a 95% interval of 32.8%–33.5%.
+
+Raw microdata and the household RDS are local-only files excluded by the documented ignore rules. Full reproduction requires authorized IPUMS access. The final QMD's executable chunks and exact image references are not established by the supplied Blog05 documentation; check the saved article before rendering.
+
+## Previewing and Rendering the Website
+
+From the repository root, preview or render the website:
+
+```bash
+quarto preview
+quarto render
+```
+
+To render one post, for example:
+
+```bash
+quarto render blog/posts/post3/BlogPost03.qmd
+```
+
+Confirm that the article's figures and cover are present first. A Quarto render does not itself invoke the external R scripts; execution within a page depends on its QMD contents.
+
+`docs/` contains generated HTML and supporting assets for GitHub Pages. Edit `.qmd`, R, CSS, or other source files, then render again to refresh `docs/`. Keep shared website images in `images/` and post-specific assets in their post directories.
+
+## Data Provenance and Attribution
+
+Saved snapshots, source vintages, and credentials have different roles. Preserve raw data unchanged, retain available extraction metadata, and consult each post README for its full data citation and access instructions. A local file listing does not establish that the file is tracked in Git. Fresh acquisitions and unpinned software may change estimates or output files.
+
+Keep private API keys in a repository-root `.Renviron` excluded from Git. Blog04 uses `BEA_API_KEY`; Blog05 uses `IPUMS_API_KEY`; Blog03's local analysis requires neither. Ignore rules do not remove files already tracked by Git.
+
+Third-party data terms remain separate from any license covering this repository's code or writing. Consult the post READMEs for IPUMS CPS, IPUMS USA, BEA, Census boundary, and mapping-package credits. The analysis code does not grant permission to redistribute IPUMS microdata.
+
+For Blog04, retain BEA source attribution and the API notice, including in the article near its data credit:
+
+> This product uses the Bureau of Economic Analysis (BEA) Data API but is not endorsed or certified by BEA.
+
+Derived estimates, rankings, maps, and interpretations are the author's calculations. The posts provide descriptive analyses; state-level comparisons do not establish individual-level relationships or causal effects.
