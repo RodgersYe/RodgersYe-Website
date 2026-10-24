@@ -58,18 +58,18 @@ Then preview/render `BlogPost06.qmd` in RStudio.
 
 ## Outputs
 
-| Location | Meaning | Public repository? |
-|---|---|---|
-| `data/processed/ige_single_year.csv` | matched single-year, row-level data | **No** |
-| `data/processed/ige_results.csv` | single-year regression summary | keep local by default |
-| `data/processed/ige_multi_year.csv` | matched multiyear, row-level data | **No** |
-| `data/processed/ige_multiyear_results.csv` | single vs. multiyear coefficients | keep local by default |
-| `data/processed/ige_multiyear_difference.csv` | paired bootstrap uncertainty | keep local by default |
-| `figures/ige_by_child_age.png` | single-year age profile | aggregate-only; verify release permission |
-| `figures/ige_multiyear_only.png` | multiyear age profile | aggregate-only; verify release permission |
-| `figures/ige_single_vs_multiyear.png` | common-sample comparison | aggregate-only; verify release permission |
-| `figures/ige_public_summary.csv` | only eight aggregate regression rows + bootstrap bounds | aggregate-only; verify release permission |
+| Location | Meaning |
+|---|---|
+| `data/processed/ige_single_year.csv` |
+| `data/processed/ige_results.csv` |
+| `data/processed/ige_multi_year.csv` |
+| `data/processed/ige_multiyear_results.csv` |
+| `data/processed/ige_multiyear_difference.csv` |
+| `figures/ige_by_child_age.png` | single-year age profile |
+| `figures/ige_multiyear_only.png` | multiyear age profile |
+| `figures/ige_single_vs_multiyear.png` | common-sample comparison |
+| `figures/ige_public_summary.csv` | only eight aggregate regression rows + bootstrap bounds |
 
-## Terms, GitHub, and citations
+## Citations
 
 PSID does not permit transferring public-use data or custom extracts to third parties; it also explicitly prohibits using AI/LLM programs in conjunction with PSID data.
