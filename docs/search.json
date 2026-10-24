@@ -4,7 +4,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Blog 5: Is Living Alone Easier Where More People Do It?\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog 4: The Price Tag Behind America’s Income Rankings\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 3: How Has the American Workweek Changed?\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 2: What Is the Best Day of the Week for Attending Drexel Events?\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 1: Misconceptions About the P-Value\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Blog 6: Does One Year of Income Change the Parent–Child Earnings Link?\n\n\n\n\n\n\n\n\nOct 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog 5: Is Living Alone Easier Where More People Do It?\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog 4: The Price Tag Behind America’s Income Rankings\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 3: How Has the American Workweek Changed?\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 2: What Is the Best Day of the Week for Attending Drexel Events?\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 1: Misconceptions About the P-Value\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/post3/BlogPost03.html",
@@ -21,25 +21,11 @@
     "text": "North Dakota and Florida tell two different stories about living alone. In 2024, 14.9 percent of North Dakota residents lived by themselves, compared with 11.0 percent in Florida. Yet among adult solo renters with positive income, 20.9 percent in North Dakota faced annualized gross rent above half their income. In Florida, the figure was 42.3 percent. Living alone was more common in North Dakota, but severe rent burden was roughly twice as common in Florida. Why do the two maps of independent living look so different?\nThe question matters when deciding whether a place fits your budget. Calculating rent as a percentage of your income is straightforward; understanding that number takes context. Is your housing budget unusually stretched, or do many solo renters nearby face similar pressure? State comparisons offer a broad benchmark, although they cannot tell you whether a particular apartment is overpriced. A high rent-to-income ratio can reflect expensive housing, limited income, or both. To explore that distinction, I used the 2024 American Community Survey through IPUMS USA, examining 135,366 adult one-person households that pay rent across the 50 states, with Washington, D.C., kept separate.\nThe first answer is that stretched budgets are widespread. Among solo renters with valid positive income, 60.6 percent had annualized gross rent above 30 percent of income, and 33.1 percent were above 50 percent—the severe-burden threshold used here. Figure 1 places those state estimates alongside the national benchmark. Florida and Nevada were both near 42 percent, while South Dakota was at 18.4 percent. For someone weighing the cost of living alone, that spread makes the national average an incomplete guide. The same housing arrangement can come with very different financial demands depending on where you live.\n\nStill, Figure 1 is better read as a comparison than a league table. Its uncertainty bars show that each state’s percentage is an estimate, with some measured less precisely than others. Small gaps between neighboring dots should not become confident claims about which state is more affordable. The chart also leaves out zero- and negative-income households because their rent-to-income ratios cannot be interpreted in the same way. It therefore captures pressure among positive-income renters, rather than the full extent of housing difficulty among everyone renting alone.\n\n\nFigure 2 gives that pressure a location. Florida, Nevada and several western states stand out. Figure 3, showing where residents live alone, draws attention toward North Dakota and parts of the upper Midwest instead. California sharpens the contrast: just 8.6 percent of its residents lived alone, yet 38.7 percent of its positive-income adult solo renters faced severe burden. Across the 50 states, giving each state equal weight, the correlation between living-alone prevalence and severe burden was approximately −0.49. The pattern is a mismatch worth explaining, not evidence that increasing solo living would make housing cheaper.\nPart of the explanation may lie in who appears on each map. A homeowner living alone counts toward Figure 3, but not toward the rental pressure in Figure 2. Figure 3 also covers all ages and compares solo residents with the entire state population. Figure 2 focuses on adult renters with positive income. A high living-alone share therefore does not necessarily mean a high share facing rental costs. Differences in age and homeownership could matter here, although this analysis does not measure their separate effects.\nLooking at rent and income together makes the contrast more concrete. Florida’s median annualized gross rent was $19,116, against $10,128 in North Dakota. Median annual income among renters with valid income was $37,000 in Florida and $40,000 in North Dakota. Florida’s higher rent did not come with a higher median income. These medians summarize separate distributions; the burden calculations use each household’s own rent and income, rather than dividing one statewide median by another.\nAge adds another twist. Solo renters aged 65 and older paid less at the median: $12,000 in annualized gross rent, compared with $16,200 for those aged 18 to 64. Yet their severe-burden rate was higher, at 41.6 percent versus 29.8 percent. Their median annual income was also much lower: $22,800 versus $43,000. A smaller rent bill can still take a larger bite from a smaller income. That does not mean aging causes housing hardship, and income alone misses savings and assets that some older renters can draw on.\nThere are limits to the comparison. Gross rent includes utilities and fuel, and annualizes a current monthly amount; income refers to the previous 12 months before taxes. These are existing tenants’ costs, not today’s advertised rents. State-level figures also hide differences between cities and neighborhoods.\nThe useful next step is to bring the comparison closer to home. Compare apartments within the same local market, including utility costs. Calculate housing costs against dependable income and examine what remains for food, transport and unexpected expenses. If the budget looks tight, consider which adjustment would help most: a different neighborhood, a shared apartment, or a stronger income cushion. The maps provide context for that decision. A place where many people live alone may still demand more of your income than you can comfortably spare.\nData Source: Steven Ruggles, Sarah Flood, Matthew Sobek, Daniel Backman, Grace Cooper, Julia A. Rivera Drew, Stephanie Richards, Renae Rodgers, Jonathan Schroeder, and Kari C.W. Williams. IPUMS USA: Version 16.0 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D010.V16.0\nHere is some additional detailed data; feel free to take a look if you are interested. Also, the analysis code is available in the GitHub Repository."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Guozhi Ye",
-    "section": "",
-    "text": "Guozhi Ye\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
-  },
-  {
-    "objectID": "resume.html",
-    "href": "resume.html",
-    "title": "Resume",
-    "section": "",
-    "text": "Download my resume here:"
-  },
-  {
-    "objectID": "resume.html#resume-pdf",
-    "href": "resume.html#resume-pdf",
-    "title": "Resume",
-    "section": "Resume PDF",
-    "text": "Resume PDF"
+    "objectID": "blog/posts/post1/BlogPost01.html#takeaway",
+    "href": "blog/posts/post1/BlogPost01.html#takeaway",
+    "title": "Post 1: Misconceptions About the P-Value",
+    "section": "Takeaway",
+    "text": "Takeaway\nA p-value is not “the probability that the null hypothesis is true.” It is “the probability of observing the current result, or a more extreme one, assuming that the null hypothesis is true.”\nThe key to understanding the p-value is not memorizing the number (0.05), but remembering the direction of the conditional probability:\n\\[\nP(\\text{Data}\\mid H_0)\n\\neq\nP(H_0\\mid \\text{Data})\n\\]\nOnce this distinction is clear, the p-value becomes much less mysterious."
   },
   {
     "objectID": "aboutme.html",
@@ -63,11 +49,53 @@
     "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis"
   },
   {
-    "objectID": "blog/posts/post1/BlogPost01.html#takeaway",
-    "href": "blog/posts/post1/BlogPost01.html#takeaway",
-    "title": "Post 1: Misconceptions About the P-Value",
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Download my resume here:"
+  },
+  {
+    "objectID": "resume.html#resume-pdf",
+    "href": "resume.html#resume-pdf",
+    "title": "Resume",
+    "section": "Resume PDF",
+    "text": "Resume PDF"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Guozhi Ye",
+    "section": "",
+    "text": "Guozhi Ye\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
+  },
+  {
+    "objectID": "blog/posts/post6/BlogPost06.html#match-parents-and-children-with-sql",
+    "href": "blog/posts/post6/BlogPost06.html#match-parents-and-children-with-sql",
+    "title": "Blog 6: Does One Year of Income Change the Parent–Child Earnings Link?",
+    "section": "1. Match Parents and Children with SQL",
+    "text": "1. Match Parents and Children with SQL\nI use the Panel Study of Income Dynamics (PSID): its Parent Identification File links biological parents to children, its individual file tracks people across interviews, and its family files report earnings. Because a family ID can change when someone moves out, a family ID alone cannot identify a person over time. I first link each person’s permanent 1968 family and person identifiers, then use interview-specific family IDs to attach earnings.\nAfter importing and renaming the relevant PSID variables in pandas, I use Python’s sqlite3 to run SQL. This shortened excerpt shows the key matching step:\nimport sqlite3\nimport pandas as pd\n\nwith sqlite3.connect(\":memory:\") as db:\n    pid.to_sql(\"pid\", db, index=False)\n    ind.to_sql(\"individuals\", db, index=False)\n    matches = pd.read_sql_query(\"\"\"\n        SELECT p.child_fam68, p.child_pn,\n               c.age23 AS child_age23, f.fam99 AS parent_family_1999\n        FROM pid AS p\n        JOIN individuals AS c\n          ON p.child_fam68 = c.fam68 AND p.child_pn = c.pn\n        JOIN individuals AS f\n          ON p.father_fam68 = f.fam68 AND p.father_pn = f.pn\n        JOIN individuals AS m\n          ON p.mother_fam68 = m.fam68 AND p.mother_pn = m.pn\n        WHERE f.fam99 = m.fam99 AND c.age23 BETWEEN 35 AND 49\n    \"\"\", db)\nSELECT chooses the columns to retain; each JOIN matches records using a two-part person key. The full script also checks parental roles in 1999 and the adult child’s role in 2023, removes invalid IDs, and verifies that each child appears once. These checks matter: an incorrect join could pair the wrong people or duplicate observations."
+  },
+  {
+    "objectID": "blog/posts/post6/BlogPost06.html#build-earnings-measures-and-estimate-ige",
+    "href": "blog/posts/post6/BlogPost06.html#build-earnings-measures-and-estimate-ige",
+    "title": "Blog 6: Does One Year of Income Change the Parent–Child Earnings Link?",
+    "section": "2. Build Earnings Measures and Estimate IGE",
+    "text": "2. Build Earnings Measures and Estimate IGE\nParental earnings combine both biological parents’ labor and business labor earnings; children’s earnings refer to the adult child’s own labor and business labor earnings. The single-year measure uses parental earnings in 1998 and child earnings in 2022 (reported in the 1999 and 2023 interviews). The multi-year measure averages available parental earnings from 1998–2010 and child earnings from 2012–2022, first converting each year’s amount to 2022 dollars using the BLS CPI-U. I require at least three valid parental years and three valid child years for the multi-year estimates.\nSQL also makes this aggregation reproducible. After combining both parents’ earnings within each eligible year, the following pattern produces their inflation-adjusted average:\nSELECT p.child_fam68, p.child_pn,\n       COUNT(*) AS n_parent_years,\n       AVG(p.annual_parent_income * 292.655 / c.cpi)\n           AS parent_avg_2022usd\nFROM parent_income AS p\nJOIN cpi AS c ON c.income_year = p.survey_year - 1\nGROUP BY p.child_fam68, p.child_pn;\nGROUP BY creates one record per child; COUNT counts eligible years and AVG averages real parental earnings. The full pipeline also uses SUM to combine parents’ earnings and repeats the averaging for children. I retain positive values for the two measures used in each regression and estimate:\n[()=+()+.]\nHere, () is the IGE: an estimate of 0.30 means that 10% higher parental earnings are associated with approximately 3% higher adult-child earnings, not that parental earnings cause the increase. Regressions use R’s lm() and 95% confidence intervals with standard errors clustered by parental family to account for siblings."
+  },
+  {
+    "objectID": "blog/posts/post6/BlogPost06.html#what-changes-when-we-average-earnings",
+    "href": "blog/posts/post6/BlogPost06.html#what-changes-when-we-average-earnings",
+    "title": "Blog 6: Does One Year of Income Change the Parent–Child Earnings Link?",
+    "section": "3. What Changes When We Average Earnings?",
+    "text": "3. What Changes When We Average Earnings?\nTo ensure a fair comparison, both models use the same 1,057 adult children from 728 parental families, aged 35–49 in 2023.\n\nNote: Points show IGE estimates; error bars show 95% confidence intervals clustered by parental family.\nThe overall single-year IGE is 0.311, compared with 0.372 using multi-year averages. The higher multi-year estimate suggests that one-year earnings can obscure the persistent parent–child relationship through temporary earnings fluctuations.\nThe age breakdown illustrates why measurement timing deserves attention. For ages 40–44, the multi-year estimate is 0.463, versus 0.302 for a single year. Yet the difference is smaller at ages 35–39 and 45–49, and uncertainty is substantial. Earnings at one age may poorly represent lifetime economic standing—often called life-cycle bias."
+  },
+  {
+    "objectID": "blog/posts/post6/BlogPost06.html#takeaway",
+    "href": "blog/posts/post6/BlogPost06.html#takeaway",
+    "title": "Blog 6: Does One Year of Income Change the Parent–Child Earnings Link?",
     "section": "Takeaway",
-    "text": "Takeaway\nA p-value is not “the probability that the null hypothesis is true.” It is “the probability of observing the current result, or a more extreme one, assuming that the null hypothesis is true.”\nThe key to understanding the p-value is not memorizing the number (0.05), but remembering the direction of the conditional probability:\n\\[\nP(\\text{Data}\\mid H_0)\n\\neq\nP(H_0\\mid \\text{Data})\n\\]\nOnce this distinction is clear, the p-value becomes much less mysterious."
+    "text": "Takeaway\nIn this matched PSID sample, multi-year earnings produce a higher IGE point estimate, consistent with a clearer measure of long-run earnings. The practical lesson is to match people carefully with SQL, average inflation-adjusted earnings when possible, and treat a single year’s IGE as a potentially noisy snapshot—not a complete measure of economic mobility.\n\nCode Reference and Reproducibility\nThe two code examples above are simplified excerpts from the original analysis scripts. The first example, which demonstrates parent–child matching using SELECT and JOIN in Python’s SQLite environment, is adapted from 03_multiyear_prepare_data.R, lines 175–203. Specifically, lines 175–196 define the SQL matching query, while lines 197–203 show how it is executed through Python’s sqlite3 and pandas. The second example, illustrating GROUP BY, COUNT, and AVG for constructing inflation-adjusted parental earnings, comes from the same file, lines 288–302, particularly the parent_avg operation in lines 294–302. For the single-year parental earnings aggregation using SUM, see 01_singleyear_prepare_data(1).R, lines 182–199. These excerpts omit some data-cleaning steps and sample restrictions for readability. Readers can consult the complete scripts for the full matching procedures, income construction, and reproducible IGE estimates.\n\n\nData Availability and Replication\nAll data used in this analysis are available from the PSID official download page](https://simba.isr.umich.edu/Zips/ZipMain.aspx). Researchers can register for a free account and download the Family Files for every other year from 1999 through 2023 (1999, 2001, …, 2023), along with the Cross-year Individual File (1968–2023) and Parent Identification File (2023)."
   },
   {
     "objectID": "blog/posts/post2/BlogPost02.html#when-should-you-keep-your-schedule-open",

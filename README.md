@@ -21,12 +21,13 @@ This README provides repository navigation and a starting point for reproduction
 │       ├── post2/       # Drexel event opportunities
 │       ├── post3/       # U.S. working hours by age
 │       ├── post4/       # State income and regional prices
-│       └── post5/       # Living alone and rent burden
+│       ├── post5/       # Living alone and rent burden
+│       └── post6/       # PSID intergenerational income elasticity (IGE)
 ├── docs/                # Rendered website served by GitHub Pages
 └── README.md
 ```
 
-Posts 2–5 use the following layout, with different scripts and data files in each post:
+Posts 2–6 generally use the following layout, with different scripts and data files in each post:
 
 ```text
 blog/posts/postX/
@@ -51,6 +52,7 @@ The Blog05 article and cover names above are conventions; confirm the actual fil
 | 3 — How Has the American Workweek Changed? | Actual weekly hours across six age groups, 2000–2024 | IPUMS CPS Basic Monthly microdata | [Post 3 README](blog/posts/post3/README.md) |
 | 4 — The Price Tag Behind America's Income Rankings | Nominal and regional-price-adjusted per capita personal income in the 50 states, 2024 | BEA archived income and API snapshots | [Post 4 README](blog/posts/post4/README.md) |
 | 5 — Is Living Alone Easier Where More People Do It? | Living-alone prevalence and severe rent burden in the 50 states, 2024 | IPUMS USA, ACS one-year microdata; Census state boundaries | [Post 5 README](blog/posts/post5/README.md) |
+| 6 — Matching Parents and Children with SQL in Python | Biological parent–child matching, single-year versus multiyear average intergenerational income elasticity, and income-measure sensitivity by age | PSID 2023 Parent Identification, 1968–2023 Cross-Year Individual, and 1999–2023 Family Files | [Post 6 README](blog/posts/post6/README.md) |
 
 ## Software and Setup
 
@@ -61,7 +63,7 @@ git clone https://github.com/RodgersYe/RodgersYe-Website.git
 cd RodgersYe-Website
 ```
 
-Use R for the analytical scripts and Quarto for the website. RStudio is optional; open the repository's `.Rproj` file if using it. Posts 3–5 resolve paths from the website root with `here`; keep their documented directory locations.
+Use R for the analytical scripts and Quarto for the website. RStudio is optional; open the repository's `.Rproj` file if using it. Posts 3–6 resolve paths from the website root with `here`; keep their documented directory locations.
 
 Install the packages needed for the post you want to reproduce:
 
@@ -71,6 +73,7 @@ Install the packages needed for the post you want to reproduce:
 | 3 | `tidyverse`, `here`, `scales` |
 | 4 | `here`, `httr2`, `ggplot2`, `usmap`, `usmapdata`, `sf`; `httr2` is needed only for API acquisition |
 | 5 | `here`, `ipumsr`, `data.table`, `tidyselect`, `sf`, `ggplot2`, `scales`, `patchwork`, `ggrepel` |
+| 6 | `here`, `reticulate`, `sandwich` (R); `pandas` in the Python environment selected by `reticulate` (Python's `sqlite3` is built in) |
 
 Install Quarto separately. Mapping posts also require the system libraries used by `sf`. Exact software versions are not fully pinned in the supplied post documentation, so a new environment may not reproduce identical files.
 
@@ -169,6 +172,30 @@ If a complete, authorized local XML/data pair is already present, stage `auto` r
 
 The final QMD's executable chunks and exact image references are not established by the supplied Blog05 documentation; check the saved article before rendering.
 
+### Post 6 — Matching Parents and Children with SQL in Python
+
+The [Post 6 README](blog/posts/post6/README.md) documents the complete PSID data inventory, fixed-width `.txt`/`.do` input pairs, wave-specific income definitions, codebook references, privacy restrictions, and reproduction procedure. The post estimates intergenerational income elasticity (IGE) from biological parents' **combined individual labor earnings** and their adult child's **own labor earnings** (not family income).
+
+- **Identity and linkage:** `PID23` (biological parents), `IND2023ER` (stable individual identifiers, wave-specific family IDs, relationships), and family-level income files.
+- **Single-year:** 1999 Family File for parents' 1998 earnings; 2023 Family File for children's 2022 earnings.
+- **Multiyear:** parents' earnings from 1998, 2000, 2002, 2004, 2006, 2008, and 2010; children's earnings from 2012, 2014, 2016, 2018, 2020, and 2022. Income is converted to 2022 dollars before averaging, with a minimum of three valid waves in each generation.
+- **Methods:** RStudio runs embedded Python (`reticulate` + `pandas`) and SQLite SQL (`SELECT`, `JOIN`, `GROUP BY`, `SUM()`, `AVG()`), followed by R log–log OLS regressions with parent-family clustered standard errors and a clustered bootstrap of the same-sample coefficient difference.
+
+Start from the website repository's `.Rproj` in RStudio, with authorized PSID inputs stored locally in `blog/posts/post6/data/raw/`. Install the packages listed above, ensure Python `pandas` is available, and run:
+
+```r
+source(here::here("blog", "posts", "post6", "code", "01_singleyear_prepare_data.R"))
+source(here::here("blog", "posts", "post6", "code", "02_singleyear_analyze_ige.R"))
+source(here::here("blog", "posts", "post6", "code", "03_multiyear_prepare_data.R"))
+source(here::here("blog", "posts", "post6", "code", "04_multiyear_analyze_ige.R"))
+```
+
+The previously observed **full single-year sample** included 1,171 children with IGE **0.3048**. In the **common multiyear-eligible sample** (1,057 children; 728 parent families), the single-year IGE is **0.3109** and the multiyear IGE is **0.3725**. The latter exceeds the former by approximately **0.0615 (19.8% relative to the common-sample single-year estimate)**. This is a difference in income measurement, **not an identified causal life-cycle bias**. Bootstrap significance must come from the locally produced interval and is not inferred from these coefficients alone.
+
+The scripts write matched row-level records to `data/processed/` (**never distribute**), regression and bootstrap summaries locally, and aggregate-only figures to `figures/`. The updated analysis can also produce `figures/ige_public_summary.csv` for the Quarto page; **review PSID dissemination rules before publishing that file, plots, or other derived statistics**. Codebook PDFs are documentation rather than data files; the private inputs must be acquired separately under PSID's terms.
+
+**PSID licensing restriction:** Its [Conditions of Use](https://simba.isr.umich.edu/u/conduse.aspx) restrict redistribution and explicitly prohibit AI/LLM use in conjunction with PSID data. Do not upload microdata or extracts to GitHub, an AI tool, or other third parties. Confirm authorized use of AI-assisted code and release of any aggregate outputs directly with PSID before running or publishing them. A public repository of scripts is not a public distribution license for PSID records.
+
 ## Previewing and Rendering the Website
 
 From the repository root, preview or render the website:
@@ -182,6 +209,8 @@ To render one post, for example:
 
 ```bash
 quarto render blog/posts/post3/BlogPost03.qmd
+# Or render Blog 06:
+quarto render blog/posts/post6/BlogPost06.qmd
 ```
 
 Confirm that the article's figures and cover are present first. A Quarto render does not itself invoke the external R scripts; execution within a page depends on its QMD contents.
@@ -194,7 +223,9 @@ Saved snapshots, source vintages, and credentials have different roles. Preserve
 
 Keep private API keys in a repository-root `.Renviron` excluded from Git. Blog04 uses `BEA_API_KEY`; Blog05 uses `IPUMS_API_KEY`; Blog03's local analysis requires neither. Ignore rules do not remove files already tracked by Git.
 
-Third-party data terms remain separate from any license covering this repository's code or writing. Consult the post READMEs for IPUMS CPS, IPUMS USA, BEA, Census boundary, and mapping-package credits. The analysis code does not grant permission to redistribute IPUMS microdata.
+Third-party data terms remain separate from any license covering this repository's code or writing. Consult the post READMEs for IPUMS CPS, IPUMS USA, BEA, Census boundary, mapping-package credits, and **PSID (Post 6)**. The analysis code does not grant permission to redistribute IPUMS or PSID microdata. PSID also restricts the use of AI/LLMs with PSID data; confirm authorized use before executing AI-assisted analysis and publishing derived outputs.
+
+For Post 6, ensure the website-root `.gitignore` excludes `blog/posts/post6/data/raw/` and `blog/posts/post6/data/processed/`. Ignore rules do not remove already tracked files: review `git ls-files blog/posts/post6/data` before publishing. Figures and summary CSVs are aggregate-only but still require a PSID disclosure and publication review. See the [Post 6 README](blog/posts/post6/README.md) and the [PSID Conditions of Use](https://simba.isr.umich.edu/u/conduse.aspx).
 
 For Blog04, retain BEA source attribution and the API notice, including in the article near its data credit:
 
