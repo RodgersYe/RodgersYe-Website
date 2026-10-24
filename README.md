@@ -32,16 +32,14 @@ Posts 2–6 generally use the following layout, with different scripts and data 
 ```text
 blog/posts/postX/
 ├── README.md
-├── BlogPost0X.qmd
-├── BlogPost0XCover.png
+├── BlogPostXX.qmd
+├── BlogPostXXCover.png
 ├── code/
 ├── data/
 │   ├── raw/
 │   └── processed/
 └── figures/
 ```
-
-The Blog05 article and cover names above are conventions; confirm the actual filenames and image references before rendering. Raw or processed microdata shown in a post's file guide are not necessarily included in a public clone.
 
 ## Blog Index
 
@@ -75,7 +73,7 @@ Install the packages needed for the post you want to reproduce:
 | 5 | `here`, `ipumsr`, `data.table`, `tidyselect`, `sf`, `ggplot2`, `scales`, `patchwork`, `ggrepel` |
 | 6 | `here`, `reticulate`, `sandwich` (R); `pandas` in the Python environment selected by `reticulate` (Python's `sqlite3` is built in) |
 
-Install Quarto separately. Mapping posts also require the system libraries used by `sf`. Exact software versions are not fully pinned in the supplied post documentation, so a new environment may not reproduce identical files.
+Install Quarto separately. Mapping posts also require the system libraries used by `sf`.
 
 ## Reproducing the Analyses
 
@@ -89,8 +87,6 @@ The workflow uses `code/01_scrape_events.R`, followed by `code/02_clean_analyze.
 - **Outputs:** Four processed CSVs, including cleaned events and weekday summaries, plus `events_by_weekday.png` and `weekday_robustness_check.png`.
 - **Snapshot check:** The documented data contain 3,869 raw records and 3,577 retained event occurrences after removing cancelled records. Recurring and multi-day occurrences remain in the main analysis.
 - **Interpretation:** Comparisons account for the number of times each weekday occurs in 2026. Tuesday and Wednesday consistently have the most listed opportunities, followed by Thursday.
-
-Preserve the September 21, 2026 snapshot to reproduce the documented results. A new scrape can reflect later calendar changes. Future events were incompletely posted at collection, which motivates the post's robustness checks.
 
 ### Post 3 — Working Hours
 
@@ -107,7 +103,7 @@ The first script writes baseline estimates, audits, endpoint comparisons, and se
 
 Complete coverage yields 1,800 monthly age-group rows and 150 annual rows, each with 12 observed months. Annual means average the monthly weighted means equally. Results describe workers aged 16+ who were at work in the reference week; the series do not follow a fixed cohort.
 
-To regenerate only figures, run the second script with the correct baseline annual CSV. `BlogPost03.qmd` embeds existing images and does not execute either script. The original extract version and download date are undocumented, limiting exact replication of the original download.
+To regenerate only figures, run the second script with the correct baseline annual CSV. `BlogPost03.qmd` embeds existing images and does not execute either script. 
 
 ### Post 4 — State Income and Prices
 
@@ -126,11 +122,9 @@ Rscript blog/posts/post4/code/03_analyze_data.R
 Rscript blog/posts/post4/code/04_make_figures.R
 ```
 
-These scripts generate three processed CSVs and three PNGs: two ranking maps and a rank-change chart. Validation requires 50 states and agreement with official real-income rankings. The documented comparison has 44 states changing rank, a median absolute movement of four places, and seven states common to both top-ten groups.
+These scripts generate three processed CSVs and three PNGs: two ranking maps and a rank-change chart. Validation requires 50 states and agreement with official real-income rankings. 
 
 Run `01_get_raw_data.R` only when fresh API acquisition is needed; it requires a personal `BEA_API_KEY`, overwrites the API snapshots, and does not obtain the historical ZIP. New vintages may change results or fail validation. Reusing the saved inputs needs no API key.
-
-**Figure limitation:** The article embeds five analytical PNGs, but script 04 regenerates only three. Retain `01_nominal_pcpi_ranking_2024.png` and `02_rpp_adjusted_pcpi_ranking_2024.png`; their generating code is absent from the documented pipeline. `BlogPost04.qmd` embeds saved images without rerunning the analysis.
 
 ### Post 5 — Living Alone and Rent Burden
 
@@ -142,8 +136,7 @@ From a repository-root R session:
 options(blog5.ipums_stage = "auto")
 for (script in c("01_get_raw_data.R", "02_clean_data.R",
                  "03_analyze_data.R", "04_make_figures.R")) {
-  source(here::here("blog", "posts", "post5", "code", script))
-}
+  source(here::here("blog", "posts", "post5", "code", script))}
 ```
 
 Stage `auto` reuses a complete local raw pair, otherwise resumes a saved task or submits and downloads an extract using a personal `IPUMS_API_KEY`. Preserve `extract_id.txt` to resume an interrupted acquisition; task IDs belong to the account that created them.
@@ -158,7 +151,7 @@ The final analytical outputs are:
 
 Script 03 needs both the raw pair and RDS. Confirm `analysis_completed = PASS` and no `FAIL` entries before using the summary. Script 04 requires both CSVs from a matching completed run and checks the RDS checksum if present. It can regenerate figures without microdata or the RDS; Census boundaries are downloaded only if the geometry ZIP is absent.
 
-Rent burden uses household weights and positive-income adult solo renters; severe burden means annualized gross rent **strictly above 50%** of income. Living-alone prevalence uses person weights and all state residents as its denominator. D.C. is retained separately in reports and excluded from the main 50-state figures. The documented pooled severe-burden rate is 33.1%, with a 95% interval of 32.8%–33.5%.
+Rent burden uses household weights and positive-income adult solo renters; severe burden means annualized gross rent **strictly above 50%** of income. Living-alone prevalence uses person weights and all state residents as its denominator. D.C. is retained separately in reports and excluded from the main 50-state figures. 
 
 **Data access and redistribution:** To comply with IPUMS data-use terms and redistribution restrictions, this repository does not publicly distribute the raw IPUMS microdata or the household-level processed RDS. These files are stored locally and excluded by the documented ignore rules. Public reproduction materials consist of code, aggregate reports, figures, and article assets; they do not replace the microdata required for a full recalculation.
 
@@ -190,11 +183,9 @@ source(here::here("blog", "posts", "post6", "code", "03_multiyear_prepare_data.R
 source(here::here("blog", "posts", "post6", "code", "04_multiyear_analyze_ige.R"))
 ```
 
-The previously observed **full single-year sample** included 1,171 children with IGE **0.3048**. In the **common multiyear-eligible sample** (1,057 children; 728 parent families), the single-year IGE is **0.3109** and the multiyear IGE is **0.3725**. The latter exceeds the former by approximately **0.0615 (19.8% relative to the common-sample single-year estimate)**. This is a difference in income measurement, **not an identified causal life-cycle bias**. Bootstrap significance must come from the locally produced interval and is not inferred from these coefficients alone.
-
 The scripts write matched row-level records to `data/processed/` (**never distribute**), regression and bootstrap summaries locally, and aggregate-only figures to `figures/`. The updated analysis can also produce `figures/ige_public_summary.csv` for the Quarto page; **review PSID dissemination rules before publishing that file, plots, or other derived statistics**. Codebook PDFs are documentation rather than data files; the private inputs must be acquired separately under PSID's terms.
 
-**PSID licensing restriction:** Its [Conditions of Use](https://simba.isr.umich.edu/u/conduse.aspx) restrict redistribution and explicitly prohibit AI/LLM use in conjunction with PSID data. Do not upload microdata or extracts to GitHub, an AI tool, or other third parties. Confirm authorized use of AI-assisted code and release of any aggregate outputs directly with PSID before running or publishing them. A public repository of scripts is not a public distribution license for PSID records.
+**PSID licensing restriction:** Its [Conditions of Use](https://simba.isr.umich.edu/u/conduse.aspx) restrict redistribution and explicitly prohibit AI/LLM use in conjunction with PSID data. Do not upload microdata or extracts to GitHub, an AI tool, or other third parties.
 
 ## Previewing and Rendering the Website
 
@@ -220,15 +211,3 @@ Confirm that the article's figures and cover are present first. A Quarto render 
 ## Data Provenance and Attribution
 
 Saved snapshots, source vintages, and credentials have different roles. Preserve raw data unchanged, retain available extraction metadata, and consult each post README for its full data citation and access instructions. A local file listing does not establish that the file is tracked in Git. Fresh acquisitions and unpinned software may change estimates or output files.
-
-Keep private API keys in a repository-root `.Renviron` excluded from Git. Blog04 uses `BEA_API_KEY`; Blog05 uses `IPUMS_API_KEY`; Blog03's local analysis requires neither. Ignore rules do not remove files already tracked by Git.
-
-Third-party data terms remain separate from any license covering this repository's code or writing. Consult the post READMEs for IPUMS CPS, IPUMS USA, BEA, Census boundary, mapping-package credits, and **PSID (Post 6)**. The analysis code does not grant permission to redistribute IPUMS or PSID microdata. PSID also restricts the use of AI/LLMs with PSID data; confirm authorized use before executing AI-assisted analysis and publishing derived outputs.
-
-For Post 6, ensure the website-root `.gitignore` excludes `blog/posts/post6/data/raw/` and `blog/posts/post6/data/processed/`. Ignore rules do not remove already tracked files: review `git ls-files blog/posts/post6/data` before publishing. Figures and summary CSVs are aggregate-only but still require a PSID disclosure and publication review. See the [Post 6 README](blog/posts/post6/README.md) and the [PSID Conditions of Use](https://simba.isr.umich.edu/u/conduse.aspx).
-
-For Blog04, retain BEA source attribution and the API notice, including in the article near its data credit:
-
-> This product uses the Bureau of Economic Analysis (BEA) Data API but is not endorsed or certified by BEA.
-
-Derived estimates, rankings, maps, and interpretations are the author's calculations. The posts provide descriptive analyses; state-level comparisons do not establish individual-level relationships or causal effects.

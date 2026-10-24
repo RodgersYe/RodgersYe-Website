@@ -60,7 +60,7 @@ GROUP BY p.child_fam68, p.child_pn;
 
 `GROUP BY` creates one record per child; `COUNT` counts eligible years and `AVG` averages real parental earnings. The full pipeline also uses `SUM` to combine parents' earnings and repeats the averaging for children. I retain positive values for the two measures used in each regression and estimate:
 
-\[\log(\text{Child earnings})=\alpha+\beta\log(\text{Parent earnings})+\varepsilon.\]
+$$\log(\text{Child earnings})=\alpha+\beta\log(\text{Parent earnings})+\varepsilon.$$
 
 Here, \(\beta\) is the IGE: an estimate of **0.30** means that 10% higher parental earnings are associated with approximately 3% higher adult-child earnings, not that parental earnings *cause* the increase. Regressions use R's `lm()` and 95% confidence intervals with standard errors clustered by parental family to account for siblings.
 
