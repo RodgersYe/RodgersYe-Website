@@ -60,16 +60,16 @@ Then preview/render `BlogPost06.qmd` in RStudio.
 
 | Location | Meaning |
 |---|---|
-| `data/processed/ige_single_year.csv` |
-| `data/processed/ige_results.csv` |
-| `data/processed/ige_multi_year.csv` |
-| `data/processed/ige_multiyear_results.csv` |
-| `data/processed/ige_multiyear_difference.csv` |
+| `data/processed/ige_single_year.csv` | matched single-year, row-level data |
+| `data/processed/ige_results.csv` | single-year regression summary |
+| `data/processed/ige_multi_year.csv` | matched multiyear, row-level data |
+| `data/processed/ige_multiyear_results.csv` | single vs. multiyear coefficients |
+| `data/processed/ige_multiyear_difference.csv` | paired bootstrap uncertainty |
 | `figures/ige_by_child_age.png` | single-year age profile |
 | `figures/ige_multiyear_only.png` | multiyear age profile |
 | `figures/ige_single_vs_multiyear.png` | common-sample comparison |
 | `figures/ige_public_summary.csv` | only eight aggregate regression rows + bootstrap bounds |
 
-## Citations
+## Terms, GitHub, and citations
 
 PSID does not permit transferring public-use data or custom extracts to third parties; it also explicitly prohibits using AI/LLM programs in conjunction with PSID data.
