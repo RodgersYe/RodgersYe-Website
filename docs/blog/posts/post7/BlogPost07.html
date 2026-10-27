@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-10-26">
 
-<title>Blog 7: How Does Population Growth Drive Real GDP Growth? – Guozhi Ye</title>
+<title>Blog 7: More Population, More Prosperity? – Guozhi Ye</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -74,7 +74,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -109,7 +108,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -153,25 +152,13 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul class="collapse">
-  <li><a href="#why-does-population-matter" id="toc-why-does-population-matter" class="nav-link active" data-scroll-target="#why-does-population-matter">Why Does Population Matter?</a></li>
-  <li><a href="#data-and-an-economic-accounting-framework" id="toc-data-and-an-economic-accounting-framework" class="nav-link" data-scroll-target="#data-and-an-economic-accounting-framework">Data and an Economic Accounting Framework</a></li>
-  <li><a href="#figure-1-how-much-of-gdp-growth-is-comparable-to-population-growth" id="toc-figure-1-how-much-of-gdp-growth-is-comparable-to-population-growth" class="nav-link" data-scroll-target="#figure-1-how-much-of-gdp-growth-is-comparable-to-population-growth">Figure 1: How Much of GDP Growth Is Comparable to Population Growth?</a></li>
-  <li><a href="#figure-2-bigger-population-bigger-economy" id="toc-figure-2-bigger-population-bigger-economy" class="nav-link" data-scroll-target="#figure-2-bigger-population-bigger-economy">Figure 2: Bigger Population, Bigger Economy?</a></li>
-  <li><a href="#what-should-we-take-away" id="toc-what-should-we-take-away" class="nav-link" data-scroll-target="#what-should-we-take-away">What Should We Take Away?</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog 7: How Does Population Growth Drive Real GDP Growth?</h1>
+<h1 class="title">Blog 7: More Population, More Prosperity?</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Econometrics</div>
     <div class="quarto-category">Intergenerational Mobility &amp; IGE</div>
@@ -201,63 +188,97 @@ window.Quarto = {
 
 <p><img src="BlogPost07Cover.png" class="img-fluid" width="500"></p>
 <style>
-.interactive-frame {
+.quarto-title-block .subtitle {color: #556675; font-size: 1.28rem;}
+.lead-paragraph {font-size: 1.12rem; line-height: 1.65;}
+.plot-panel {
+  width: 100%;
+  min-width: 0;
+  max-width: 1440px;
+  margin-inline: auto;
+  border: 1px solid #d9e2e8;
+  border-radius: 9px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 12px rgba(24,43,56,.06);
+}
+.plot-panel iframe {
   display: block;
   width: 100%;
-  border: 1px solid #e4e9ee;
-  border-radius: 8px;
-  background: white;
+  max-width: 100%;
+  min-width: 0;
+  height: 815px;
+  border: 0;
 }
-.figure-caption {
-  color: #5a6573;
-  font-size: 0.88rem;
-  line-height: 1.55;
-  margin-top: 0.5rem;
-  margin-bottom: 1.6rem;
+.fig-note {color: #526473; font-size: .91rem; line-height: 1.55; margin-top: .55rem;}
+@media (max-width: 600px) {
+  .plot-panel iframe {height: 815px;}
 }
 </style>
-<section id="why-does-population-matter" class="level2">
-<h2 class="anchored" data-anchor-id="why-does-population-matter">Why Does Population Matter?</h2>
-<p>More residents can expand a state’s labor force, customer base, and opportunities for specialization. In that sense, population growth can <em>support</em> economic growth. But does a faster-growing population always translate into faster-growing real output? <strong>This post examines how population and real GDP move together across all 50 U.S. states, and why the answer changes over time.</strong></p>
-</section>
-<section id="data-and-an-economic-accounting-framework" class="level2">
-<h2 class="anchored" data-anchor-id="data-and-an-economic-accounting-framework">Data and an Economic Accounting Framework</h2>
-<p>I use annual state population estimates from the <strong>U.S. Census Bureau</strong> and inflation-adjusted state GDP from the <strong>Bureau of Economic Analysis (BEA)</strong>, accessed through <a href="https://fred.stlouisfed.org/">FRED</a>. The dataset includes 50 states from <strong>2000 to 2025</strong>. Because a growth rate requires the previous year’s value, annual growth comparisons begin in <strong>2001</strong>. Real GDP is measured in chained 2017 dollars.</p>
-<p>The key accounting relationship is:</p>
-<p><span class="math display">\[
-\text{Real GDP} = \text{Population}\times\text{Real GDP per capita}.
-\]</span></p>
-<p>For annual percentage growth rates, this implies the useful approximation</p>
-<p><span class="math display">\[
-g_{GDP}\approx g_{Population}+g_{GDP\ per\ capita}.
-\]</span></p>
-</section>
-<section id="figure-1-how-much-of-gdp-growth-is-comparable-to-population-growth" class="level2">
-<h2 class="anchored" data-anchor-id="figure-1-how-much-of-gdp-growth-is-comparable-to-population-growth">Figure 1: How Much of GDP Growth Is Comparable to Population Growth?</h2>
-<p>The first interactive chart reports <strong>population growth rate divided by real GDP growth rate, multiplied by 100</strong>. Drag the year slider to compare states, hover for the underlying growth rates, and switch between <em>Focus</em> and <em>Full range</em> to inspect extreme observations.</p>
-<iframe class="interactive-frame" src="figures/figure_01_population_share_by_state.html" title="Interactive population share of real GDP growth by state, 2001 to 2025" loading="lazy" height="840">
+<section id="when-population-grows-does-prosperity-follow" class="level1 page-columns page-full">
+<h1>When Population Grows, Does Prosperity Follow?</h1>
+<p>Population growth is often seen as a sign of economic strength. More residents mean more workers, more consumers, and potentially more tax revenue. For a state looking to grow its economy, attracting new residents can seem like an obvious path to growth.</p>
+<p>But there is an important distinction between having a more prosperous economy and having a bigger population. A state’s GDP can rise simply because more people live and work there, even if the amount of economic output produced per resident barely changes. In other words, economic growth does not necessarily mean that the average resident is becoming better off.</p>
+<p>This raises a question worth examining: <strong>When states gain population, how much of their economic growth comes from having more people, and how much comes from producing more per person?</strong></p>
+<p>To explore this question, I examine population and real GDP trends across all 50 U.S. states from 2000 to 2025. The results reveal a consistent pattern: population growth is closely associated with the expansion of a state’s overall economy, but it tells us surprisingly little about improvements in economic output per resident.</p>
+<section id="two-ways-an-economy-can-grow" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="two-ways-an-economy-can-grow">Two Ways an Economy Can Grow</h2>
+<p>To understand the relationship, we first need to separate two sources of economic growth.</p>
+<p>The first is population growth. When a state gains residents, its workforce and consumer base can expand, increasing total economic activity. The second is growth in real GDP per capita, which measures how much inflation-adjusted economic output a state produces per resident.</p>
+<p>These two components are connected through a simple relationship:</p>
+<p><span class="math display">\[\text{Real GDP} = \text{Population} \times \text{Real GDP per capita}\]</span></p>
+<p>This means that total GDP can increase because the population is growing, because output per person is rising, or because both are happening at the same time.</p>
+<p>In terms of annual growth rates, the exact relationship is:</p>
+<p><span class="math display">\[g_{GDP}=g_{POP}+g_{PC}+g_{POP}g_{PC}\]</span></p>
+<p>The final term accounts for the interaction between population growth and per-capita GDP growth. Because this term is usually small, the two growth rates can be added together to provide a close approximation of total GDP growth.</p>
+<p>This distinction matters because the two sources of growth tell us different things. Population growth describes an increase in economic scale, while growth in real GDP per capita provides a measure of whether economic output is increasing relative to the number of people who live in the state.</p>
+<p>To see how these forces have evolved, I use annual data for all 50 states between 2000 and 2025, with annual growth rates calculated from 2001 onward.</p>
+<div class="column-screen-inset">
+<div class="plot-panel">
+<iframe src="figures/figure_1_gdp_growth_decomposition_by_state.html" title="Interactive Plotly chart: annual real GDP growth decomposition for 50 U.S. states, 2001 to 2025" loading="eager">
 </iframe>
-<p class="figure-caption">
-<strong>Figure 1.</strong> Population growth as a percentage of real GDP growth, 2001–2025. This is a ratio of growth rates, not a causal contribution. Values can be negative or exceed 100%, particularly when GDP growth is near zero.
-</p>
-<p>Consider <strong>Texas</strong>: in <strong>2023</strong>, its population grew <strong>2.00%</strong> while real GDP rose <strong>9.18%</strong>, giving a ratio of <strong>21.7%</strong>. By <strong>2025</strong>, population growth had slowed to <strong>1.25%</strong> and GDP growth to <strong>2.85%</strong>; the ratio increased to <strong>43.9%</strong>. Thus, a larger ratio does not necessarily mean faster population growth. It can also reflect a slower-growing GDP denominator.</p>
-<p>States can take sharply different paths in the same year. In <strong>2025</strong>, <strong>North Carolina</strong> recorded <strong>1.32%</strong> population growth and <strong>1.83%</strong> real GDP growth (a <strong>72.3%</strong> ratio). <strong>New York</strong> recorded approximately <strong>0.01%</strong> population growth but <strong>2.48%</strong> GDP growth (a <strong>0.2%</strong> ratio). The latter pattern points to the importance of real output per resident, not merely additional residents.</p>
+</div>
+<div class="fig-note">
+<strong>Figure 1.</strong> Decomposition of annual real GDP growth across 50 states, 2001–2025. Choose a year with the slider; hover to read a state’s three rates. The bars show approximate additive contributions; the dot is the actual GDP change. For the clearest view of all 50 states, use a desktop-width browser window.
+</div>
+</div>
 </section>
-<section id="figure-2-bigger-population-bigger-economy" class="level2">
-<h2 class="anchored" data-anchor-id="figure-2-bigger-population-bigger-economy">Figure 2: Bigger Population, Bigger Economy?</h2>
-<p>The second chart shifts from <em>growth rates</em> to <em>levels</em>. Each dot represents a state: its population is on the horizontal axis and its real GDP on the vertical axis. Use the animation to see how the distribution and the fitted line change from <strong>2000 to 2025</strong>; hover to identify specific states.</p>
-<iframe class="interactive-frame" src="figures/figure_02_population_vs_real_gdp_2000_2025.html" title="Interactive state population versus real GDP levels, 2000 to 2025" loading="lazy" height="750">
-</iframe>
-<p class="figure-caption">
-<strong>Figure 2.</strong> Annual state population (millions) versus real GDP (billions of chained 2017 dollars), with a fitted cross-state line. The relationship concerns economic <em>size</em>, not the causal effect of population growth.
-</p>
-<p>Larger states generally produce more, but population alone cannot explain the variation. In <strong>2025</strong>, <strong>Florida</strong> had approximately <strong>23.46 million</strong> residents and <strong>$1.38 trillion</strong> in real GDP, while <strong>New York</strong> had fewer residents (<strong>20.00 million</strong>) but a larger economy (<strong>$1.89 trillion</strong>). Differences in output per resident, industrial structure, and employment patterns matter alongside population size.</p>
+<section id="what-happens-when-we-follow-states-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="what-happens-when-we-follow-states-over-time">What Happens When We Follow States Over Time?</h2>
+<p>Rather than comparing states at just one point in time, the chart allows us to follow the same states through economic expansions, recessions, and recoveries. This makes it easier to see why population growth and overall economic performance do not always move together.</p>
+<p>Consider 2009, when the Great Recession was affecting economies across the country. In that year, <strong>39 states experienced population growth even as their total real GDP declined</strong>. These states were gaining residents, but the decline in economic output per person was large enough to outweigh the contribution of population growth.</p>
+<p>A similar pattern appeared in 2020, when the COVID-19 pandemic disrupted economic activity. <strong>In 37 states, population increased while total real GDP fell.</strong> Once again, having more residents did not prevent the overall economy from contracting.</p>
+<p>The following year tells a very different story. In 2021, real GDP per capita increased in all 50 states as economic activity rebounded. The improvement was broad-based, rather than limited to states experiencing rapid population growth.</p>
+<p>Taken together, these years illustrate why population growth alone cannot explain a state’s economic performance. Population may continue to rise through a downturn, but whether total output expands or contracts depends heavily on what happens to output per resident.</p>
 </section>
-<section id="what-should-we-take-away" class="level2">
-<h2 class="anchored" data-anchor-id="what-should-we-take-away">What Should We Take Away?</h2>
-<p><strong>Population growth is one route to a larger economy, not a guarantee of faster GDP growth or improved prosperity.</strong> The changing ratios in Figure 1 highlight differences between population expansion and real output growth; Figure 2 shows why economic size alone cannot settle the question. Neither chart identifies a causal effect, and GDP per capita is not the same as household income or labor productivity.</p>
+<section id="more-people-more-gdpbut-not-necessarily-more-gdp-per-person" class="level2">
+<h2 class="anchored" data-anchor-id="more-people-more-gdpbut-not-necessarily-more-gdp-per-person">More People, More GDP—but Not Necessarily More GDP per Person</h2>
+<p>Across the 50 states, annualized population growth between 2000 and 2025 has a positive correlation of <strong>0.77</strong> with annualized total real GDP growth. States that gained population more rapidly generally also experienced faster growth in the overall size of their economies. However, the correlation between population growth and real GDP-per-capita growth is <strong>0.08</strong>, indicating almost no linear relationship across states over this period.</p>
+<p>There is a straightforward reason for this contrast. More residents can contribute to a larger total economy even when output per resident changes very little. But adding people does not, by itself, ensure that economic output grows faster than the population.</p>
+<p>The experiences of Nevada and Utah make this difference especially clear.</p>
+<p>Between 2000 and 2025, Nevada’s population grew at an annualized rate of approximately <strong>1.96%</strong>, among the faster rates in the country. Yet its real GDP per capita grew by only <strong>0.47%</strong> per year. The state’s economy expanded substantially in size, but growth in output per resident was relatively modest.</p>
+<p>Utah experienced similarly rapid population growth, averaging <strong>1.84%</strong> per year. Unlike Nevada, however, Utah also recorded strong real GDP-per-capita growth of <strong>1.80%</strong> annually.</p>
+<p>Both states became significantly more populous, but their economic trajectories differed. Utah combined population expansion with much faster growth in output per resident, while Nevada’s overall economic expansion relied more heavily on the addition of people.</p>
+<p>The comparison shows why population growth should not be treated as a substitute for per-capita economic performance. Two states can attract residents at similar rates while experiencing very different outcomes in how much output they produce per person.</p>
+<p>The most recent year in the dataset offers another useful comparison. In 2025, Texas experienced population growth of approximately <strong>1.25%</strong>, alongside real GDP growth of <strong>2.85%</strong>. California, by contrast, had a nearly unchanged population, with a slight decline of <strong>0.02%</strong>, yet its real GDP grew by <strong>3.54%</strong>.</p>
+<p>California’s economy therefore grew faster than Texas’s that year despite having virtually no population growth. The difference reflects stronger growth in output per resident, illustrating that a state does not need rapid population expansion to achieve substantial overall economic growth.</p>
+<p>You can explore this contrast directly in Figure 1 by moving the slider to 2025 and hovering over Texas and California.</p>
+</section>
+<section id="what-can-we-actually-conclude" class="level2">
+<h2 class="anchored" data-anchor-id="what-can-we-actually-conclude">What Can We Actually Conclude?</h2>
+<p>Population growth can make a state’s economy growth. What it cannot guarantee is that the economy will generate more output for each person who lives there.</p>
+<p>That is the central lesson of the past 25 years. During recessions, many states continued gaining residents while their economies contracted. During recoveries, per-capita output rose broadly, including in states without exceptionally strong population growth. And over the full period, states with similar population trends often followed very different paths in real GDP per capita.</p>
+<p>For policymakers, the implication is not that attracting residents is unimportant. Rather, population growth should be understood as one part of a broader economic strategy, not as the ultimate measure of its success.</p>
+<p>A larger population creates opportunities, but turning those opportunities into lasting economic progress depends on factors such as productive investment, workers’ skills, infrastructure, and the ability of businesses to generate greater value.</p>
+<p><strong>The goal, ultimately, should not be simply to build a bigger economy. It should be to build an economy that produces more for the people who live in it.</strong></p>
+<hr>
+<section id="data-and-methodology" class="level3">
+<h3 class="anchored" data-anchor-id="data-and-methodology">Data and Methodology</h3>
+<p>I collected annual population and real GDP data for all 50 U.S. states from 2000 to 2025 using the Federal Reserve Economic Data (FRED) API. Population data originate from the U.S. Census Bureau, while real GDP data come from the Bureau of Economic Analysis (BEA), measured in inflation-adjusted chained 2017 dollars. Using R, we downloaded the datasets, checked their completeness, and verified that each state had observations for all 26 years. We then calculated annual population growth, real GDP growth, and real GDP per capita growth to distinguish economic expansion associated with population increases from growth in output per resident. We also calculated the ratio of population growth to real GDP growth to examine how their relative magnitudes varied across states and years. Finally, we used Plotly in R to create two interactive visualizations, allowing readers to compare population and real GDP across states and explore changes in population’s share of GDP growth over time through year sliders and hover information. These comparisons are descriptive and do not establish a causal effect of population growth on GDP.</p>
+<p>For the specific code and data to reproduce the results, please visit <a href="https://github.com/RodgersYe/RodgersYe_6400_Blog07.git">RodgersYe_6400_Blog07</a></p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -679,5 +700,4 @@ g_{GDP}\approx g_{Population}+g_{GDP\ per\ capita}.
 
 
 
-<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
