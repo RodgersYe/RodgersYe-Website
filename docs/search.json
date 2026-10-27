@@ -4,7 +4,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Blog 6: Does One Year of Income Change the Parent–Child Earnings Link?\n\n\n\n\n\n\n\n\nOct 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog 5: Is Living Alone Easier Where More People Do It?\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog 4: The Price Tag Behind America’s Income Rankings\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 3: How Has the American Workweek Changed?\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 2: What Is the Best Day of the Week for Attending Drexel Events?\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 1: Misconceptions About the P-Value\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\n\n\n\nNo matching items"
+    "text": "Blog 7: How Does Population Growth Drive Real GDP Growth?\n\n\n\n\n\n\n\n\nOct 26, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog 6: Does One Year of Income Change the Parent–Child Earnings Link?\n\n\n\n\n\n\n\n\nOct 23, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog 5: Is Living Alone Easier Where More People Do It?\n\n\n\n\n\n\n\n\nOct 19, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nBlog 4: The Price Tag Behind America’s Income Rankings\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 3: How Has the American Workweek Changed?\n\n\n\n\n\n\n\n\nSep 28, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 2: What Is the Best Day of the Week for Attending Drexel Events?\n\n\n\n\n\n\n\n\nSep 21, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nPost 1: Misconceptions About the P-Value\n\n\n\n\n\n\n\n\nSep 14, 2026\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/posts/post3/BlogPost03.html",
@@ -19,55 +19,6 @@
     "title": "Blog 5: Is Living Alone Easier Where More People Do It?",
     "section": "",
     "text": "North Dakota and Florida tell two different stories about living alone. In 2024, 14.9 percent of North Dakota residents lived by themselves, compared with 11.0 percent in Florida. Yet among adult solo renters with positive income, 20.9 percent in North Dakota faced annualized gross rent above half their income. In Florida, the figure was 42.3 percent. Living alone was more common in North Dakota, but severe rent burden was roughly twice as common in Florida. Why do the two maps of independent living look so different?\nThe question matters when deciding whether a place fits your budget. Calculating rent as a percentage of your income is straightforward; understanding that number takes context. Is your housing budget unusually stretched, or do many solo renters nearby face similar pressure? State comparisons offer a broad benchmark, although they cannot tell you whether a particular apartment is overpriced. A high rent-to-income ratio can reflect expensive housing, limited income, or both. To explore that distinction, I used the 2024 American Community Survey through IPUMS USA, examining 135,366 adult one-person households that pay rent across the 50 states, with Washington, D.C., kept separate.\nThe first answer is that stretched budgets are widespread. Among solo renters with valid positive income, 60.6 percent had annualized gross rent above 30 percent of income, and 33.1 percent were above 50 percent—the severe-burden threshold used here. Figure 1 places those state estimates alongside the national benchmark. Florida and Nevada were both near 42 percent, while South Dakota was at 18.4 percent. For someone weighing the cost of living alone, that spread makes the national average an incomplete guide. The same housing arrangement can come with very different financial demands depending on where you live.\n\nStill, Figure 1 is better read as a comparison than a league table. Its uncertainty bars show that each state’s percentage is an estimate, with some measured less precisely than others. Small gaps between neighboring dots should not become confident claims about which state is more affordable. The chart also leaves out zero- and negative-income households because their rent-to-income ratios cannot be interpreted in the same way. It therefore captures pressure among positive-income renters, rather than the full extent of housing difficulty among everyone renting alone.\n\n\nFigure 2 gives that pressure a location. Florida, Nevada and several western states stand out. Figure 3, showing where residents live alone, draws attention toward North Dakota and parts of the upper Midwest instead. California sharpens the contrast: just 8.6 percent of its residents lived alone, yet 38.7 percent of its positive-income adult solo renters faced severe burden. Across the 50 states, giving each state equal weight, the correlation between living-alone prevalence and severe burden was approximately −0.49. The pattern is a mismatch worth explaining, not evidence that increasing solo living would make housing cheaper.\nPart of the explanation may lie in who appears on each map. A homeowner living alone counts toward Figure 3, but not toward the rental pressure in Figure 2. Figure 3 also covers all ages and compares solo residents with the entire state population. Figure 2 focuses on adult renters with positive income. A high living-alone share therefore does not necessarily mean a high share facing rental costs. Differences in age and homeownership could matter here, although this analysis does not measure their separate effects.\nLooking at rent and income together makes the contrast more concrete. Florida’s median annualized gross rent was $19,116, against $10,128 in North Dakota. Median annual income among renters with valid income was $37,000 in Florida and $40,000 in North Dakota. Florida’s higher rent did not come with a higher median income. These medians summarize separate distributions; the burden calculations use each household’s own rent and income, rather than dividing one statewide median by another.\nAge adds another twist. Solo renters aged 65 and older paid less at the median: $12,000 in annualized gross rent, compared with $16,200 for those aged 18 to 64. Yet their severe-burden rate was higher, at 41.6 percent versus 29.8 percent. Their median annual income was also much lower: $22,800 versus $43,000. A smaller rent bill can still take a larger bite from a smaller income. That does not mean aging causes housing hardship, and income alone misses savings and assets that some older renters can draw on.\nThere are limits to the comparison. Gross rent includes utilities and fuel, and annualizes a current monthly amount; income refers to the previous 12 months before taxes. These are existing tenants’ costs, not today’s advertised rents. State-level figures also hide differences between cities and neighborhoods.\nThe useful next step is to bring the comparison closer to home. Compare apartments within the same local market, including utility costs. Calculate housing costs against dependable income and examine what remains for food, transport and unexpected expenses. If the budget looks tight, consider which adjustment would help most: a different neighborhood, a shared apartment, or a stronger income cushion. The maps provide context for that decision. A place where many people live alone may still demand more of your income than you can comfortably spare.\nData Source: Steven Ruggles, Sarah Flood, Matthew Sobek, Daniel Backman, Grace Cooper, Julia A. Rivera Drew, Stephanie Richards, Renae Rodgers, Jonathan Schroeder, and Kari C.W. Williams. IPUMS USA: Version 16.0 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D010.V16.0\nHere is some additional detailed data; feel free to take a look if you are interested. Also, the analysis code is available in the GitHub Repository."
-  },
-  {
-    "objectID": "blog/posts/post1/BlogPost01.html#takeaway",
-    "href": "blog/posts/post1/BlogPost01.html#takeaway",
-    "title": "Post 1: Misconceptions About the P-Value",
-    "section": "Takeaway",
-    "text": "Takeaway\nA p-value is not “the probability that the null hypothesis is true.” It is “the probability of observing the current result, or a more extreme one, assuming that the null hypothesis is true.”\nThe key to understanding the p-value is not memorizing the number (0.05), but remembering the direction of the conditional probability:\n\\[\nP(\\text{Data}\\mid H_0)\n\\neq\nP(H_0\\mid \\text{Data})\n\\]\nOnce this distinction is clear, the p-value becomes much less mysterious."
-  },
-  {
-    "objectID": "aboutme.html",
-    "href": "aboutme.html",
-    "title": "About Me",
-    "section": "",
-    "text": "I’m Guozhi Ye, a master’s student at the University of Pennsylvania studying Applied Economics and Data Science (AEDS). My academic interests focus on macroeconomic analysis, business analytics, and data-driven decision-making. I enjoy using economic reasoning and quantitative methods to better understand real-world business and economic problems. Alongside my graduate studies, I am developing practical technical skills in R, SQL, and Git to strengthen my ability to work with data, conduct reproducible analysis, and collaborate on analytical projects. Looking ahead, I hope to pursue a career that combines economics, data analysis, and business strategy."
-  },
-  {
-    "objectID": "aboutme.html#education",
-    "href": "aboutme.html#education",
-    "title": "About Me",
-    "section": "Education",
-    "text": "Education\nMaster of Applied Economics and Data Science, University of Pennsylvania (expaceted 2027) Batelor of Science, University Name 2026"
-  },
-  {
-    "objectID": "aboutme.html#interests",
-    "href": "aboutme.html#interests",
-    "title": "About Me",
-    "section": "Interests",
-    "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis"
-  },
-  {
-    "objectID": "resume.html",
-    "href": "resume.html",
-    "title": "Resume",
-    "section": "",
-    "text": "Download my resume here:"
-  },
-  {
-    "objectID": "resume.html#resume-pdf",
-    "href": "resume.html#resume-pdf",
-    "title": "Resume",
-    "section": "Resume PDF",
-    "text": "Resume PDF"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Guozhi Ye",
-    "section": "",
-    "text": "Guozhi Ye\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
   },
   {
     "objectID": "blog/posts/post6/BlogPost06.html#match-parents-and-children-with-sql",
@@ -96,6 +47,90 @@
     "title": "Blog 6: Does One Year of Income Change the Parent–Child Earnings Link?",
     "section": "Takeaway",
     "text": "Takeaway\nIn this matched PSID sample, multi-year earnings produce a higher IGE point estimate, consistent with a clearer measure of long-run earnings. The practical lesson is to match people carefully with SQL, average inflation-adjusted earnings when possible, and treat a single year’s IGE as a potentially noisy snapshot—not a complete measure of economic mobility.\n\nCode Reference and Reproducibility\nThe two code examples above are simplified excerpts from the original analysis scripts. The first example, which demonstrates parent–child matching using SELECT and JOIN in Python’s SQLite environment, is adapted from 03_multiyear_prepare_data.R, lines 175–203. Specifically, lines 175–196 define the SQL matching query, while lines 197–203 show how it is executed through Python’s sqlite3 and pandas. The second example, illustrating GROUP BY, COUNT, and AVG for constructing inflation-adjusted parental earnings, comes from the same file, lines 288–302, particularly the parent_avg operation in lines 294–302. For the single-year parental earnings aggregation using SUM, see 01_singleyear_prepare_data(1).R, lines 182–199. These excerpts omit some data-cleaning steps and sample restrictions for readability. Readers can consult the complete scripts for the full matching procedures, income construction, and reproducible IGE estimates.\n\n\nData Availability and Replication\nAll data used in this analysis are available from the PSID official download page](https://simba.isr.umich.edu/Zips/ZipMain.aspx). Researchers can register for a free account and download the Family Files for every other year from 1999 through 2023 (1999, 2001, …, 2023), along with the Cross-year Individual File (1968–2023) and Parent Identification File (2023)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Guozhi Ye",
+    "section": "",
+    "text": "Guozhi Ye\nUniversity of Pennsylvaina\nWelcome to my personal website.\n\nQuick Links"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "Download my resume here:"
+  },
+  {
+    "objectID": "resume.html#resume-pdf",
+    "href": "resume.html#resume-pdf",
+    "title": "Resume",
+    "section": "Resume PDF",
+    "text": "Resume PDF"
+  },
+  {
+    "objectID": "aboutme.html",
+    "href": "aboutme.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I’m Guozhi Ye, a master’s student at the University of Pennsylvania studying Applied Economics and Data Science (AEDS). My academic interests focus on macroeconomic analysis, business analytics, and data-driven decision-making. I enjoy using economic reasoning and quantitative methods to better understand real-world business and economic problems. Alongside my graduate studies, I am developing practical technical skills in R, SQL, and Git to strengthen my ability to work with data, conduct reproducible analysis, and collaborate on analytical projects. Looking ahead, I hope to pursue a career that combines economics, data analysis, and business strategy."
+  },
+  {
+    "objectID": "aboutme.html#education",
+    "href": "aboutme.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\nMaster of Applied Economics and Data Science, University of Pennsylvania (expaceted 2027) Batelor of Science, University Name 2026"
+  },
+  {
+    "objectID": "aboutme.html#interests",
+    "href": "aboutme.html#interests",
+    "title": "About Me",
+    "section": "Interests",
+    "text": "Interests\n\nEconometrics\nMachine Learning\nData Analysis"
+  },
+  {
+    "objectID": "blog/posts/post1/BlogPost01.html#takeaway",
+    "href": "blog/posts/post1/BlogPost01.html#takeaway",
+    "title": "Post 1: Misconceptions About the P-Value",
+    "section": "Takeaway",
+    "text": "Takeaway\nA p-value is not “the probability that the null hypothesis is true.” It is “the probability of observing the current result, or a more extreme one, assuming that the null hypothesis is true.”\nThe key to understanding the p-value is not memorizing the number (0.05), but remembering the direction of the conditional probability:\n\\[\nP(\\text{Data}\\mid H_0)\n\\neq\nP(H_0\\mid \\text{Data})\n\\]\nOnce this distinction is clear, the p-value becomes much less mysterious."
+  },
+  {
+    "objectID": "blog/posts/post7/BlogPost07.html#why-does-population-matter",
+    "href": "blog/posts/post7/BlogPost07.html#why-does-population-matter",
+    "title": "Blog 7: How Does Population Growth Drive Real GDP Growth?",
+    "section": "Why Does Population Matter?",
+    "text": "Why Does Population Matter?\nMore residents can expand a state’s labor force, customer base, and opportunities for specialization. In that sense, population growth can support economic growth. But does a faster-growing population always translate into faster-growing real output? This post examines how population and real GDP move together across all 50 U.S. states, and why the answer changes over time."
+  },
+  {
+    "objectID": "blog/posts/post7/BlogPost07.html#data-and-an-economic-accounting-framework",
+    "href": "blog/posts/post7/BlogPost07.html#data-and-an-economic-accounting-framework",
+    "title": "Blog 7: How Does Population Growth Drive Real GDP Growth?",
+    "section": "Data and an Economic Accounting Framework",
+    "text": "Data and an Economic Accounting Framework\nI use annual state population estimates from the U.S. Census Bureau and inflation-adjusted state GDP from the Bureau of Economic Analysis (BEA), accessed through FRED. The dataset includes 50 states from 2000 to 2025. Because a growth rate requires the previous year’s value, annual growth comparisons begin in 2001. Real GDP is measured in chained 2017 dollars.\nThe key accounting relationship is:\n\\[\n\\text{Real GDP} = \\text{Population}\\times\\text{Real GDP per capita}.\n\\]\nFor annual percentage growth rates, this implies the useful approximation\n\\[\ng_{GDP}\\approx g_{Population}+g_{GDP\\ per\\ capita}.\n\\]"
+  },
+  {
+    "objectID": "blog/posts/post7/BlogPost07.html#figure-1-how-much-of-gdp-growth-is-comparable-to-population-growth",
+    "href": "blog/posts/post7/BlogPost07.html#figure-1-how-much-of-gdp-growth-is-comparable-to-population-growth",
+    "title": "Blog 7: How Does Population Growth Drive Real GDP Growth?",
+    "section": "Figure 1: How Much of GDP Growth Is Comparable to Population Growth?",
+    "text": "Figure 1: How Much of GDP Growth Is Comparable to Population Growth?\nThe first interactive chart reports population growth rate divided by real GDP growth rate, multiplied by 100. Drag the year slider to compare states, hover for the underlying growth rates, and switch between Focus and Full range to inspect extreme observations.\n\n\n\nFigure 1. Population growth as a percentage of real GDP growth, 2001–2025. This is a ratio of growth rates, not a causal contribution. Values can be negative or exceed 100%, particularly when GDP growth is near zero.\n\nConsider Texas: in 2023, its population grew 2.00% while real GDP rose 9.18%, giving a ratio of 21.7%. By 2025, population growth had slowed to 1.25% and GDP growth to 2.85%; the ratio increased to 43.9%. Thus, a larger ratio does not necessarily mean faster population growth. It can also reflect a slower-growing GDP denominator.\nStates can take sharply different paths in the same year. In 2025, North Carolina recorded 1.32% population growth and 1.83% real GDP growth (a 72.3% ratio). New York recorded approximately 0.01% population growth but 2.48% GDP growth (a 0.2% ratio). The latter pattern points to the importance of real output per resident, not merely additional residents."
+  },
+  {
+    "objectID": "blog/posts/post7/BlogPost07.html#figure-2-bigger-population-bigger-economy",
+    "href": "blog/posts/post7/BlogPost07.html#figure-2-bigger-population-bigger-economy",
+    "title": "Blog 7: How Does Population Growth Drive Real GDP Growth?",
+    "section": "Figure 2: Bigger Population, Bigger Economy?",
+    "text": "Figure 2: Bigger Population, Bigger Economy?\nThe second chart shifts from growth rates to levels. Each dot represents a state: its population is on the horizontal axis and its real GDP on the vertical axis. Use the animation to see how the distribution and the fitted line change from 2000 to 2025; hover to identify specific states.\n\n\n\nFigure 2. Annual state population (millions) versus real GDP (billions of chained 2017 dollars), with a fitted cross-state line. The relationship concerns economic size, not the causal effect of population growth.\n\nLarger states generally produce more, but population alone cannot explain the variation. In 2025, Florida had approximately 23.46 million residents and $1.38 trillion in real GDP, while New York had fewer residents (20.00 million) but a larger economy ($1.89 trillion). Differences in output per resident, industrial structure, and employment patterns matter alongside population size."
+  },
+  {
+    "objectID": "blog/posts/post7/BlogPost07.html#what-should-we-take-away",
+    "href": "blog/posts/post7/BlogPost07.html#what-should-we-take-away",
+    "title": "Blog 7: How Does Population Growth Drive Real GDP Growth?",
+    "section": "What Should We Take Away?",
+    "text": "What Should We Take Away?\nPopulation growth is one route to a larger economy, not a guarantee of faster GDP growth or improved prosperity. The changing ratios in Figure 1 highlight differences between population expansion and real output growth; Figure 2 shows why economic size alone cannot settle the question. Neither chart identifies a causal effect, and GDP per capita is not the same as household income or labor productivity."
   },
   {
     "objectID": "blog/posts/post2/BlogPost02.html#when-should-you-keep-your-schedule-open",
