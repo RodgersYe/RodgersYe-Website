@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-09-14">
 
-<title>Post 1: Misconceptions About the P-Value – Guozhi Ye</title>
+<title>Post 1: The Monty Hall Problem – Guozhi Ye</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -193,10 +158,11 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Post 1: Misconceptions About the P-Value</h1>
+<h1 class="title">Post 1: The Monty Hall Problem</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">STAT</div>
-    <div class="quarto-category">P-Value</div>
+    <div class="quarto-category">Probability &amp; Statistics</div>
+    <div class="quarto-category">Statistical Reasoning</div>
+    <div class="quarto-category">Decision Making</div>
   </div>
   </div>
 
@@ -221,67 +187,107 @@ window.Quarto = {
 
 
 <p><img src="BlogPost01Cover.png" class="img-fluid" width="500"></p>
-<section id="why-is-the-p-value-so-easy-to-misunderstand" class="level1">
-<h1>Why Is the p-value So Easy to Misunderstand?</h1>
-<p>In statistics, the p-value is probably one of the most commonly used—and most commonly misunderstood—concepts. When people first learn about hypothesis testing, it is natural to interpret a p-value as “the probability that the null hypothesis is true.” For example, if a test gives (p=0.03), someone might think, “There is only a 3% chance that the null hypothesis is true.” However, that is not what a p-value means.</p>
-<p>This blog asks a simple question: <strong>What does a p-value actually measure, and why is its true meaning so different from what our intuition suggests?</strong></p>
-<p>Suppose we want to test whether a coin is fair. Our null hypothesis is:</p>
+<section id="should-you-switch-why-the-monty-hall-problem-is-not-a-5050-choice" class="level1">
+<h1>Should You Switch? Why the Monty Hall Problem Is Not a 50–50 Choice</h1>
+<section id="do-two-remaining-options-mean-equal-odds" class="level2">
+<h2 class="anchored" data-anchor-id="do-two-remaining-options-mean-equal-odds">Do Two Remaining Options Mean Equal Odds?</h2>
+<p>When a decision comes down to two options, it is tempting to assume that each has a <span class="math inline">\(50\%\)</span> chance of being correct. But that conclusion overlooks a crucial question: <strong>How did those two options come to be the ones left?</strong> If someone with relevant knowledge deliberately removed an option, the remaining possibilities need not be equally likely.</p>
+<p>The Monty Hall Problem captures this distinction in a simple game. It is worth studying not just because the answer is surprising, but because it illustrates a broader principle of statistical reasoning: <strong>to interpret information correctly, we must understand how it was generated.</strong> Research findings, shortlists of job applicants, and news reports all involve selection processes. Ignoring those processes can distort how we interpret the evidence in front of us.</p>
+<p>Our central questions are straightforward: Why is switching the better strategy in the standard game? And why does the host’s removal of an empty box not reset the odds to <span class="math inline">\(50\)</span>–<span class="math inline">\(50\)</span>?</p>
+</section>
+<section id="the-setup-rules-that-make-the-question-precise" class="level2">
+<h2 class="anchored" data-anchor-id="the-setup-rules-that-make-the-question-precise">The Setup: Rules That Make the Question Precise</h2>
+<p>Imagine three identical boxes, A, B, and C. One contains <span class="math inline">\(\$10{,}000\)</span> and the other two are empty. Each box is equally likely to contain the prize. You initially select A, without opening it.</p>
+<p>The game follows four rules:</p>
+<ol type="1">
+<li>The host knows where the money is.</li>
+<li>The host always opens an <strong>empty box you did not choose</strong>.</li>
+<li>The host always offers you the option to keep your choice or switch to the other unopened box.</li>
+<li>If two empty boxes are available, the host chooses between them at random, with equal probability.</li>
+</ol>
+<p>Suppose the host opens B, revealing that it is empty. You can now stay with A or switch to C. <strong>Which strategy has the higher chance of winning?</strong></p>
+<p>These rules are central, not incidental. In particular, the host’s knowledge and commitment to revealing an empty box determine what we can infer from his action.</p>
+</section>
+<section id="clear-explanation-why-switching-wins-two-thirds-of-the-time" class="level2">
+<h2 class="anchored" data-anchor-id="clear-explanation-why-switching-wins-two-thirds-of-the-time">Clear Explanation: Why Switching Wins Two-Thirds of the Time</h2>
+<p>The simplest proof lists every possible location of the prize. Since A, B, and C are initially equally likely to contain the money, each row below has probability <span class="math inline">\(1/3\)</span>.</p>
+<div id="tbl-cases" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: All possible prize locations and their outcomes under each strategy.
+</figcaption>
+<div aria-describedby="tbl-cases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Prize location</th>
+<th style="text-align: center;">Host opens</th>
+<th style="text-align: center;">Stay with A</th>
+<th style="text-align: center;">Switch</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">B or C</td>
+<td style="text-align: center;">Win</td>
+<td style="text-align: center;">Lose</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">Lose</td>
+<td style="text-align: center;">Win</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">Lose</td>
+<td style="text-align: center;">Win</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The pattern in <a href="#tbl-cases" class="quarto-xref">Table&nbsp;1</a> is decisive. Staying wins only when the initial choice was correct—one of the three cases. Switching wins whenever the initial choice was wrong—two of the three cases. Thus,</p>
 <p><span class="math display">\[
-H_0:p=0.5
+P(\text{win by staying})=P(\text{initial choice correct})=\frac{1}{3},
 \]</span></p>
-<p>In other words, we temporarily assume that the coin is fair. Now suppose we flip the coin 100 times and observe 60 heads.</p>
-<p>Our intuition might lead us to ask: “After seeing this result, what is the probability that the coin is still fair?” However, a traditional p-value does not answer that question. Instead, it asks:</p>
-<blockquote class="blockquote">
-<p><strong>If the coin really is fair, how unusual would it be to observe a result as extreme as 60 heads, or even more extreme?</strong></p>
-</blockquote>
-<p>A p-value can therefore be written as:</p>
 <p><span class="math display">\[
-p\text{-value}
-=
-P(\text{observing the current result or a more extreme result}\mid H_0)
+P(\text{win by switching})=P(\text{initial choice incorrect})=\frac{2}{3}.
 \]</span></p>
-<p>The most important part is the direction of the conditional probability. A p-value calculates:</p>
+<p><strong>Switching works because the host’s rule converts both kinds of initial mistakes into wins.</strong> When your first box is wrong, the host has to open the other empty box, so the only unopened alternative is the winning one.</p>
+</section>
+<section id="why-not-5050-the-information-revealing-process-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-not-5050-the-information-revealing-process-matters">Why Not 50–50? The Information-Revealing Process Matters</h2>
+<p>Before the host opens anything, A has a <span class="math inline">\(1/3\)</span> chance of containing the prize; B and C together account for <span class="math inline">\(2/3\)</span>. The host does not eliminate an option independently of where the prize is. He knowingly reveals an empty box, so his action does not automatically increase the probability assigned to A to <span class="math inline">\(1/2\)</span>.</p>
+<p>We can also verify the result using conditional probability. Let <span class="math inline">\(M\)</span> denote the prize’s location, and let <span class="math inline">\(H_B\)</span> denote the event that the host opens B. Under the stated rules,</p>
 <p><span class="math display">\[
-P(\text{Data}\mid H_0)
+P(H_B\mid M=A)=\frac{1}{2},\qquad
+P(H_B\mid M=B)=0,\qquad
+P(H_B\mid M=C)=1.
 \]</span></p>
-<p>But what many people actually want to know is:</p>
+<p>The case analysis above shows that switching wins in two out of three games. But after we actually see the host open B, we can ask a more precise question: <strong>Given this particular reveal, how should we update the probabilities that A and C contain the prize?</strong> This is where Bayes’ rule becomes useful. It combines our beliefs about the prize’s location before the reveal (the <em>prior probabilities</em>) with how likely the host would be to open B for each possible prize location (the <em>likelihoods</em>). The result is an updated probability after observing B (the <em>posterior probability</em>). Because the host deliberately avoids revealing the prize, opening B is not evidence produced by a random elimination process. Bayes’ rule accounts for that selection mechanism and lets us verify why the two remaining boxes do not have equal chances. By Bayes’ rule,</p>
 <p><span class="math display">\[
-P(H_0\mid \text{Data})
+\begin{aligned}
+P(M=C\mid H_B)
+&amp;=\frac{P(H_B\mid M=C)P(M=C)}{P(H_B)}\\
+&amp;=\frac{1\times\frac13}{\frac12\times\frac13+1\times\frac13}\\
+&amp;=\frac{2}{3}.
+\end{aligned}
 \]</span></p>
-<p>These two probabilities may look very similar, but they are completely different. For example, “the probability that someone has the flu given that they have a fever” is not the same as “the probability that someone has a fever given that they have the flu.”</p>
-<p>We can illustrate this idea using a simple Python simulation. If we assume that the coin is truly fair, we can repeatedly simulate experiments in which the coin is flipped 100 times and then examine how often we observe 60 or more heads, or an equally extreme result in the opposite direction:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>simulations <span class="op">=</span> np.random.binomial(</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    n<span class="op">=</span><span class="dv">100</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    p<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="dv">100000</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>p_value <span class="op">=</span> np.mean(</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    (simulations <span class="op">&gt;=</span> <span class="dv">60</span>) <span class="op">|</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    (simulations <span class="op">&lt;=</span> <span class="dv">40</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p_value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The simulated p-value is approximately <strong>0.057</strong>. This means that if the coin is actually fair, about 5.7% of repeated experiments would produce a result at least as extreme as the one we observed.</p>
-<p>This does <strong>not</strong> mean that there is only a 5.7% chance that the coin is fair. It only tells us that <strong>the observed data are somewhat unusual under the assumption that the coin is fair.</strong></p>
-<p>This is what makes the p-value so counterintuitive. In real life, we usually observe the data first and naturally want to ask, “Given these data, how believable is my hypothesis?” Traditional hypothesis testing works in the opposite direction: it asks us to assume that (H_0) is true and then judge how unusual the observed data would be under that assumption.</p>
-<p>This also explains why (p&lt;0.05) is so often misinterpreted. It does not mean that “we are 95% certain that the research conclusion is correct,” nor does it mean that “there is only a 5% chance that the result occurred by accident.” It means only that <strong>if the null hypothesis were true, the probability of observing the current result or something more extreme would be less than 5%.</strong></p>
-<p>A small p-value can therefore be understood as the data sending us a warning: “If the null hypothesis is really true, this result looks a little strange.” But deciding how strongly we should doubt the null hypothesis also requires us to consider sample size, effect size, research design, and other evidence. We should not rely on the 0.05 threshold alone.</p>
-<section id="takeaway" class="level2">
-<h2 class="anchored" data-anchor-id="takeaway">Takeaway</h2>
-<p><strong>A p-value is not “the probability that the null hypothesis is true.” It is “the probability of observing the current result, or a more extreme one, assuming that the null hypothesis is true.”</strong></p>
-<p>The key to understanding the p-value is not memorizing the number (0.05), but remembering the direction of the conditional probability:</p>
-<p><span class="math display">\[
-P(\text{Data}\mid H_0)
-\neq
-P(H_0\mid \text{Data})
-\]</span></p>
-<p>Once this distinction is clear, the p-value becomes much less mysterious.</p>
-<hr>
+<p>So even after learning specifically that the host opened B, C still has a <span class="math inline">\(2/3\)</span> chance of containing the prize.</p>
+<p><strong>Change the rules, and the answer may change.</strong> Suppose the host does not know where the money is and simply opens one of the two unchosen boxes at random. He might reveal the prize. If we restrict attention to cases where he <em>happens</em> to reveal an empty box, the two unopened boxes instead have equal conditional probabilities of <span class="math inline">\(1/2\)</span> each.</p>
+<p>Both games may leave two unopened boxes, but they produce different probabilities. What matters is not merely how many options remain; it is <strong>the process that removed the others</strong>.</p>
+</section>
+<section id="interpretation-and-takeaway-what-does-this-problem-teach-us" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-and-takeaway-what-does-this-problem-teach-us">Interpretation and Takeaway: What Does This Problem Teach Us?</h2>
+<p>The mathematical answer is unambiguous: <strong>under the standard rules, staying wins with probability <span class="math inline">\(1/3\)</span>, while switching wins with probability <span class="math inline">\(2/3\)</span>. Switching is therefore the better strategy.</strong> But the deeper lesson concerns how we reason about information.</p>
+<p>First, <strong>the number of options does not determine their probabilities</strong>. Two alternatives are not automatically equally likely. Equal odds require a reason to regard the remaining alternatives as symmetric.</p>
+<p>Second, <strong>how information is selected matters as much as what it reveals</strong>. Here, the host knows the answer and must remove an empty box. Outside the game, research samples, candidate shortlists, and reported facts may also be shaped by selection rules. We should ask what was excluded, by whom, and on what basis.</p>
+<p>Third, <strong>good decisions depend on evidence and assumptions, not just first impressions</strong>. Switching is optimal in this particular game; it does not follow that changing your mind is always optimal in real life. The transferable skill is to identify the mechanism behind new information and revise judgments accordingly.</p>
+<p><strong>The central takeaway is this: when options have been deliberately filtered, we cannot infer equal chances merely from the number that remain. To reason correctly about probability, we must understand how the information was produced.</strong></p>
 
 
 </section>
