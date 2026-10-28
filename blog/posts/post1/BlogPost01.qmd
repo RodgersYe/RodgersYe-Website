@@ -7,7 +7,7 @@ categories:
   - Decision Making
 ---
 
-![](BlogPost01Cover.png){width="500px"}
+![](BlogPost01CoverNew.png){width="500px"}
 
 # Should You Switch? Why the Monty Hall Problem Is Not a 50–50 Choice
 
