@@ -63,8 +63,6 @@ For **Blogs 02–11**, follow the matching research-repository link in the table
 3. Obtain any data that are **not publicly redistributable** from the original provider, following the provider's access requirements and terms of use. A public research repository does not necessarily include restricted raw microdata.
 4. Run the analysis in the research repository as documented, then compare the generated results with the figures and discussion on the website.
 
-**Blog 01** has no separate research repository because it does not require a standalone data-processing pipeline.
-
 Rendering an existing Quarto article is **not the same as** recreating the underlying research. The website repository primarily contains presentation-ready content and assets; analytical workflows belong to the corresponding research repositories.
 
 ## Previewing and Rendering the Website
