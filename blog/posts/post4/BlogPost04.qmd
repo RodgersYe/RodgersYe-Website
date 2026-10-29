@@ -43,9 +43,9 @@ becomes more prominent. Wyoming moves to first, while South Dakota, Nebraska,
 and North Dakota enter the top ten. South Dakota stands out because it began 
 outside that group.
 
-![](figures/01_nominal_pcpi_map_2024.png){width="95%"}
+![](01_nominal_pcpi_map_2024.png){width="95%"}
 
-![](figures/02_rpp_adjusted_pcpi_map_2024.png){width="95%"}
+![](02_rpp_adjusted_pcpi_map_2024.png){width="95%"}
 
 The other half of the maps matters just as much. California slips from fourth 
 to 12th, and Hawaii becomes much lighter. Yet Connecticut and Massachusetts 
@@ -66,7 +66,7 @@ Louisiana climbs 13. At the other end, Hawaii falls 26 places, Oregon 15, and
 Florida 13. Six states do not move at all. Hawaii’s long line draws the eye, 
 but it does not represent the many shorter lines around it.
 
-![](figures/03_rank_changes_2024.png){width="95%"}
+![](03_rank_changes_2024.png){width="95%"}
 
 There is another trap in reading this figure: 
 **a change in rank is not the size of an income difference**. Iowa climbs 17 
@@ -97,6 +97,6 @@ Here is some additional detailed data; feel free to take a look if you are
 interested. Also, the analysis code is available in the
 [GitHub Repository](https://github.com/RodgersYe/RodgersYe-Website).
 
-![](figures/01_nominal_pcpi_ranking_2024.png){width="95%"}
+![](01_nominal_pcpi_ranking_2024.png){width="95%"}
 
-![](figures/02_rpp_adjusted_pcpi_ranking_2024.png){width="95%"}
+![](02_rpp_adjusted_pcpi_ranking_2024.png){width="95%"}

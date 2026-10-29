@@ -31,7 +31,7 @@ To compare weekdays fairly, I divided each weekday's cleaned event count by the 
 
 ## Wednesday wins on volume—but Tuesday is close
 
-![](figures/events_by_weekday_V2.png){width=95%}
+![](events_by_weekday_V2.png){width=95%}
 
 **Wednesday ranks first**, with **782 listings**, or **15.04 per Wednesday**. **Tuesday follows** with **746 listings**, or **14.35 per Tuesday**; **Thursday** is third with **694 listings**, or **13.09 per Thursday**. Together, these three midweek days account for **2,222 of 3,843 listings (57.8%)**.
 
@@ -49,7 +49,7 @@ These title patterns suggest a more useful interpretation than simply “midweek
 
 ## Does the midweek pattern survive closer scrutiny?
 
-![](figures/weekday_robustness_check_V2.png){width=95%}
+![](weekday_robustness_check_V2.png){width=95%}
 
 Two potential distortions deserve attention. First, future events might not yet have been published when the data were collected. Second, long-running activities could inflate counts. I therefore compared the full sample with two alternatives.
 

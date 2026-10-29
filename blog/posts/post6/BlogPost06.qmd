@@ -68,7 +68,7 @@ Here, \(\beta\) is the IGE: an estimate of **0.30** means that 10% higher parent
 
 To ensure a fair comparison, both models use the **same 1,057 adult children** from **728 parental families**, aged **35–49 in 2023**.
 
-![](figures/ige_single_vs_multiyear.png){width="95%"}
+![](ige_single_vs_multiyear.png){width="95%"}
 
 *Note: Points show IGE estimates; error bars show 95% confidence intervals clustered by parental family.*
 

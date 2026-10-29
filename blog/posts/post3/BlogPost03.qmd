@@ -30,7 +30,7 @@ Comparing age groups can reveal changes hidden within national averages.
 Separating main-job hours from other-job hours adds another question: 
 **How did actual weekly working hours change across age groups between 2000 and 2024, and where did those changes occur?**
 
-![](figures/fig1_total_hours_by_age.png){width="95%"}
+![](fig1_total_hours_by_age.png){width="95%"}
 
 Workers aged 25–64 occupy a relatively stable corridor in Figure 1, generally 
 averaging around 39–42 hours. The youngest and oldest groups sit below that 
@@ -52,7 +52,7 @@ usual or contracted hours. Consequently, the older group’s increase describes
 people who were working; it does not establish that older Americans generally 
 worked more or became more likely to hold jobs.
 
-![](figures/fig2_main_job_hours_by_age.png){width="95%"}
+![](fig2_main_job_hours_by_age.png){width="95%"}
 
 Separating the working week reveals where most of the movement occurred. 
 Figure 2 closely resembles Figure 1: older workers’ main-job hours increased, 
@@ -62,7 +62,7 @@ movements are directly comparable. The age divergence therefore appears
 primarily in the main job, directing attention toward changes in principal 
 work arrangements.
 
-![](figures/fig3_other_job_hours_by_age.png){width="95%"}
+![](fig3_other_job_hours_by_age.png){width="95%"}
 
 Other jobs operate on a much smaller scale. In 2024, their contribution 
 averaged approximately 0.6–0.85 hours per week across age groups, with workers 
@@ -72,8 +72,8 @@ contribute zeros, spreading additional hours across the entire retained sample.
 This average reflects both how common multiple jobs are and how many additional 
 hours their holders work.
 
-![](figures/fig4_main_job_share_by_age.png){width="95%"}
-![](figures/fig5_other_job_share_by_age.png){width="95%"}
+![](fig4_main_job_share_by_age.png){width="95%"}
+![](fig5_other_job_share_by_age.png){width="95%"}
 
 
 The shares reinforce this interpretation: main jobs consistently account for 

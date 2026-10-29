@@ -15,13 +15,13 @@ The question matters when deciding whether a place fits your budget. Calculating
 
 The first answer is that stretched budgets are widespread. Among solo renters with valid positive income, 60.6 percent had annualized gross rent above 30 percent of income, and 33.1 percent were above 50 percent—the severe-burden threshold used here. Figure 1 places those state estimates alongside the national benchmark. Florida and Nevada were both near 42 percent, while South Dakota was at 18.4 percent. For someone weighing the cost of living alone, that spread makes the national average an incomplete guide. The same housing arrangement can come with very different financial demands depending on where you live.
 
-![](figures/fig01_severe_burden_intervals.png){width="95%"}
+![](fig01_severe_burden_intervals.png){width="95%"}
 
 Still, Figure 1 is better read as a comparison than a league table. Its uncertainty bars show that each state's percentage is an estimate, with some measured less precisely than others. Small gaps between neighboring dots should not become confident claims about which state is more affordable. The chart also leaves out zero- and negative-income households because their rent-to-income ratios cannot be interpreted in the same way. It therefore captures pressure among positive-income renters, rather than the full extent of housing difficulty among everyone renting alone.
 
-![](figures/fig02_severe_rent_burden_map.png){width="95%"}
+![](fig02_severe_rent_burden_map.png){width="95%"}
 
-![](figures/fig03_living_alone_population_share_map.png){width="95%"}
+![](fig03_living_alone_population_share_map.png){width="95%"}
 
 Figure 2 gives that pressure a location. Florida, Nevada and several western states stand out. Figure 3, showing where residents live alone, draws attention toward North Dakota and parts of the upper Midwest instead. California sharpens the contrast: just 8.6 percent of its residents lived alone, yet 38.7 percent of its positive-income adult solo renters faced severe burden. Across the 50 states, giving each state equal weight, the correlation between living-alone prevalence and severe burden was approximately −0.49. The pattern is a mismatch worth explaining, not evidence that increasing solo living would make housing cheaper.
 

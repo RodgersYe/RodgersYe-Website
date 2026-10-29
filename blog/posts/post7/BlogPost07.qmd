@@ -71,7 +71,7 @@ To see how these forces have evolved, I use annual data for all 50 states betwee
 
 ::: {.column-screen-inset}
 <div class="plot-panel">
-<iframe src="figures/figure_1_gdp_growth_decomposition_by_state.html" title="Interactive Plotly chart: annual real GDP growth decomposition for 50 U.S. states, 2001 to 2025" loading="eager"></iframe>
+<iframe src="figure_1_gdp_growth_decomposition_by_state.html" title="Interactive Plotly chart: annual real GDP growth decomposition for 50 U.S. states, 2001 to 2025" loading="eager"></iframe>
 </div>
 
 <div class="fig-note"><strong>Figure 1.</strong> Decomposition of annual real GDP growth across 50 states, 2001–2025. Choose a year with the slider; hover to read a state's three rates. The bars show approximate additive contributions; the dot is the actual GDP change. For the clearest view of all 50 states, use a desktop-width browser window.</div>
