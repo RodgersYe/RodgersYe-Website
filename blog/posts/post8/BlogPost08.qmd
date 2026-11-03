@@ -7,7 +7,7 @@ categories:
   - Hypothesis Testing
 ---
 
-![](BlogPost08Cover.png){width="500px"}
+![](BlogPost08CoverNew.png){width="500px"}
 
 # A Simulation Guide to Confidence Intervals and p-Values
 
