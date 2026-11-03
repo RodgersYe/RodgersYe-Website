@@ -1,13 +1,12 @@
 ---
 title: "Post 8: How Much Can We Trust a Sample?"
 date: 2026-November-02
+image: "BlogPost08CoverNew.png"
 categories:
   - Statistical Inference
   - Bootstrap & Confidence Intervals
   - Hypothesis Testing
 ---
-
-![](BlogPost08CoverNew.png){width="500px"}
 
 # A Simulation Guide to Confidence Intervals and p-Values
 
