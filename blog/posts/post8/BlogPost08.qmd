@@ -19,7 +19,7 @@ I generated 100 synthetic monthly earnings from a normal population with mean \$
 
 The **bootstrap** approximates that sampling uncertainty without collecting new observations. I repeatedly drew 100 values **with replacement from the same original sample**, calculated each resample's mean, and plotted 10,000 such means. The resulting distribution is centered near the observed sample mean, not automatically at the true population mean.
 
-![](exp1_original_sample_histogram.png){idth="95%"}
+![](exp1_original_sample_histogram.png){width="95%"}
 
 ![](exp1_bootstrap_comparison.png){width="95%"}
 

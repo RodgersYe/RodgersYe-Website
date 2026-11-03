@@ -165,7 +165,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="experiment-1-making-uncertainty-visible-with-the-bootstrap">Experiment 1: Making uncertainty visible with the bootstrap</h2>
 <p>I generated 100 synthetic monthly earnings from a normal population with mean $5,000 and standard deviation $1,000. The sample mean was <strong>$5,034.63</strong>, but another random sample would produce a different estimate.</p>
 <p>The <strong>bootstrap</strong> approximates that sampling uncertainty without collecting new observations. I repeatedly drew 100 values <strong>with replacement from the same original sample</strong>, calculated each resample’s mean, and plotted 10,000 such means. The resulting distribution is centered near the observed sample mean, not automatically at the true population mean.</p>
-<p><img src="exp1_original_sample_histogram.png" class="img-fluid" data-idth="95%"></p>
+<p><img src="exp1_original_sample_histogram.png" class="img-fluid" style="width:95.0%"></p>
 <p><img src="exp1_bootstrap_comparison.png" class="img-fluid" style="width:95.0%"></p>
 <p>I also compared 100, 1,000, and 10,000 bootstrap resamples. Their intervals were [$4,854.25, $5,196.24], [$4,850.85, $5,224.09], and [$4,844.01, $5,231.21]. The changing endpoints show <strong>Monte Carlo variability</strong>: more resamples make the percentile estimates steadier, but do not create new information about the population or guarantee a narrower interval.</p>
 </section>
