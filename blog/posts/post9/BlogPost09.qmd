@@ -1,5 +1,5 @@
 ---
-title: "More Trees, Better Investments?"
+title: "Post 9: More Trees, Better Investments?"
 date: 2026-November-16 
 image: "BlogPost09Cover.png"
 categories: 
