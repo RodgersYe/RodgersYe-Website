@@ -49,8 +49,8 @@ The `blog/posts/postX/` folders hold the corresponding Quarto article (`.qmd`) a
 | 05 | **Is Living Alone Easier Where More People Do It?** — living alone and rent burden | [BlogPost05.qmd](blog/posts/post5/BlogPost05.qmd) | [Blog 05 research repository](https://github.com/RodgersYe/RodgersYe_6400_Blog05) |
 | 06 | **Matching Parents and Children with SQL in Python** — intergenerational income elasticity using PSID | [BlogPost06.qmd](blog/posts/post6/BlogPost06.qmd) | [Blog 06 research repository](https://github.com/RodgersYe/RodgersYe_6400_Blog06) |
 | 07 | **More Population, More Prosperity?** — state population and real GDP growth | [BlogPost07.qmd](blog/posts/post7/BlogPost07.qmd) | [Blog 07 research repository](https://github.com/RodgersYe/RodgersYe_6400_Blog07) |
-| 08 | **How Much Can We Trust a Sample?** - A Simulation Guide to Confidence Intervals and p-Values | [BlogPost08.qmd](https://rodgersye.github.io/RodgersYe-Website/blog/posts/post8/BlogPost08) | [Blog 08 research repository](https://github.com/RodgersYe/RodgersYe_6400_Blog08.git) |
-| 09 | **More Trees, Better Investments?** - Prediction accuracy and investment performance with XGBoost |  [BlogPost09.qmd](https://rodgersye.github.io/RodgersYe-Website/blog/posts/post8/BlogPost09)  | [Blog 09 research repository](https://github.com/RodgersYe/RodgersYe_6400_Blog09.git)  |
+| 08 | **How Much Can We Trust a Sample?** - A Simulation Guide to Confidence Intervals and p-Values | [BlogPost08.qmd](blog/posts/post8/BlogPost08.qmd) | [Blog 08 research repository](https://github.com/RodgersYe/RodgersYe_6400_Blog08.git) |
+| 09 | **More Trees, Better Investments?** - Prediction accuracy and investment performance with XGBoost |  [BlogPost09.qmd](blog/posts/post9/BlogPost09.qmd)  | [Blog 09 research repository](https://github.com/RodgersYe/RodgersYe_6400_Blog09.git)  |
 | 10 | **To be announced** | Not yet available | Repository link to be added |
 | 11 | **To be announced** | Not yet available | Repository link to be added |
 
