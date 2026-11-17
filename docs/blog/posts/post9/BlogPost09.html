@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-11-16">
+
+<title>More Trees, Better Investments? – Guozhi Ye</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-9d96f532d65220ca877c0304385df42f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Guozhi Ye</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../aboutme.html"> 
+<span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../resume.html"> 
+<span class="menu-text">Resume</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">More Trees, Better Investments?</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Finance</div>
+    <div class="quarto-category">XGBoost</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 16, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="prediction-accuracy-and-investment-performance-with-xgboost" class="level1">
+<h1>Prediction accuracy and investment performance with XGBoost</h1>
+<section id="more-accurate-predictions-lower-investment-returns" class="level2">
+<h2 class="anchored" data-anchor-id="more-accurate-predictions-lower-investment-returns">More accurate predictions, lower investment returns?</h2>
+<p>If you could choose only one model, would you choose the one with the lowest prediction error or the highest historical investment return?</p>
+<p>In this stock-return experiment, an XGBoost model with ten trees delivered the most accurate predictions among the six models, yet earned the lowest portfolio return. A 500-tree model had greater prediction error but the highest cumulative net return, at 92.74%. After accounting for return volatility, however, its Sharpe ratio remained slightly below that of buying and holding SPY.</p>
+<p>These results prompted me to revisit the classroom stock-prediction experiment. <strong>Does changing the number of trees improve prediction or investment performance, and can it improve both?</strong></p>
+</section>
+<section id="from-the-classroom-model-to-a-single-parameter-experiment" class="level2">
+<h2 class="anchored" data-anchor-id="from-the-classroom-model-to-a-single-parameter-experiment">From the classroom model to a single-parameter experiment</h2>
+<p>The classroom experiment used XGBoost to turn price, volume, momentum, volatility, and market-relative features into return forecasts, then selected highly ranked stocks for a portfolio. XGBoost adds decision trees sequentially to reduce training loss.</p>
+<p>I used the classroom setting of 300 trees as the reference and compared it with 10, 100, 200, 500, and 1,000 trees. All six models used identical training data, 14 predictors, and other parameters. Changing only tree count allowed me to examine how model complexity affected the results.</p>
+<p>Data came from Yahoo Finance through tidyquant, covering the 95 stocks in the fixed classroom universe and SPY over the requested January 2022–October 2026 window. After constructing features and screening the training boundary, the common sample contained 33,725 observations, with all training labels realized before 2024. Every model shared corrections to the original procedure’s cross-boundary label leakage and weight normalization.</p>
+</section>
+<section id="turning-predictions-into-investments" class="level2">
+<h2 class="anchored" data-anchor-id="turning-predictions-into-investments">Turning predictions into investments</h2>
+<p>Each model was fitted once and subsequently generated forecasts using information available at each signal day’s close. The portfolio entered at the next trading day’s close and exited at the twentieth trading day’s close after the signal, spanning <strong>19 trading-day intervals</strong>. On each exit date, it bought the next portfolio using a new signal formed the preceding trading day.</p>
+<p>Each cycle selected the ten highest return forecasts. Positive forecasts were normalized into portfolio weights, while nonpositive forecasts received zero weight. If all ten forecasts were nonpositive, the strategy used equal weights, although this fallback never occurred in the backtest. Adjusted closing prices approximated total returns, and every purchase and sale incurred a 0.1% fee.</p>
+<p>Actual trading ran from January 2, 2024, through October 30, 2026. Forecast evaluation used <strong>37 complete cycles × 95 stocks, or 3,515 observations</strong>. The final cycle, containing only seven trading-day intervals, still entered investment returns and ended with full liquidation. Stocks share market shocks, so these observations are correlated.</p>
+</section>
+<section id="more-trees-fit-better-but-predict-worse" class="level2">
+<h2 class="anchored" data-anchor-id="more-trees-fit-better-but-predict-worse">More trees fit better but predict worse</h2>
+<p><img src="01_prediction_rmse.png" class="img-fluid" style="width:95.0%"></p>
+<p>As tree count increased from ten to 1,000, training RMSE fell from 8.23% to 4.91%, while out-of-sample RMSE rose from 9.20% to 9.97%. The model fitted known observations increasingly well while becoming less accurate at forecasting subsequent returns. This divergence is consistent with overfitting.</p>
+<div id="tbl-prediction" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-prediction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Out-of-sample predictive performance.
+</figcaption>
+<div aria-describedby="tbl-prediction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th style="text-align: right;">RMSE</th>
+<th style="text-align: right;">Direction accuracy</th>
+<th style="text-align: right;">Mean rank correlation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Historical mean</td>
+<td style="text-align: right;">9.18%</td>
+<td style="text-align: right;">56.36%</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="even">
+<td>10 trees</td>
+<td style="text-align: right;">9.20%</td>
+<td style="text-align: right;">55.59%</td>
+<td style="text-align: right;">0.0178</td>
+</tr>
+<tr class="odd">
+<td>100 trees</td>
+<td style="text-align: right;">9.40%</td>
+<td style="text-align: right;">52.72%</td>
+<td style="text-align: right;">0.0189</td>
+</tr>
+<tr class="even">
+<td>200 trees</td>
+<td style="text-align: right;">9.56%</td>
+<td style="text-align: right;">51.66%</td>
+<td style="text-align: right;">0.0211</td>
+</tr>
+<tr class="odd">
+<td>300 trees</td>
+<td style="text-align: right;">9.66%</td>
+<td style="text-align: right;">52.75%</td>
+<td style="text-align: right;">0.0172</td>
+</tr>
+<tr class="even">
+<td>500 trees</td>
+<td style="text-align: right;">9.80%</td>
+<td style="text-align: right;">52.63%</td>
+<td style="text-align: right;">0.0227</td>
+</tr>
+<tr class="odd">
+<td>1,000 trees</td>
+<td style="text-align: right;">9.97%</td>
+<td style="text-align: right;">52.52%</td>
+<td style="text-align: right;">0.0218</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>RMSE measures numerical return-prediction error, with lower values indicating better accuracy. Direction accuracy measures whether predicted and realized returns are both positive or both nonpositive. Mean rank correlation averages the within-cycle Spearman correlations between predicted and realized returns.</p>
+<p>Reducing the classroom model to ten trees improved out-of-sample RMSE by approximately <strong>0.46 percentage points</strong>. For numerical prediction, reducing complexity was an effective improvement attempt.</p>
+<p>However, the simplest historical-mean benchmark retained a slight advantage. It forecast approximately 1.34% for every stock in every cycle and achieved an RMSE of 9.18%, approximately 0.03 percentage points below the ten-tree model. This small difference has not been tested for significance. Because the benchmark always predicted a positive return, its 56.36% direction accuracy equaled the share of positive realized returns in the test sample. Direction accuracy above 50% therefore need not indicate that a model provides more information than a simple rule.</p>
+</section>
+<section id="the-most-accurate-model-earned-the-lowest-portfolio-return" class="level2">
+<h2 class="anchored" data-anchor-id="the-most-accurate-model-earned-the-lowest-portfolio-return">The most accurate model earned the lowest portfolio return</h2>
+<p><img src="02_net_wealth.png" class="img-fluid" style="width:95.0%"></p>
+<p>Investment returns did not change monotonically with tree count. Ten trees produced the lowest model prediction error and the lowest model portfolio return, at 72.02%. Five hundred trees had higher RMSE than the classroom reference but earned a cumulative net return of 92.74%, approximately <strong>5.7 percentage points</strong> more.</p>
+<p>The evaluation criteria emphasize different outcomes. RMSE measures numerical errors across all 95 stocks, while portfolio returns depend on the smaller set receiving capital and their weights. Reducing errors for many unselected stocks can improve RMSE without improving the actual investment. Forecast changes also affect capital allocation among selected stocks, further influencing portfolio returns.</p>
+<p>Although 500 trees had the highest mean rank correlation, its value of 0.0227 was still close to zero. That statistic is insufficient to establish that the highest return came from a stable stock-selection advantage. Individual stock outcomes, weights, and market paths could all affect the results.</p>
+<p>Cycle-level performance further qualifies the interpretation that 500 trees performed better. It exceeded the 300-tree strategy in only <strong>18 of 38 cycles</strong>. Their selected lists overlapped by <strong>8.68 stocks</strong> on average, yet their final wealth differed. The cumulative advantage depended on the magnitudes of cycle gains and losses and their compounding, and could also reflect a few selection changes and different weights.</p>
+</section>
+<section id="did-higher-returns-justify-the-additional-risk" class="level2">
+<h2 class="anchored" data-anchor-id="did-higher-returns-justify-the-additional-risk">Did higher returns justify the additional risk?</h2>
+<div id="tbl-investment" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-investment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Returns and risk after transaction fees.
+</figcaption>
+<div aria-describedby="tbl-investment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Strategy</th>
+<th style="text-align: right;">Cumulative net return</th>
+<th style="text-align: right;">Annualized volatility</th>
+<th style="text-align: right;">Maximum drawdown</th>
+<th style="text-align: right;">Sharpe ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10 trees</td>
+<td style="text-align: right;">72.02%</td>
+<td style="text-align: right;">21.99%</td>
+<td style="text-align: right;">16.24%</td>
+<td style="text-align: right;">0.98</td>
+</tr>
+<tr class="even">
+<td>100 trees</td>
+<td style="text-align: right;">82.98%</td>
+<td style="text-align: right;">22.01%</td>
+<td style="text-align: right;">18.04%</td>
+<td style="text-align: right;">1.08</td>
+</tr>
+<tr class="odd">
+<td>200 trees</td>
+<td style="text-align: right;">79.74%</td>
+<td style="text-align: right;">21.64%</td>
+<td style="text-align: right;">19.31%</td>
+<td style="text-align: right;">1.07</td>
+</tr>
+<tr class="even">
+<td>300 trees</td>
+<td style="text-align: right;">87.02%</td>
+<td style="text-align: right;">21.35%</td>
+<td style="text-align: right;">18.35%</td>
+<td style="text-align: right;">1.15</td>
+</tr>
+<tr class="odd">
+<td>500 trees</td>
+<td style="text-align: right;">92.74%</td>
+<td style="text-align: right;">21.01%</td>
+<td style="text-align: right;">17.55%</td>
+<td style="text-align: right;">1.21</td>
+</tr>
+<tr class="even">
+<td>1,000 trees</td>
+<td style="text-align: right;">88.13%</td>
+<td style="text-align: right;">20.72%</td>
+<td style="text-align: right;">20.70%</td>
+<td style="text-align: right;">1.18</td>
+</tr>
+<tr class="odd">
+<td>SPY buy-and-hold</td>
+<td style="text-align: right;">64.79%</td>
+<td style="text-align: right;">15.44%</td>
+<td style="text-align: right;">18.76%</td>
+<td style="text-align: right;">1.22</td>
+</tr>
+<tr class="even">
+<td>SPY rebalanced</td>
+<td style="text-align: right;">53.04%</td>
+<td style="text-align: right;">15.46%</td>
+<td style="text-align: right;">19.08%</td>
+<td style="text-align: right;">1.05</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Maximum drawdown is the largest decline from a previous wealth peak, reported as a positive loss magnitude. Sharpe ratios use daily returns after fees and assume a zero risk-free rate.</p>
+<p>The Sharpe ratio measures excess return per unit of return volatility. It helps assess whether higher returns compensate for additional risk and allows comparisons of risk-adjusted performance across strategies. Under this study’s zero-risk-free-rate assumption, the annualized calculation is mean daily net return divided by its standard deviation, multiplied by √252.</p>
+<p>Compared with 300 trees, 500 trees delivered higher returns, lower volatility and maximum drawdown, and a higher Sharpe ratio, rising from 1.15 to 1.21. Its improvement relative to the classroom reference therefore appeared across several investment measures.</p>
+<p>The comparison with SPY buy-and-hold was different. The 500-tree strategy’s annualized volatility was 21.01%, substantially above SPY’s 15.44%. Although it earned more, its Sharpe ratio was slightly lower, at 1.21 versus 1.22. This small difference has not been tested for statistical significance, and using an observed risk-free-rate series could change the result. The evidence supports higher historical cumulative returns, while providing insufficient grounds to conclude that risk-adjusted performance was superior.</p>
+<p>Increasing tree count to 1,000 did not continue to improve overall investment performance. Cumulative net return was lower than with 500 trees, while maximum drawdown widened to 20.70%. Additional model complexity produced no consistent improvement in the risk–return trade-off.</p>
+<p>Trading costs were also economically meaningful. Repeatedly liquidating and repurchasing SPY reduced its net return from 64.79% to 53.04%. All six models completed the same 38 round trips, so the common proportional fee rule reduced their terminal wealth without changing their terminal ranking.</p>
+</section>
+<section id="when-did-all-models-struggle-to-predict-returns" class="level2">
+<h2 class="anchored" data-anchor-id="when-did-all-models-struggle-to-predict-returns">When did all models struggle to predict returns?</h2>
+<p><img src="05_cycle_rmse.png" class="img-fluid" style="width:95.0%"></p>
+<p>In that high-error cycle, RMSE ranged from 18.68% to 19.33% across all six models. Colors were usually similar across models within a given period, suggesting that shared prediction difficulties often outweighed the differences associated with tree count.</p>
+<p>Errors were generally higher later in the backtest, but fluctuated substantially. Changing predictive relationships and more extreme realized stock returns could both increase RMSE. Because this experiment did not compare fixed models with periodically retrained models, it cannot isolate the effect of aging training data.</p>
+</section>
+<section id="what-did-this-experiment-change" class="level2">
+<h2 class="anchored" data-anchor-id="what-did-this-experiment-change">What did this experiment change?</h2>
+<p><strong>Fewer trees improved prediction error, 500 trees improved historical investment performance relative to the classroom reference, and SPY retained a slight advantage in the observed Sharpe comparison.</strong> The preferred model therefore depends on the evaluation objective. More accurate return estimates, higher cumulative returns, and better risk-adjusted performance each require evaluation.</p>
+<p>Five hundred trees was identified as the historical return winner after observing the complete backtest. Its advantage has yet to be validated in a new independent period. The fixed stock list may introduce survivorship bias, adjusted prices may be revised retrospectively, and simulated execution omits slippage and market impact.</p>
+<p>This experiment demonstrates that <strong>better training fit cannot substitute for out-of-sample evaluation, and better out-of-sample prediction error cannot substitute for investment evaluation.</strong> Assessing a stock-prediction model requires following the full sequence from forecasts to selection, capital allocation, trading costs, and risk. The value of changing tree count should ultimately be judged against those combined outcomes.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><img src="../../../images/UniversityofPennsylvania_FullLogo_RGB.png" class="img-fluid" width="100"></p>
+</div>   
+    <div class="nav-footer-center">
+<p>© 2026 Guozhi Ye. All rights reserved.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
